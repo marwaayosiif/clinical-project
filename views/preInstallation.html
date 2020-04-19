@@ -36,7 +36,7 @@
 
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form">
+			<form class="contact100-form validate-form" action="/pre-installationform" method="post">
 				<span class="contact100-form-title">
 					Pre-Installation Form
 				</span>
@@ -91,7 +91,7 @@
 						</div>
 						<div class="cell">
 							<div class="contact100-form-checkbox">
-								<input class="input-checkbox100" id="ckb1" type="checkbox" name="preinstallCheck">
+								<input class="input-checkbox100" id="ckb1"  type="checkbox" name="preinstallCheck">
 							</div>
 						</div>
 						<div class="cell">
@@ -106,6 +106,27 @@
 							</div>
 						</div>
 					</div>
+					<div class="row">
+						<div class="cell">
+							Site Power Outlet Available
+						</div>
+						<div class="cell">
+							<div class="contact100-form-checkbox">
+								<input class="input-checkbox100" id="ckb1"  type="checkbox" name="sitepowerCheck">
+							</div>
+						</div>
+						<div class="cell">
+							<div class="wrap-input100 bg1 wrap-input100 mt-3">
+								<input class="input100" type="text" name="sitepowerRON" placeholder="Enter The Name">
+							</div>
+						</div>
+						<div class="cell pl-3">
+							<div class="wrap-input100 bg1 wrap-input100 mt-3">
+								<input class="input100" type="text" name="sitepowerComment"
+									placeholder="Enter Any Comments">
+							</div>
+						</div>
+					</div>
 
 					<div class="row">
 						<div class="cell">
@@ -113,7 +134,7 @@
 						</div>
 						<div class="cell">
 							<div class="contact100-form-checkbox">
-								<input class="input-checkbox100" id="ckb1" type="checkbox" name="requiredtoolCheck">
+								<input class="input-checkbox100" id="ckb1"  type="checkbox" name="requiredtoolCheck">
 							</div>
 						</div>
 						<div class="cell">
@@ -134,7 +155,7 @@
 						</div>
 						<div class="cell">
 							<div class="contact100-form-checkbox">
-								<input class="input-checkbox100" id="ckb1" type="checkbox" name="requiredsupllyCheck">
+								<input class="input-checkbox100" id="ckb1" type="checkbox"  name="requiredsupllyCheck">
 							</div>
 						</div>
 						<div class="cell">
@@ -179,7 +200,7 @@
 						</div>
 						<div class="cell">
 							<div class="contact100-form-checkbox">
-								<input class="input-checkbox100" id="ckb1" type="checkbox" name="lockkeyCheck">
+								<input class="input-checkbox100" id="ckb1"  type="checkbox" name="lockkeyCheck">
 							</div>						</div>
 						<div class="cell">
 							<div class="wrap-input100 bg1 wrap-input100 mt-3">
@@ -197,7 +218,7 @@
 				</div>
 				<div class="wrap-input100 bg1 wrap-input100">
 					<span class="label-input100 pr-3">Date:</span>
-					<input class="input100  js-datepicker" type="date" name="equipment" placeholder="Enter The Date"
+					<input class="input100  js-datepicker" type="date" name="date" placeholder="Enter The Date"
 						required>
 					<i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
 				</div>
@@ -212,7 +233,7 @@
 					<button class="contact100-form-btn">
 						<span>
 							Submit
-							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							<i class="fa fa-long-arrow-right m-l-7"  href = "/pre-installationform" aria-hidden="true"></i>
 						</span>
 					</button>
 				</div>
