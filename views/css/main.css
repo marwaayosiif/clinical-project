@@ -238,15 +238,6 @@
     margin-bottom: 20px;
   }
 
-  .w90{
-    width: 90%!important;
-
-  } 
-
-  .w75{
-    width: 75%!important;
-
-  }
   .rs1-wrap-input100 {
     width: calc((100% - 30px) / 2);
   }
