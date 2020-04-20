@@ -7,7 +7,7 @@ const Pre_installation= sequelize.define('Pre_installation',{
         type: Sequelize.TEXT,
     },
     Date: {
-    type:Sequelize.STRING,
+    type:Sequelize.DATE,
     allowNull:true
     },
     Name:{
@@ -15,7 +15,7 @@ const Pre_installation= sequelize.define('Pre_installation',{
         allowNull:true
     },
     Equipment:{
-        type:Sequelize.STRING,
+        type:Sequelize.TEXT,
         allowNull:false
     },
     Floor:{
@@ -32,27 +32,27 @@ const Pre_installation= sequelize.define('Pre_installation',{
     },
     Pre_installationFormCopiedCheck:{
         
-        type:Sequelize.BOOLEAN,
+        type:Sequelize.STRING,
         allowNull:true
     },
     SitePowerOutletAvailableCheck:{
-        type:Sequelize.BOOLEAN,
+        type:Sequelize.STRING,
         allowNull:true
     },
     RequiredToolsAvailableCheck:{
-        type:Sequelize.BOOLEAN,
+        type:Sequelize.STRING,
         allowNull:true
     },
     RequiredSuppliesAvailableCheck:{
-        type:Sequelize.BOOLEAN,
+        type:Sequelize.STRING,
         allowNull:true
     },
     SiteCanBeLockedAfterHoursCheck:{
-        type:Sequelize.BOOLEAN,
+        type:Sequelize.STRING,
         allowNull:true
     },
     LockKeysAssignedToPersonalCheck:{
-        type:Sequelize.BOOLEAN,
+        type:Sequelize.STRING,
         allowNull:true
     },
     Pre_installationFormCopiedRON:{
