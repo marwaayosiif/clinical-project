@@ -825,7 +825,7 @@
   .table .row.header .cell {
     font-family: Poppins-Regular;
     font-size: 18px;
-    color: #888888;
+    color: #fff;
     line-height: 1.2;
     font-weight: unset !important;
   
@@ -855,7 +855,7 @@
     width: 100% !important;
   }
   
-  .table .row:hover {
+  .table .notheader:hover {
     background-color: #ececff;
     color: #333333;
     cursor: pointer;
