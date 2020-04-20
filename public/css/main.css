@@ -237,7 +237,7 @@
     padding: 10px 30px 9px 22px;
     margin-bottom: 20px;
   }
-  
+
   .rs1-wrap-input100 {
     width: calc((100% - 30px) / 2);
   }
@@ -254,7 +254,7 @@
   
   .input100 {
     display: inline;
-    width: 75%;
+    width: 100%;
     background: transparent;
     font-family: Montserrat-SemiBold;
     font-size: 18px;
@@ -333,7 +333,7 @@
   }
   
   .contact100-form-btn:hover {
-    background-color: #00ad5f;
+    background-color: #00bfd8;
   }
   
   .contact100-form-btn:hover i {
@@ -423,7 +423,7 @@
     content: "\f26b";
     font-family: Material-Design-Iconic-Font;
     font-size: 18px;
-    color: #00ad5f;
+    color: #00bfd8;
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -552,12 +552,12 @@
   }
   
   .select2-container .select2-results__option[aria-selected="true"] {
-    background: #00ad5f;
+    background: #00bfd8;
     color: white;
   }
   
   .select2-container .select2-results__option--highlighted[aria-selected] {
-    background: #00ad5f;
+    background: #00bfd8;
     color: white;
   }
   
@@ -686,7 +686,7 @@
   #filter-bar .noUi-connect {
     border: 1px solid #e6e6e6;
     border-radius: 9px;
-    background-color: #00ad5f;
+    background-color: #00bfd8;
     box-shadow: none;
   }
   #filter-bar .noUi-handle {
@@ -753,31 +753,31 @@
     }
   }
   
-  .row {
+  .table .row {
     display: table-row;
     background: #fff;
   }
   
-  .row.header {
+  .table .row.header {
     color: #ffffff;
     background: #333333;
   }
 
   @media screen and (max-width: 768px) {
-    .row {
+    .table  .row {
       display: block;
     }
   
-    .row.header {
+    .table  .row.header {
       padding: 0;
       height: 0px;
     }
   
-    .row.header .cell {
+    .table  .row.header .cell {
       display: none;
     }
   
-    .row .cell:before {
+    .table  .row .cell:before {
       font-family: Poppins-Bold;
       font-size: 12px;
       color: #808080;
@@ -802,7 +802,7 @@
     }
   }
   
-  .row .cell {
+  .table  .row .cell {
     font-family: Poppins-Regular;
     font-size: 15px;
     color: #666666;
@@ -813,10 +813,10 @@
     border-bottom: 1px solid #f2f2f2;
   }
   
-  .row.header .cell {
+  .table .row.header .cell {
     font-family: Poppins-Regular;
     font-size: 18px;
-    color: #888888;
+    color: #fff;
     line-height: 1.2;
     font-weight: unset !important;
   
@@ -824,36 +824,36 @@
     padding-bottom: 19px;
   }
   
-  .row .cell:nth-child(1) {
+  .table .row .cell:nth-child(1) {
     width: 200px;
     padding-left: 40px;
   }
   
-  .row .cell:nth-child(2) {
+  .table  .row .cell:nth-child(2) {
     width: 50px;
   }
   
-  .row .cell:nth-child(3) {
+  .table .row .cell:nth-child(3) {
     width: 250px;
   }
   
-  .row .cell:nth-child(4) {
+  .table .row .cell:nth-child(4) {
     width: 250px;
   }
   
   
-  .table, .row {
+  .table, .table .row {
     width: 100% !important;
   }
   
-  .row:hover {
+  .table .notheader:hover {
     background-color: #ececff;
     color: #333333;
     cursor: pointer;
   }
 
   @media (max-width: 768px) {
-    .row {
+    .table .row {
       border-bottom: 1px solid #f2f2f2;
       padding-bottom: 18px;
       padding-top: 30px;
@@ -861,17 +861,17 @@
       margin: 0;
     }
     
-    .row .cell {
+    .table .row .cell {
       border: none;
       padding-left: 30px;
       padding-top: 16px;
       padding-bottom: 16px;
     }
-    .row .cell:nth-child(1) {
+    .table .row .cell:nth-child(1) {
       padding-left: 30px;
     }
     
-    .row .cell {
+    .table .row .cell {
       font-family: Poppins-Regular;
       font-size: 18px;
       color: #555555;
@@ -879,38 +879,9 @@
       font-weight: unset !important;
     }
   
-    .table, .row, .cell {
+    .table,.table  .row, .cell {
       width: 100% !important;
     }
-  }
-
-
-
-  .input-checkbox100 {
-    display: inline-block;
-    position: relative;
-    padding-left: 32px;
-    cursor: pointer;
-    font-family: Oswald-Medium;
-    font-size: 15px;
-    color: #1b3815;
-    line-height: 1.2;
-    margin: 0;  }
-  
-    .label-checkbox100 {
-        display: inline-block;
-        position: relative;
-        padding-left: 32px;
-        cursor: pointer;
-        font-family: Oswald-Medium;
-        font-size: 15px;
-        color: #1b3815;
-        line-height: 1.2;
-        margin: 0;  }
-      
-  
-  .input-checkbox100:checked  {
-    color: #57b846;
   }
 
 
@@ -928,7 +899,7 @@
     cursor: pointer;
   }  
   input[type='checkbox'] {
-    --active: #00ad5f;
+    --active: #00bfd8;
     --active-inner: #fff;
     --focus: 2px rgba(39, 94, 254, .3);
     --border: #BBC1E1;

@@ -4,8 +4,10 @@ const DirName=require('./util/path');
 const bodyParser=require('body-parser');
 const exphbs=require('express-handlebars');
 const sequelize=require('./util/db')
-const preinstallationRoutes = require('./routes/main')
+const mainRoutes = require('./routes/main')
 const Pre_installation=require('./models/pre-installation')
+const PreventiveMaintainance=require('./models/PreventiveMaintainance')
+const WorksOrders=require('./models/worksOrders')
 const app = express()
 var cookieParser = require('cookie-parser');
 const multer =require('multer');
@@ -42,7 +44,7 @@ app.use(bodyParser.urlencoded({extended:false}))
 app.use(express.static(DirName+'/public/'));
 // using the routes in the routes file 
 // app.use(patientRoutes);
-app.use(preinstallationRoutes);
+app.use(mainRoutes);
 // app.use(doctorRoutes);
 
 // app.use(cookieParser());;
@@ -53,7 +55,7 @@ app.use(preinstallationRoutes);
 
 
 // synchronizing with database 
-sequelize.sync().then(res => { 
+sequelize.sync({force:true}).then(res => { 
   app.listen(3000,() => {
     console.log('Running')
    })

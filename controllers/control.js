@@ -2,16 +2,49 @@ const DirName=require('../util/path')
 const path= require('path')
 const bcrypt = require('bcryptjs')
 const Pre_installation = require('../models/pre-installation')
-// const doctor = require('../models/doctor')
-// const flash = require('req-flash')
-// const date = require('../models/date')
-// const appointment = require('../models/appointment')
-// const complain = require('../models/complain')
+const PreventiveMaintainance=require('./models/PreventiveMaintainance')
+const WorksOrders=require('./models/worksOrders')
 
-exports.mainroute=(req,res,next) => {
+
+exports.mainRoute=(req,res,next) => {
+    res.sendFile(path.join(DirName,'views','index.html'));
+}
+exports.Date=(req,res,next) => {
 
     res.sendFile(path.join(DirName,'views','preInstallation.html'));
 
+}
+exports.dataPreven=(req,res,next) => {
+    res.sendFile(path.join(DirName,'views',''));
+}
+exports.dataWorkOrder=(req,res,next)=>{
+    res.sendFile(path.join(DirName,'views',''));
+}
+exports.getDataPreven = (req,res,next) => {
+    const preventive = new PreventiveMaintainance({
+        manufacture:req.body,
+        SchDate:req.body,
+        version:req.body,
+        serialNO:req.body,
+        freq:req.body,
+        processes:req.body,
+        daysOfMaintainance:req.body
+    });
+
+        
+
+        if (PreventiveMaintainance.findOne({where:{serialNO: preventive.serialNO}}).then(user => {
+           
+            if (!user) {
+                preventive.save().then(res.sendFile(path.join(DirName,'views','')));
+
+            } else {
+               
+                console.log('anaa henaa');
+                // res.sendFile(path.join(DirName,'views','errors/signupexistingemail.html'));
+            }
+        }));
+        
 }
 exports.getData =(req,res,next) => {
     const newform = new Pre_installation({
@@ -44,6 +77,19 @@ exports.getData =(req,res,next) => {
     // console.log(Pre_installationFormCopiedCheck)
     // console.log(newform.Data)
     // if (req.body.preinstallCheck == )
-    newform.save()
-    res.sendFile(path.join(DirName,'views','preInstallation.html'));
+    newform.save().then(res.sendFile(path.join(DirName,'views','preInstallation.html')));
+}
+exports.getDataWorkOrder = (req,res,next)=>{
+    new workOrder = new WorksOrders({
+        nameEq:req.body,
+        disc:req.body,
+        model:req.body,
+        assestType:req.body,
+        status:req.body,
+        serialNO:req.body,
+        manufacturer:req.body,
+        manufacturerInfo:req.body,
+        preferedSuppliers:req.body
+    });
+    workOrder.save().then(res.sendFile(path.join(DirName,'views','')));
 }
