@@ -1884,7 +1884,7 @@ margin-bottom: 15px;
 
 /* EZ Checklist */
 .ez-checkbox {
-    margin-right: 5px;
+    /* margin-right: 5px; */
 }
 .ez-checkbox,
 .ez-radio {
@@ -2633,7 +2633,7 @@ ul.labels-info li img {
     margin: 0 -15px;
 }
 .mail-checkbox {
-    margin-right: 10px;
+    /* margin-right: 10px; */
 }
 .table-inbox {
     margin: 0;
@@ -2645,7 +2645,7 @@ ul.labels-info li img {
     width: 5%;
 }
 .table-inbox tr td:first-child .icheckbox_minimal {
-    margin-left: 15px;
+    /* margin-left: 15px; */
 }
 .table-inbox tr td:hover {
     cursor: pointer;
