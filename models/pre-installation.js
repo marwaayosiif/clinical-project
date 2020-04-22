@@ -10,6 +10,10 @@ const Pre_installation= sequelize.define('Pre_installation',{
     type:Sequelize.DATE,
     allowNull:true
     },
+    // SerialNO:{
+    //     type: Sequelize.INTEGER,
+    //     primaryKey:true
+    // },
     Name:{
         type:Sequelize.TEXT,
         allowNull:true

@@ -28,18 +28,15 @@ const WorksOrders= sequelize.define('WorksOrders',{
         allowNull:false,
         primaryKey:true
     },
-    manufacturer:{
+    prioity:{
         type:Sequelize.TEXT,
         allowNull:false
     },
-    manufacturerInfo:{
-        type:Sequelize.TEXT,
+    Date:{
+        type:Sequelize.DATE,
         allowNull:false
-    },
-    preferedSuppliers:{
-        type:Sequelize.TEXT,
-        allowNull:false
-    },
+    }
+    
     
 })
 

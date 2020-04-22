@@ -2,50 +2,127 @@ const DirName=require('../util/path')
 const path= require('path')
 const bcrypt = require('bcryptjs')
 const Pre_installation = require('../models/pre-installation')
-const PreventiveMaintainance=require('./models/PreventiveMaintainance')
-const WorksOrders=require('./models/worksOrders')
+const PreventiveMaintainance=require('../models/PreventiveMaintainance')
+const WorksOrders=require('../models/worksOrders')
+const Engineers= require('../models/engineers')
 
 
+exports.showPreinstallationData=(req,res,next) => {
+    // const Id = req.params.id;
+    Pre_installation.findAll()
+    
+    .then(newform => {
+        console.log(newform)
+        res.render('preinstallation_data',{newform:newform,layout:false})})
+    }
+
+exports.managementSystem=(req,res,next) => {
+
+    res.sendFile(path.join(DirName,'views','management_system.html'));
+}
+exports.showLogin=(req,res,next) => {
+    res.sendFile(path.join(DirName,'views','login.html'));
+}
 exports.mainRoute=(req,res,next) => {
     res.sendFile(path.join(DirName,'views','index.html'));
 }
-exports.Date=(req,res,next) => {
+exports.Data=(req,res,next) => {
 
     res.sendFile(path.join(DirName,'views','preInstallation.html'));
 
 }
-exports.dataPreven=(req,res,next) => {
-    res.sendFile(path.join(DirName,'views',''));
-}
-exports.dataWorkOrder=(req,res,next)=>{
-    res.sendFile(path.join(DirName,'views',''));
-}
-exports.getDataPreven = (req,res,next) => {
-    const preventive = new PreventiveMaintainance({
-        manufacture:req.body,
-        SchDate:req.body,
-        version:req.body,
-        serialNO:req.body,
-        freq:req.body,
-        processes:req.body,
-        daysOfMaintainance:req.body
+exports.singUp=(req,res,next) => {
+    console.log("maytenhyaty")
+    const engineer = new Engineers({
+        FullName:req.body.rname,
+        Job:req.body.job,
+        Email:req.body.remail,
+        Password:req.body.pass
     });
-
+    console.log(engineer);
         
-
-        if (PreventiveMaintainance.findOne({where:{serialNO: preventive.serialNO}}).then(user => {
+        Engineers.findOne({where:{Email: engineer.Email}}).then(user => {
            
             if (!user) {
-                preventive.save().then(res.sendFile(path.join(DirName,'views','')));
-
+                bcrypt.genSalt(10, (err, salt) => {
+                    bcrypt.hash(engineer.Password, salt, (err, hash) => {
+                        engineer.Password = hash;
+                        engineer.save().then(savedUser => {
+                            console.log("eheldonya");
+                            res.redirect('/managementSystem'); 
+                        });
+                       
+                    });
+                });
             } else {
-               
-                console.log('anaa henaa');
-                // res.sendFile(path.join(DirName,'views','errors/signupexistingemail.html'));
+                console.log('User is found');
+                res.redirect('/managementSystem'); 
             }
-        }));
-        
+        });
+
+    }
+
+exports.login=(req,res,next) => {
+    let Email = req.body.email;
+    let Password = req.body.pass;
+    Engineers.findOne({where:{Email:Email}}).then(user => {
+ 
+        if(!user){           
+           console.log("user is not found")
+           res.redirect('/showLogin')
+            // res.sendFile(path.join(DirName,'views','errors/signinemailerrorD.html'));
+           
+       } else{
+           bcrypt.compare(Password, user.Password).then((returnedPassword) => {
+               if (returnedPassword){
+
+
+                res.redirect('/managementSystem');
+                
+               }
+               else{
+                   console.log("password is not correct")
+                   res.redirect('login')
+                // res.sendFile(path.join(DirName,'views','errors/siginwrongpassD.html'));
+                  
+               }
+           });
+       }
+    });
 }
+// exports.dataPreven=(req,res,next) => {
+//     res.sendFile(path.join(DirName,'views',''));
+// }
+// exports.dataWorkOrder=(req,res,next)=>{
+//     res.sendFile(path.join(DirName,'views',''));
+// }
+
+// exports.getDataPreven = (req,res,next) => {
+//     const preventive = new PreventiveMaintainance({
+//         manufacture:req.body,
+//         SchDate:req.body,
+//         version:req.body,
+//         serialNO:req.body,
+//         freq:req.body,
+//         processes:req.body,
+//         daysOfMaintainance:req.body
+//     });
+
+        
+
+//         if (PreventiveMaintainance.findOne({where:{serialNO: preventive.serialNO}}).then(user => {
+           
+//             if (!user) {
+//                 preventive.save().then(res.sendFile(path.join(DirName,'views','')));
+
+//             } else {
+               
+//                 console.log('anaa henaa');
+//                 // res.sendFile(path.join(DirName,'views','errors/signupexistingemail.html'));
+//             }
+//         }));
+        
+// }
 exports.getData =(req,res,next) => {
     const newform = new Pre_installation({
         Hospital:req.body.hospital,
@@ -77,19 +154,22 @@ exports.getData =(req,res,next) => {
     // console.log(Pre_installationFormCopiedCheck)
     // console.log(newform.Data)
     // if (req.body.preinstallCheck == )
-    newform.save().then(res.sendFile(path.join(DirName,'views','preInstallation.html')));
-}
-exports.getDataWorkOrder = (req,res,next)=>{
-    new workOrder = new WorksOrders({
-        nameEq:req.body,
-        disc:req.body,
-        model:req.body,
-        assestType:req.body,
-        status:req.body,
-        serialNO:req.body,
-        manufacturer:req.body,
-        manufacturerInfo:req.body,
-        preferedSuppliers:req.body
+    newform.save().then(savedUser => {
+        console.log("eheldonya");
+        res.redirect('/pre-installationform'); 
     });
-    workOrder.save().then(res.sendFile(path.join(DirName,'views','')));
 }
+// exports.getDataWorkOrder = (req,res,next)=>{
+//     new workOrder = new WorksOrders({
+//         nameEq:req.body,
+//         disc:req.body,
+//         model:req.body,
+//         assestType:req.body,
+//         status:req.body,
+//         serialNO:req.body,
+//         manufacturer:req.body,
+//         manufacturerInfo:req.body,
+//         preferedSuppliers:req.body
+//     });
+//     workOrder.save().then(res.sendFile(path.join(DirName,'views','')));
+// }
