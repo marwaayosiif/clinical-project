@@ -56,7 +56,7 @@
         *********************************************************************************************************************************************************** -->
         <!--sidebar start-->
         <aside>
-            <div id="sidebar" class="nav-collapse ">
+            <div id="sidebar" class="nav-collapse">
                 <!-- sidebar menu start-->
                 <ul class="sidebar-menu" id="nav-accordion">
                     <li class="mt">
@@ -114,35 +114,35 @@
                             <div class="form">
                                 <form class="cmxform form-horizontal style-form" id="signupForm" method="get" action="">
 
-                                    <div class="form-group ">
+                                    <div class="form-group">
                                         <label for="lastname" class="control-label col-lg-2">Name</label>
                                         <div class="col-lg-10">
                                             <input class=" form-control" id="lastname" name="lastname" type="text" required/>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-lg-2">Model</label>
+                                        <label for="model" class="control-label col-lg-2">Model</label>
                                         <div class="col-lg-3">
                                             <div data-date-viewmode="years" data-date-format="dd-mm-yyyy" data-date="01-01-2014" class="input-append date dpYears">
-                                                <input type="text" readonly="" value="01-01-2014" size="16" class="form-control" required>
+                                                <input type="text" readonly="" id="model" name="model" value="01-01-2014" size="16" class="form-control" required>
                                                 <span class="input-group-btn add-on">
                             <button class="btn btn-theme" type="button"><i class="fa fa-calendar"></i></button>
                             </span>
                                             </div>
                                             <span class="help-block">Select date</span>
-                                        </div>
-                                    </div>
-                                    <div class="form-group ">
-                                        <label for="serial" class="control-label col-lg-2">Serial Number</label>
-                                        <div class="col-lg-10">
-                                            <input class="form-control " id="serial" name="serial" type="number" required />
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-lg-2">Maintainance Date</label>
+                                        <label for="serial" class="control-label col-lg-2">Serial Number</label>
+                                        <div class="col-lg-10">
+                                            <input class="form-control" id="serial" name="serial" type="number" required />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="maintainDate" class="control-label col-lg-2">Maintainance Date</label>
                                         <div class="col-lg-3">
                                             <div data-date-viewmode="years" data-date-format="dd-mm-yyyy" data-date="01-01-2014" class="input-append date dpYears">
-                                                <input type="text" readonly="" value="01-01-2014" size="16" class="form-control" required>
+                                                <input type="text" readonly="" id="maintainDate" name="maintainDate" value="01-01-2014" size="16" class="form-control" required>
                                                 <span class="input-group-btn add-on">
                             <button class="btn btn-theme" type="button"><i class="fa fa-calendar"></i></button>
                             </span>
@@ -150,10 +150,10 @@
                                             <span class="help-block">Select date</span>
                                         </div>
                                     </div>
-                                    <div class="form-group ">
+                                    <div class="form-group">
                                         <label for="department" class="control-label col-lg-2">Department</label>
                                         <div class="col-lg-10">
-                                            <input class="form-control " id="department" name="department" type="text" required />
+                                            <input class="form-control" id="department" name="department" type="text" required />
                                         </div>
                                     </div>
                                     <div class="form-group">

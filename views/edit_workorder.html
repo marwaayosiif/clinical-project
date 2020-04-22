@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <title>Management System</title>
+
+    <!-- Favicons -->
+    <link href="images/icons/medical.png" rel="icon">
+    <link href="images/icons/medical.png" rel="apple-touch-icon">
+
+    <!-- Bootstrap core CSS -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--external css-->
+    <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="lib/advanced-datatable/css/demo_page.css" rel="stylesheet" />
+    <link href="lib/advanced-datatable/css/demo_table.css" rel="stylesheet" />
+    <link rel="stylesheet" href="lib/advanced-datatable/css/DT_bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap-datepicker/css/datepicker.css" />
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet">
+
+    <!-- =======================================================
+    Template Name: Dashio
+    Template URL: https://templatemag.com/dashio-bootstrap-admin-template/
+    Author: TemplateMag.com
+    License: https://templatemag.com/license/
+  ======================================================= -->
+</head>
+
+<body>
+    <section id="container">
+        <!-- **********************************************************************************************************************************************************
+        TOP BAR CONTENT & NOTIFICATIONS
+        *********************************************************************************************************************************************************** -->
+        <!--header start-->
+        <header class="header black-bg">
+            <div class="sidebar-toggle-box">
+                <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+            </div>
+            <!--logo start-->
+            <a href="index.html" class="logo"><img style="width: 140px;height: 40px;" src="images/logo.png" alt="alternative"></a>
+            <!--logo end-->
+
+        </header>
+        <!--header end-->
+        <!-- **********************************************************************************************************************************************************
+        MAIN SIDEBAR MENU
+        *********************************************************************************************************************************************************** -->
+        <!--sidebar start-->
+        <aside>
+            <div id="sidebar" class="nav-collapse">
+                <!-- sidebar menu start-->
+                <ul class="sidebar-menu" id="nav-accordion">
+                    <li class="mt">
+                        <a href="management.html">
+                            <i class="fa fa-medkit"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="fa fa-user-md"></i>
+                            <span>Staff</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="engineers.html">Engineers</a></li>
+                            <li><a href="technicians.html">Technicians</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="mt">
+                        <a href="equipments.html">
+                            <i class="fa fa-cogs"></i>
+                            <span>Equipments</span>
+                        </a>
+                    </li>
+                    <li class="sub-menu">
+                        <a class="active" href="javascript:;">
+                            <i class="fa fa-book"></i>
+                            <span>Reports</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="pre_installation.html">Pre-installation Report</a></li>
+                            <li><a href="preventive_maintance.html">Preventive Maintainance Report</a></li>
+                            <li class="active"><a href="workorder.html">Work Order Report</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <!-- sidebar menu end-->
+            </div>
+        </aside>
+        <!--sidebar end-->
+        <!-- **********************************************************************************************************************************************************
+        MAIN CONTENT
+        *********************************************************************************************************************************************************** -->
+        <!--main content start-->
+        <section id="main-content">
+            <section class="wrapper">
+                <h3><i class="fa fa-angle-right"></i> Edit Work Order Report</h3>
+
+                <!-- /row -->
+                <div class="row mt">
+                    <div class="col-lg-12">
+                        <div class="form-panel">
+                            <div class="form">
+                                <form class="cmxform form-horizontal style-form" id="signupForm" method="get" action="">
+                                    <div class="form-group">
+                                        <label for="equipment" class="control-label col-lg-2">Equipment's Name</label>
+                                        <div class="col-lg-10">
+                                            <input class=" form-control" id="equipment" name="equipment" type="text" value="MRI" required/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="serial" class="control-label col-lg-2">Serial Number</label>
+                                        <div class="col-lg-10">
+                                            <input class="form-control" id="serial" name="serial" type="number" value="123" required />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="model" class="control-label col-lg-2">Model</label>
+                                        <div class="col-lg-10">
+                                            <input class=" form-control" id="model" name="model" type="text" value="AB15" required/>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="status" class="control-label col-lg-2">Status</label>
+                                        <div class="col-lg-10">
+                                            <input class="form-control" id="status" name="status" type="text" value="working" required />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="desc" class="control-label col-lg-2">Description</label>
+                                        <div class="col-lg-10">
+                                            <textarea class="form-control" name="desc" id="desc" rows="5" data-rule="required" required>description</textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="assest" class="control-label col-lg-2">Assest Type</label>
+                                        <div class="col-lg-10">
+                                            <input class="form-control" id="assest" name="assest" type="text" value="type" required />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="priority" class="control-label col-lg-2">Priority</label>
+                                        <div class="col-lg-10">
+                                            <input class="form-control" id="priority" name="priority" type="text" value="first" required />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="date" class="control-label col-lg-2">Date</label>
+                                        <div class="col-lg-3">
+                                            <div data-date-viewmode="years" data-date-format="dd-mm-yyyy" data-date="01-01-2014" class="input-append date dpYears">
+                                                <input type="text" readonly="" id="date" name="date" value="20-10-2020" size="16" class="form-control" required>
+                                                <span class="input-group-btn add-on">
+                            <button class="btn btn-theme" type="button"><i class="fa fa-calendar"></i></button>
+                            </span>
+                                            </div>
+                                            <span class="help-block">Select date</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-lg-offset-2 col-lg-10">
+                                            <button class="btn btn-theme" type="submit">Save</button>
+                                            <a class="btn btn-theme04" type="button" href="workorder.html">Cancel</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- /form-panel -->
+                    </div>
+                    <!-- /col-lg-12 -->
+                </div>
+                <!-- /row -->
+            </section>
+            <!-- /wrapper -->
+        </section>
+        <!-- /MAIN CONTENT -->
+        <!--main content end-->
+
+    </section>
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="lib/form-validation-script.js"></script>
+
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="lib/jquery.scrollTo.min.js"></script>
+    <script src="lib/jquery.nicescroll.js" type="text/javascript"></script>
+    <!--common script for all pages-->
+    <script src="lib/common-scripts.js"></script>
+    <!--script for this page-->
+
+    <script src="lib/form-validation-script.js"></script>
+    <script type="text/javascript" src="lib/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="lib/bootstrap-daterangepicker/date.js"></script>
+    <script src="lib/advanced-form-components.js"></script>
+
+</body>
+
+</html>
