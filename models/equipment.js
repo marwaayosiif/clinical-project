@@ -7,11 +7,11 @@ const Equipment= sequelize.define('Equipment',{
         type: Sequelize.TEXT,
     },
     Model: {
-    type:Sequelize.DATE,
+    type:Sequelize.STRING,
     allowNull:true
     },
     SerialNO:{
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         primaryKey:true
     },
     DueDate:{

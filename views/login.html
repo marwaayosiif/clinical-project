@@ -37,7 +37,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumbs">
-                        <a href="index.html">Home</a><i class="fa fa-angle-double-right"></i><span>Login</span>
+                        <a href="/index">Home</a><i class="fa fa-angle-double-right"></i><span>Login</span>
                     </div>
                     <!-- end of breadcrumbs -->
                 </div>
@@ -59,7 +59,7 @@
 					</span>
                 </div>
 
-                <form class="login100-form validate-form">
+                <form class="login100-form validate-form" method="POST" action="/login">
                     <div class="wrap-input100 validate-input m-b-26" data-validate="Valid email is required: ex@abc.xyz">
                         <span class="label-input100">Email</span>
                         <input class="input100" type="text" name="email" placeholder="Enter email">
@@ -74,8 +74,8 @@
 
 
                     <div class="container-login100-form-btn">
-                        <button class="login100-form-btn">
-							<a href="management.html">
+                        <button class="login100-form-btn">  
+							<a href="/login">
 								Login
 							</a>
 							

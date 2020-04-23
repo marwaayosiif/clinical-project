@@ -45,7 +45,7 @@
                 <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
             </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><img style="width: 140px;height: 40px;" src="images/logo.png" alt="alternative"></a>
+            <a href="/index" class="logo"><img style="width: 140px;height: 40px;" src="images/logo.png" alt="alternative"></a>
             <!--logo end-->
 
         </header>
@@ -59,7 +59,7 @@
                 <!-- sidebar menu start-->
                 <ul class="sidebar-menu" id="nav-accordion">
                     <li class="mt">
-                        <a href="management.html">
+                        <a href="/managementSystem">
                             <i class="fa fa-medkit"></i>
                             <span>Dashboard</span>
                         </a>
@@ -76,7 +76,7 @@
                         </ul>
                     </li>
                     <li class="mt">
-                        <a href="equipments.html">
+                        <a href="/showEq">
                             <i class="fa fa-cogs"></i>
                             <span>Equipments</span>
                         </a>
@@ -87,9 +87,9 @@
                             <span>Reports</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="pre_installation.html">Pre-installation Report</a></li>
+                            <li><a href="/showPre-installationform">Pre-installation Report</a></li>
                             <li><a href="preventive_maintance.html">Preventive Maintainance Report</a></li>
-                            <li class="active"><a href="workorder.html">Work Order Report</a></li>
+                            <li class="active"><a href="/showWorkOrders">Work Order Report</a></li>
                         </ul>
                     </li>
 
@@ -111,7 +111,7 @@
                     <div class="col-lg-12">
                         <div class="form-panel">
                             <div class="form">
-                                <form class="cmxform form-horizontal style-form" id="signupForm" method="get" action="">
+                                <form class="cmxform form-horizontal style-form" id="signupForm" method="POST" action="/getWorkOrderData">
                                     <div class="form-group">
                                         <label for="equipment" class="control-label col-lg-2">Equipment's Name</label>
                                         <div class="col-lg-10">
@@ -171,7 +171,7 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="col-lg-offset-2 col-lg-10">
-                                            <button class="btn btn-theme" type="submit">Add</button>
+                                            <button class="btn btn-theme" href="/showWorkOrdersForm" type="submit">Add</button>
                                             <a class="btn btn-theme04" type="button" href="workorder.html">Cancel</a>
                                         </div>
                                     </div>

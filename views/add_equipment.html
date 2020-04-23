@@ -46,7 +46,7 @@
                 <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
             </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><img style="width: 140px;height: 40px;" src="images/logo.png" alt="alternative"></a>
+            <a href="/index" class="logo"><img style="width: 140px;height: 40px;" src="images/logo.png" alt="alternative"></a>
             <!--logo end-->
 
         </header>
@@ -60,7 +60,7 @@
                 <!-- sidebar menu start-->
                 <ul class="sidebar-menu" id="nav-accordion">
                     <li class="mt">
-                        <a href="management.html">
+                        <a href="/managementSystem">
                             <i class="fa fa-medkit"></i>
                             <span>Dashboard</span>
                         </a>
@@ -77,7 +77,7 @@
                         </ul>
                     </li>
                     <li class="mt">
-                        <a class="active" href="equipments.html">
+                        <a class="active" href="/showEq">
                             <i class="fa fa-cogs"></i>
                             <span>Equipments</span>
                         </a>
@@ -88,9 +88,9 @@
                             <span>Reports</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="pre_installation.html">Pre-installation Report</a></li>
+                            <li><a href="/showPre-installationform">Pre-installation Report</a></li>
                             <li><a href="preventive_maintance.html">Preventive Maintainance Report</a></li>
-                            <li><a href="workorder.html">Work Order Report</a></li>
+                            <li><a href="/showWorkOrders">Work Order Report</a></li>
                         </ul>
                     </li>
 
@@ -112,30 +112,27 @@
                     <div class="col-lg-12">
                         <div class="form-panel">
                             <div class="form">
-                                <form class="cmxform form-horizontal style-form" id="signupForm" method="get" action="">
+                                <form class="cmxform form-horizontal style-form" id="signupForm" method="POST" action="/getEqData">
 
                                     <div class="form-group">
                                         <label for="lastname" class="control-label col-lg-2">Name</label>
                                         <div class="col-lg-10">
-                                            <input class=" form-control" id="lastname" name="lastname" type="text" required/>
+                                            <input class=" form-control" id="lastname" name="name" type="text" required/>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="model" class="control-label col-lg-2">Model</label>
-                                        <div class="col-lg-3">
-                                            <div data-date-viewmode="years" data-date-format="dd-mm-yyyy" data-date="01-01-2014" class="input-append date dpYears">
-                                                <input type="text" readonly="" id="model" name="model" value="01-01-2014" size="16" class="form-control" required>
-                                                <span class="input-group-btn add-on">
-                            <button class="btn btn-theme" type="button"><i class="fa fa-calendar"></i></button>
-                            </span>
-                                            </div>
-                                            <span class="help-block">Select date</span>
+                                        
+                                            <div class="col-lg-10">
+                                            <input class=" form-control" id="lastname" name="model" type="text" required/>
                                         </div>
+                                           
+                                        
                                     </div>
                                     <div class="form-group">
-                                        <label for="serial" class="control-label col-lg-2">Serial Number</label>
+                                        <label for="model" class="control-label col-lg-2">Serial Number</label>
                                         <div class="col-lg-10">
-                                            <input class="form-control" id="serial" name="serial" type="number" required />
+                                            <input class="form-control"  name="serial" type="number" required />
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -159,7 +156,7 @@
                                     <div class="form-group">
                                         <div class="col-lg-offset-2 col-lg-10">
                                             <button class="btn btn-theme" type="submit">Add</button>
-                                            <a class="btn btn-theme04" type="button" href="equipments.html">Cancel</a>
+                                            <a class="btn btn-theme04" type="button" href="/showEqform">Cancel</a>
                                         </div>
                                     </div>
                                 </form>
