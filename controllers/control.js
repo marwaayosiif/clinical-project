@@ -5,12 +5,16 @@ const Pre_installation = require('../models/pre-installation')
 const PreventiveMaintainance=require('../models/PreventiveMaintainance')
 const WorksOrders=require('../models/worksOrders')
 const Engineers= require('../models/engineers')
-
+//
+// exports.showEng==(req,res,next) => {
+//
+//     res.sendFile(path.join(DirName,'views','add_engineer.html'));
+// }
 
 exports.showPreinstallationData=(req,res,next) => {
     // const Id = req.params.id;
     Pre_installation.findAll()
-    
+
     .then(newform => {
         console.log(newform)
         res.render('preinstallation_data',{newform:newform,layout:false})})
@@ -18,7 +22,7 @@ exports.showPreinstallationData=(req,res,next) => {
 
 exports.managementSystem=(req,res,next) => {
 
-    res.sendFile(path.join(DirName,'views','management_system.html'));
+    res.sendFile(path.join(DirName,'views','management.html'));
 }
 exports.showLogin=(req,res,next) => {
     res.sendFile(path.join(DirName,'views','login.html'));
@@ -31,35 +35,43 @@ exports.Data=(req,res,next) => {
     res.sendFile(path.join(DirName,'views','preInstallation.html'));
 
 }
+
+exports.showEng=(req,res,next) => {
+    // const Id = req.params.id;
+    Engineers.findAll()
+
+        .then(viewEng => {
+            console.log(viewEng )
+            res.render('engineers',{viewEng :viewEng ,layout:false})})
+}
 exports.singUp=(req,res,next) => {
-    console.log("maytenhyaty")
-    const engineer = new Engineers({
-        FullName:req.body.rname,
+
+    const viewEng  = new Engineers({
+        FName:req.body.firstname,
+        LName:req.body.lastname,
         Job:req.body.job,
-        Email:req.body.remail,
-        Password:req.body.pass
+        Email:req.body.email,
+        Password:req.body.password
     });
-    console.log(engineer);
-        
-        Engineers.findOne({where:{Email: engineer.Email}}).then(user => {
+
+
+        Engineers.findOne({where:{Email: viewEng.Email}}).then(user => {
            
             if (!user) {
                 bcrypt.genSalt(10, (err, salt) => {
-                    bcrypt.hash(engineer.Password, salt, (err, hash) => {
-                        engineer.Password = hash;
-                        engineer.save().then(savedUser => {
+                    bcrypt.hash(viewEng.Password, salt, (err, hash) => {
+                        viewEng.Password = hash;
+                        viewEng.save().then(savedUser => {
                             console.log("eheldonya");
-                            res.redirect('/managementSystem'); 
+                            res.redirect('/addEng');
                         });
-                       
                     });
                 });
             } else {
                 console.log('User is found');
-                res.redirect('/managementSystem'); 
+                res.redirect('/addEng');
             }
         });
-
     }
 
 exports.login=(req,res,next) => {

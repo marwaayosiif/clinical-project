@@ -3,7 +3,10 @@ const sequelize=require('../util/db.js');
 
 
 const Enigneers= sequelize.define('Enigneers',{
-    FullName:{
+    FName:{
+        type: Sequelize.TEXT,
+    },
+    LName:{
         type: Sequelize.TEXT,
     },
     Job: {
