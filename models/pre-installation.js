@@ -110,9 +110,6 @@ const Pre_installation= sequelize.define('Pre_installation',{
         allowNull:true
     },
 
-
-
-
 })
 
 

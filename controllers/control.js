@@ -59,6 +59,13 @@ exports.showEq=(req,res,next) => {
             res.render('equipments',{equip:viewEq,layout:false})
             });
 }
+exports.showPrevMain=(req,res,next) => {
+    let preVenM = "yes"
+    Equipment.findAll({where:{preVenM:preVenM}}).then(prev=> {
+            console.log(prev.preVenM)
+            res.render('preventive_maintance',{pre:prev ,layout:false})
+        })
+}
 
 exports.getTechdata=(req,res,next) => {
     const tech = new Technician({
@@ -93,6 +100,8 @@ exports.getEqData=(req,res,next) => {
         SerialNO:req.body.serial,
         DueDate:req.body.maintainDate,
         Department:req.body.department,
+        preVenM:req.body.PreventiveM,
+        frequency:req.body.freq
     });
     Equipment.findOne({where:{SerialNO: equip.SerialNO}}).then(user => {
         if (!user) {

@@ -16,7 +16,7 @@ const PreventiveMaintainance = sequelize.define('PreventiveMaintainance', {
         allowNull: false
     },
     serialNO: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         primaryKey: true,
         allowNull: false
     },

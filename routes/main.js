@@ -28,5 +28,5 @@ router.post('/addEng',controller.singUp);
 router.get('/showEq',controller.showEq);
 router.get('/showEqform',controller.showEqform)
 router.post('/getEqData',controller.getEqData)
-
+router.get('/showPreMain',controller.showPrevMain)
 module.exports=router;

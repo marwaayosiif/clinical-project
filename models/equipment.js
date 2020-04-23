@@ -21,8 +21,15 @@ const Equipment= sequelize.define('Equipment',{
     Department:{
         type: Sequelize.TEXT,
         allowNull:false
+    },
+    preVenM:{
+        type: Sequelize.TEXT,
+        allowNull: true
+    },
+    frequency:{
+        type:Sequelize.TEXT,
+        allowNull:true
     }
-   
 })
 
 
