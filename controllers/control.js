@@ -38,17 +38,18 @@ exports.Data=(req,res,next) => {
 
 }
 
+
+
 exports.showEng=(req,res,next) => {
     // const Id = req.params.id;
-    Engineers.findAll()
-        .then(viewEng=> {
-            // console.log(viewEng )
-            res.render('engineers',{viewEng:viewEng,layout:false})
-            console.log(viewEng.datavalues.FName)});
+    Engineers.findAll().then(viewEng=> {
+
+            res.render('engineers',{engineer:viewEng,layout:false})
+            });
 }
 exports.singUp=(req,res,next) => {
 
-    const viewEng  = new Engineers({
+    const engineer  = new Engineers({
         FName:req.body.firstname,
         LName:req.body.lastname,
         Job:req.body.job,
@@ -56,12 +57,12 @@ exports.singUp=(req,res,next) => {
         Password:req.body.password
     });
 
-        Engineers.findOne({where:{Email: viewEng.Email}}).then(user => {
+        Engineers.findOne({where:{Email: engineer.Email}}).then(user => {
             if (!user) {
                 bcrypt.genSalt(10, (err, salt) => {
-                    bcrypt.hash(viewEng.Password, salt, (err, hash) => {
-                        viewEng.Password = hash;
-                        viewEng.save().then(savedUser => {
+                    bcrypt.hash(engineer.Password, salt, (err, hash) => {
+                        engineer.Password = hash;
+                        engineer.save().then(savedUser => {
                             console.log("eheldonya");
                             res.redirect('/addEng');
                         });
