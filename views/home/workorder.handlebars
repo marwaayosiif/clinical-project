@@ -24,6 +24,7 @@
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/style-responsive.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
 
     <!-- =======================================================
     Template Name: Dashio
@@ -44,7 +45,7 @@
                 <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
             </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><img style="width: 140px;height: 40px;" src="images/logo.png" alt="alternative"></a>
+            <a href="/index" class="logo"><img style="width: 140px;height: 40px;" src="images/logo.png" alt="alternative"></a>
             <!--logo end-->
 
         </header>
@@ -58,37 +59,37 @@
                 <!-- sidebar menu start-->
                 <ul class="sidebar-menu" id="nav-accordion">
                     <li class="mt">
-                        <a href="management.html">
+                        <a href="/managementSystem">
                             <i class="fa fa-medkit"></i>
                             <span>Dashboard</span>
                         </a>
                     </li>
                     <li class="sub-menu">
-                        <a href="javascript:;" class="active">
+                        <a href="javascript:;">
                             <i class="fa fa-user-md"></i>
                             <span>Staff</span>
                         </a>
                         <ul class="sub">
                             <li><a href="/viewEng">Engineers</a></li>
-                            <li class="active"><a href="technicians.html">Technicians</a></li>
+                            <li><a href="/viewTech">Technicians</a></li>
 
                         </ul>
                     </li>
                     <li class="sub-menu">
-                        <a href="equipments.html">
+                        <a href="/showEq">
                             <i class="fa fa-cogs"></i>
                             <span>Equipments</span>
                         </a>
                     </li>
                     <li class="sub-menu">
-                        <a href="javascript:;">
+                        <a class="active" href="javascript:;">
                             <i class="fa fa-book"></i>
                             <span>Reports</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="pre_installation.html">Pre-installation Report</a></li>
+                            <li><a href="/showPre-installationform">Pre-installation Report</a></li>
                             <li><a href="preventive_maintance.html">Preventive Maintainance Report</a></li>
-                            <li><a href="workorder.html">Work Order Report</a></li>
+                            <li class="active"><a href="/showWorkOrders">Work Order Report</a></li>
                         </ul>
                     </li>
 
@@ -103,42 +104,46 @@
         <!--main content start-->
         <section id="main-content">
             <section class="wrapper">
-                <h3><i class="fa fa-angle-right"></i> Technicians</h3>
+                <h3><i class="fa fa-angle-right"></i> Work Order Reports</h3>
                 <div class="row mb">
                     <!-- page start-->
                     <div class="content-panel">
                         <div class="adv-table">
-                            <a type="button" class="btn btn-theme" href="add_technician.html" style="float: right!important;margin: 20px 20px!important;"><i class="fa  fa-plus-square" style="margin-right: 5px!important;"></i> Add A Technician</a>
+                            <a type="button" class="btn btn-theme" href="/showWorkOrdersForm" style="float: right!important;margin: 20px 20px!important;"><i class="fa  fa-plus-square" style="margin-right: 5px!important;"></i> Add A Work Order Report</a>
 
                             <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
 
                                 <thead>
                                     <tr>
-                                        <th>First Name</th>
-                                        <th>Last Name</th>
-                                        <th class="hidden-phone">ID</th>
-                                        <th class="hidden-phone">Serial Number</th>
-                                        <th class="hidden-phone">Company's Name</th>
-                                        <th class="hidden-phone">Phone Number</th>
-
+                                        <th>Equipment</th>
+                                        <th>Serial Number</th>
+                                        <th>Model</th>
+                                        <th>Status</th>
+                                        <th class="hidden-phone">Description</th>
+                                        <th class="hidden-phone">Assest Type</th>
+                                        <th class="hidden-phone">Priority</th>
+                                        <th class="hidden-phone">Date</th>
                                         <th>Manage</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                {{#each workorder}}
                                     <tr class="gradeA">
-                                        <td>Alaa</td>
-                                        <td>Gamal</td>
-                                        <td class="  hidden-phone">111</td>
-                                        <td class=" hidden-phone">123</td>
-                                        <td class=" hidden-phone">cufe</td>
-                                        <td class=" hidden-phone">098</td>
+                                        <td>{{this.dataValues.nameEq}}</td>
+                                        <td>{{this.dataValues.serialNO}}</td>
+                                        <td>{{this.dataValues.model}}</td>
+                                        <td>{{this.dataValues.status}}</td>
+                                        <td class="  hidden-phone">{{this.dataValues.disc}}</td>
+                                        <td class=" hidden-phone">{{this.dataValues.assestType}}</td>
+                                        <td class=" hidden-phone">{{this.dataValues.prioity}}</td>
+                                        <td class=" hidden-phone">{{this.dataValues.Date}}</td>
 
                                         <td class="center">
-                                            <a href="edit_technician.html" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
+                                            <a href="edit_workorder.html" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
                                             <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete"><i class="fa fa-trash-o"></i></button>
                                         </td>
                                     </tr>
-
+                                {{/each}}
                                 </tbody>
                             </table>
                         </div>
@@ -160,7 +165,7 @@
                         <h4 class="modal-title" id="myModalLabel">Delete</h4>
                     </div>
                     <div class="modal-body">
-                        Are you sure you want to delete this technician?
+                        Are you sure you want to delete this report?
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger">Delete</button>
@@ -196,13 +201,18 @@
         /* Formating function for row details */
         function fnFormatDetails(oTable, nTr) {
             var aData = oTable.fnGetData(nTr);
-            var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">';
-            sOut += '<tr><td>Name:</td><td>' + aData[1] + "" + aData[2] + '</td></tr>';
-            sOut += '<tr><td>ID:</td><td>' + aData[3] + '</td></tr>';
-            sOut += '<tr><td>Serial Number:</td><td>' + aData[4] + '</td></tr>';
-            sOut += "<tr><td>Company's Name:</td><td>" + aData[5] + '</td></tr>';
-            sOut += "<tr><td>Phone Number:</td><td>" + aData[6] + '</td></tr>';
+            var sOut = '<table cellpadding="5" cellspacing="0" border="0" >';
+            sOut += "<tr><td>Equipment's Name:</td><td>" + aData[1] + '</td></tr>';
+            sOut += '<tr><td>Serial Number:</td><td>' + aData[2] + '</td></tr>';
+            sOut += '<tr><td>Model:</td><td>' + aData[3] + '</td></tr>';
+            sOut += "<tr><td>Status: </td><td>" + aData[4] + '</td> </tr>';
+            sOut += "<tr><td>Description: </td><td>" + aData[5] + '</td> </tr>';
+            sOut += "<tr><td>Assest Type: </td><td>" + aData[6] + '</td> </tr>';
+            sOut += "<tr><td>Priority: </td><td>" + aData[7] + '</td> </tr>';
+            sOut += "<tr><td>Date: </td><td>" + aData[8] + '</td> </tr>';
+
             sOut += '</table>';
+
 
             return sOut;
         }

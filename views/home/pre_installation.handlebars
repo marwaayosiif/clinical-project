@@ -45,7 +45,7 @@
                 <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
             </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><img style="width: 140px;height: 40px;" src="images/logo.png" alt="alternative"></a>
+            <a href="/index" class="logo"><img style="width: 140px;height: 40px;" src="images/logo.png" alt="alternative"></a>
             <!--logo end-->
 
         </header>
@@ -59,7 +59,7 @@
                 <!-- sidebar menu start-->
                 <ul class="sidebar-menu" id="nav-accordion">
                     <li class="mt">
-                        <a href="management.html">
+                        <a href="/managementSystem">
                             <i class="fa fa-medkit"></i>
                             <span>Dashboard</span>
                         </a>
@@ -71,12 +71,12 @@
                         </a>
                         <ul class="sub">
                             <li><a href="/viewEng">Engineers</a></li>
-                            <li><a href="technicians.html">Technicians</a></li>
+                            <li><a href="/viewTech">Technicians</a></li>
 
                         </ul>
                     </li>
                     <li class="sub-menu">
-                        <a href="equipments.html">
+                        <a href="/showEq">
                             <i class="fa fa-cogs"></i>
                             <span>Equipments</span>
                         </a>
@@ -87,9 +87,9 @@
                             <span>Reports</span>
                         </a>
                         <ul class="sub">
-                            <li class="active"><a href="pre_installation.html">Pre-installation Report</a></li>
-                            <li><a href="preventive_maintance.html">Preventive Maintainance Report</a></li>
-                            <li><a href="workorder.html">Work Order Report</a></li>
+                            <li class="active"><a href="/showPre-installationform">Pre-installation Report</a></li>
+                            <li><a href="">Preventive Maintainance Report</a></li>
+                            <li><a href="/showWorkOrders">Work Order Report</a></li>
                         </ul>
                     </li>
 
@@ -109,7 +109,7 @@
                     <!-- page start-->
                     <div class="content-panel">
                         <div class="adv-table">
-                            <a type="button" class="btn btn-theme" href="add_preinstallation.html" style="float: right!important;margin: 20px 20px!important;"><i class="fa  fa-plus-square" style="margin-right: 5px!important;"></i> Add A Pre-Installation Report</a>
+                            <a type="button" class="btn btn-theme" href="/pre-installationform" style="float: right!important;margin: 20px 20px!important;"><i class="fa  fa-plus-square" style="margin-right: 5px!important;"></i> Add A Pre-Installation Report</a>
 
                             <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
 
@@ -126,21 +126,22 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    {{#each newform}}
                                     <tr class="gradeA">
-                                        <td>MRI</td>
-                                        <td>20-10-2020</td>
-                                        <td>Alaa Gamal</td>
-                                        <td class="  hidden-phone">Dar Elfoaad</td>
-                                        <td class=" hidden-phone">Radiology</td>
-                                        <td class=" hidden-phone">2</td>
-                                        <td class=" hidden-phone">5</td>
+                                        <td>{{this.dataValues.Equipment}}</td>
+                                        <td>{{this.dataValues.Date}}</td>
+                                        <td>{{this.dataValues.Name}}</td>
+                                        <td class="  hidden-phone">{{this.dataValues.Hospital}}</td>
+                                        <td class=" hidden-phone">{{this.dataValues.Department}}</td>
+                                        <td class=" hidden-phone">{{this.dataValues.Floor}}</td>
+                                        <td class=" hidden-phone">{{this.dataValues.Room}}</td>
 
                                         <td class="center">
                                             <a href="edit_preinstallation.html" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
                                             <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete"><i class="fa fa-trash-o"></i></button>
                                         </td>
                                     </tr>
-
+                                {{/each}}    
                                 </tbody>
                             </table>
                         </div>

@@ -5,25 +5,26 @@ const Pre_installation = require('../models/pre-installation')
 const PreventiveMaintainance=require('../models/PreventiveMaintainance')
 const WorksOrders=require('../models/worksOrders')
 const Engineers= require('../models/engineers')
-//
-// exports.showEng==(req,res,next) => {
-//
-//     res.sendFile(path.join(DirName,'views','add_engineer.html'));
-// }
+const Equipment= require('../models/equipment')
+const Technician = require('../models/technician')
+
+
+exports.showWorkOrdeForm=(req,res,next) => {
+    res.sendFile(path.join(DirName,'views','add_workorder.html'));
+}
+exports.showEqform=(req,res,next) => {
+    res.sendFile(path.join(DirName,'views','add_equipment.html'));
+}
+exports.showPreinstallationform=(req,res,next) => {
+    res.sendFile(path.join(DirName,'views','add_preinstallation.html'));
+}
 exports.ShowEditEngForm=(req,res,next) => {
     res.sendFile(path.join(DirName,'views','add_engineer.html'));
-
 }
-exports.showPreinstallationData=(req,res,next) => {
-    // const Id = req.params.id;
-    Pre_installation.findAll()
-    .then(newform => {
-        // console.log(newform)
-        res.render('preinstallation_data',{newform:newform,layout:false})})
-    }
-
+exports.viewTechForm=(req,res,next)=>{
+    res.sendFile(path.join(DirName,'views','add_technician.html'));
+}
 exports.managementSystem=(req,res,next) => {
-
     res.sendFile(path.join(DirName,'views','management.html'));
 }
 exports.showLogin=(req,res,next) => {
@@ -32,20 +33,77 @@ exports.showLogin=(req,res,next) => {
 exports.mainRoute=(req,res,next) => {
     res.sendFile(path.join(DirName,'views','index.html'));
 }
-exports.Data=(req,res,next) => {
 
-    res.sendFile(path.join(DirName,'views','preInstallation.html'));
-
-}
-
-
-
+exports.showPreinstallationData=(req,res,next) => {
+    Pre_installation.findAll()
+    .then(newform => {
+        res.render('pre_installation',{newform:newform,layout:false})})
+    }
 exports.showEng=(req,res,next) => {
-    // const Id = req.params.id;
     Engineers.findAll().then(viewEng=> {
-
             res.render('engineers',{engineer:viewEng,layout:false})
             });
+}
+exports.viewTech=(req,res,next)=>{
+    Technician.findAll().then(viewTech=>{
+        res.render('technicians',{tech:viewTech,layout:false}) 
+    });
+}
+exports.showWorkOrder=(req,res,next)=>{
+    WorksOrders.findAll().then(viewWO=> {
+        res.render('workorder',{workorder:viewWO,layout:false})
+        });
+}
+exports.showEq=(req,res,next) => {
+    Equipment.findAll().then(viewEq=> {
+            res.render('equipments',{equip:viewEq,layout:false})
+            });
+}
+
+exports.getTechdata=(req,res,next) => {
+    const tech = new Technician({
+        FirstName:req.body.firstname,
+        LastName:req.body.lastname,
+        ID:req.body.id,
+        SerialNO:req.body.serial,
+        CompanyName:req.body.company,
+        PhoneNumber:req.body.phone
+    });
+    tech.save().then(
+        res.redirect('/viewTechForm')
+    )
+}
+exports.getWorkOrderData=(req,res,next) => {
+    const workorder = new WorksOrders({
+        nameEq:req.body.equipment,
+        disc:req.body.desc,
+        model:req.body.model,
+        assestType:req.body.assest,
+        status:req.body.status,
+        serialNO:req.body.serial,
+        prioity:req.body.priority,
+        Date:req.body.date,
+    });
+    workorder.save().then(res.redirect('/showWorkOrdersForm'));
+}
+exports.getEqData=(req,res,next) => {
+    const equip = new Equipment({
+        Name:req.body.name,
+        Model:req.body.model,
+        SerialNO:req.body.serial,
+        DueDate:req.body.maintainDate,
+        Department:req.body.department,
+    });
+    Equipment.findOne({where:{SerialNO: equip.SerialNO}}).then(user => {
+        if (!user) {
+            equip.save().then(
+                res.redirect('/showEqform')
+            );
+        } else {
+            console.log('User is found');
+            res.redirect('/showEqform');
+        }
+    });
 }
 exports.singUp=(req,res,next) => {
 
@@ -74,68 +132,26 @@ exports.singUp=(req,res,next) => {
             }
         });
     }
-
 exports.login=(req,res,next) => {
     let Email = req.body.email;
     let Password = req.body.pass;
     Engineers.findOne({where:{Email:Email}}).then(user => {
- 
         if(!user){           
            console.log("user is not found")
            res.redirect('/showLogin')
-            // res.sendFile(path.join(DirName,'views','errors/signinemailerrorD.html'));
-           
        } else{
            bcrypt.compare(Password, user.Password).then((returnedPassword) => {
                if (returnedPassword){
-
-
                 res.redirect('/managementSystem');
-                
                }
                else{
                    console.log("password is not correct")
-                   res.redirect('login')
-                // res.sendFile(path.join(DirName,'views','errors/siginwrongpassD.html'));
-                  
+                   res.redirect('/showLogin')
                }
            });
        }
     });
 }
-// exports.dataPreven=(req,res,next) => {
-//     res.sendFile(path.join(DirName,'views',''));
-// }
-// exports.dataWorkOrder=(req,res,next)=>{
-//     res.sendFile(path.join(DirName,'views',''));
-// }
-
-// exports.getDataPreven = (req,res,next) => {
-//     const preventive = new PreventiveMaintainance({
-//         manufacture:req.body,
-//         SchDate:req.body,
-//         version:req.body,
-//         serialNO:req.body,
-//         freq:req.body,
-//         processes:req.body,
-//         daysOfMaintainance:req.body
-//     });
-
-        
-
-//         if (PreventiveMaintainance.findOne({where:{serialNO: preventive.serialNO}}).then(user => {
-           
-//             if (!user) {
-//                 preventive.save().then(res.sendFile(path.join(DirName,'views','')));
-
-//             } else {
-               
-//                 console.log('anaa henaa');
-//                 // res.sendFile(path.join(DirName,'views','errors/signupexistingemail.html'));
-//             }
-//         }));
-        
-// }
 exports.getData =(req,res,next) => {
     const newform = new Pre_installation({
         Hospital:req.body.hospital,
@@ -164,25 +180,8 @@ exports.getData =(req,res,next) => {
         LockKeysAssignedToPersonalRON:req.body.lockkeyRON,
         LockKeysAssignedToPersonalComment:req.body.lockkeyComment,
     });
-    // console.log(Pre_installationFormCopiedCheck)
-    // console.log(newform.Data)
-    // if (req.body.preinstallCheck == )
     newform.save().then(savedUser => {
         console.log("eheldonya");
         res.redirect('/pre-installationform'); 
     });
 }
-// exports.getDataWorkOrder = (req,res,next)=>{
-//     new workOrder = new WorksOrders({
-//         nameEq:req.body,
-//         disc:req.body,
-//         model:req.body,
-//         assestType:req.body,
-//         status:req.body,
-//         serialNO:req.body,
-//         manufacturer:req.body,
-//         manufacturerInfo:req.body,
-//         preferedSuppliers:req.body
-//     });
-//     workOrder.save().then(res.sendFile(path.join(DirName,'views','')));
-// }

@@ -10,20 +10,23 @@ const Pre_installation = require('../models/pre-installation')
 const Engineers= require('../models/engineers')
 
 router.get('/index',controller.mainRoute);
-// router.get('/pre-installationform',controller.Data);
-router.post('/pre-installationform',controller.getData);
-router.post('/addEng',controller.singUp);
-router.get('/addEng',controller.ShowEditEngForm);
-router.get('/viewEng',controller.showEng);
-
 router.get('/managementSystem',controller.managementSystem);
-router.post('/login',controller.login);
 router.get('/showLogin',controller.showLogin);
+router.post('/login',controller.login);
+router.get('/showWorkOrders',controller.showWorkOrder);
+router.get('/showWorkOrdersForm',controller.showWorkOrdeForm);
+router.post('/getWorkOrderData',controller.getWorkOrderData)
+router.get('/viewTech',controller.viewTech);
+router.get('/viewTechForm',controller.viewTechForm);
+router.post('/getTechData',controller.getTechdata)
 router.get('/showPre-installationform',controller.showPreinstallationData)
+router.get('/pre-installationform',controller.showPreinstallationform);
+router.post('/pre-installationform',controller.getData);
+router.get('/viewEng',controller.showEng);
+router.get('/addEng',controller.ShowEditEngForm);
+router.post('/addEng',controller.singUp);
+router.get('/showEq',controller.showEq);
+router.get('/showEqform',controller.showEqform)
+router.post('/getEqData',controller.getEqData)
 
-// router.post('/register',controller.regist);
-// router.post('',controller.getDataPreven);
-// router.get('',controller.dataPreven);
-// router.post('',controller.getDataWorkOrder);
-// router.get('',controller.dataWorkOrder);
 module.exports=router;
