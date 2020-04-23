@@ -12,6 +12,7 @@ const Engineers= require('../models/engineers')
 router.get('/index',controller.mainRoute);
 // router.get('/pre-installationform',controller.Data);
 router.post('/pre-installationform',controller.getData);
+router.get('/pre-installationform',controller.showPreinstallationform);
 router.post('/addEng',controller.singUp);
 router.get('/addEng',controller.ShowEditEngForm);
 router.get('/viewEng',controller.showEng);

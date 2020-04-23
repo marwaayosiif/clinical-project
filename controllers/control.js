@@ -10,6 +10,9 @@ const Engineers= require('../models/engineers')
 //
 //     res.sendFile(path.join(DirName,'views','add_engineer.html'));
 // }
+exports.showPreinstallationform=(req,res,next) => {
+    res.sendFile(path.join(DirName,'views','add_preinstallation.html'));
+}
 exports.ShowEditEngForm=(req,res,next) => {
     res.sendFile(path.join(DirName,'views','add_engineer.html'));
 
@@ -19,7 +22,7 @@ exports.showPreinstallationData=(req,res,next) => {
     Pre_installation.findAll()
     .then(newform => {
         // console.log(newform)
-        res.render('preinstallation_data',{newform:newform,layout:false})})
+        res.render('pre_installation',{newform:newform,layout:false})})
     }
 
 exports.managementSystem=(req,res,next) => {
@@ -32,13 +35,6 @@ exports.showLogin=(req,res,next) => {
 exports.mainRoute=(req,res,next) => {
     res.sendFile(path.join(DirName,'views','index.html'));
 }
-exports.Data=(req,res,next) => {
-
-    res.sendFile(path.join(DirName,'views','preInstallation.html'));
-
-}
-
-
 
 exports.showEng=(req,res,next) => {
     // const Id = req.params.id;
