@@ -10,13 +10,15 @@ const Engineers= require('../models/engineers')
 //
 //     res.sendFile(path.join(DirName,'views','add_engineer.html'));
 // }
+exports.ShowEditEngForm=(req,res,next) => {
+    res.sendFile(path.join(DirName,'views','add_engineer.html'));
 
+}
 exports.showPreinstallationData=(req,res,next) => {
     // const Id = req.params.id;
     Pre_installation.findAll()
-
     .then(newform => {
-        console.log(newform)
+        // console.log(newform)
         res.render('preinstallation_data',{newform:newform,layout:false})})
     }
 
@@ -39,10 +41,10 @@ exports.Data=(req,res,next) => {
 exports.showEng=(req,res,next) => {
     // const Id = req.params.id;
     Engineers.findAll()
-
-        .then(viewEng => {
-            console.log(viewEng )
-            res.render('engineers',{viewEng :viewEng ,layout:false})})
+        .then(viewEng=> {
+            // console.log(viewEng )
+            res.render('engineers',{viewEng:viewEng,layout:false})
+            console.log(viewEng)});
 }
 exports.singUp=(req,res,next) => {
 
@@ -53,7 +55,6 @@ exports.singUp=(req,res,next) => {
         Email:req.body.email,
         Password:req.body.password
     });
-
 
         Engineers.findOne({where:{Email: viewEng.Email}}).then(user => {
            
