@@ -44,7 +44,7 @@ exports.showEng=(req,res,next) => {
         .then(viewEng=> {
             // console.log(viewEng )
             res.render('engineers',{viewEng:viewEng,layout:false})
-            console.log(viewEng)});
+            console.log(viewEng.datavalues.FName)});
 }
 exports.singUp=(req,res,next) => {
 
@@ -57,7 +57,6 @@ exports.singUp=(req,res,next) => {
     });
 
         Engineers.findOne({where:{Email: viewEng.Email}}).then(user => {
-           
             if (!user) {
                 bcrypt.genSalt(10, (err, salt) => {
                     bcrypt.hash(viewEng.Password, salt, (err, hash) => {
