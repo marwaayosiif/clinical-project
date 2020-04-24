@@ -29,4 +29,11 @@ router.get('/showEq',controller.showEq);
 router.get('/showEqform',controller.showEqform)
 router.post('/getEqData',controller.getEqData)
 router.get('/showPreMain',controller.showPrevMain)
+router.get('/showEditEng',controller.showEditEng)
+router.post('/editEng',controller.editEng)
+router.get('/showEditTech',controller.ShowEditTech)
+router.post('/editTech',controller.EditTech)
+router.get('/showEditEq',controller.showEditEq)
+router.post('editEq',controller.editEq)
+
 module.exports=router;

@@ -33,7 +33,15 @@ exports.showLogin=(req,res,next) => {
 exports.mainRoute=(req,res,next) => {
     res.sendFile(path.join(DirName,'views','index.html'));
 }
-
+exports.showEditEng=(req,res,next)=>{
+    res.sendFile(path.join(DirName,'views','edit_engineer.html'));
+}
+exports.ShowEditTech=(req,res,next)=>{
+    res.sendFile(path.join(DirName,'views','edit_technician.html'));
+}
+exports.showEditEq=(req,res,next)=>{
+    res.sendFile(path.join(DirName,'views','edit_equipment.html'));
+}
 exports.showPreinstallationData=(req,res,next) => {
     Pre_installation.findAll()
     .then(newform => {
@@ -65,6 +73,30 @@ exports.showPrevMain=(req,res,next) => {
             console.log(prev.preVenM)
             res.render('preventive_maintance',{pre:prev ,layout:false})
         })
+}
+
+exports.EditTech=(req,res,next) => {
+    const TECH = new Technician({
+        FirstName:req.body.firstname,
+        LastName:req.body.lastname,
+        ID:req.body.id,
+        SerialNO:req.body.serial,
+        CompanyName:req.body.company,
+        PhoneNumber:req.body.phone
+    });
+    Technician.findOne({where:{ ID:TECH.ID}}).then(editTech => {
+        TECH.FirstName ? editTech.FName=TECH.FName : null;
+        TECH.LastName ?  editTech.LastName=TECH.LastName : null;
+        TECH.SerialNO ?  editTech.SerialNO=TECH.SerialNO : null;
+        TECH.CompanyName ? editTech.CompanyName=TECH.CompanyName : null;
+        TECH.PhoneNumber ? editTech.PhoneNumber=TECH.PhoneNumber : null;
+        TECH.save();
+    })
+        .then( result => {
+            res.redirect('/viewTech')
+        })
+        .catch(err =>  res.redirect('/viewTech'))
+
 }
 
 exports.getTechdata=(req,res,next) => {
@@ -114,6 +146,36 @@ exports.getEqData=(req,res,next) => {
         }
     });
 }
+
+exports.editEq=(req,res,next) => {
+    const equip = new Equipment({
+        Name: req.body.name,
+        Model: req.body.model,
+        SerialNO: req.body.serial,
+        DueDate: req.body.maintainDate,
+        Department: req.body.department,
+        preVenM: req.body.PreventiveM,
+        frequency: req.body.freq
+    });
+    Equipment.findOne({where:{SerialNO:equip.SerialNO}}).then(editEq => {
+        equip.Name ? editEq.Name=equip.Name : null;
+        equip.Model ?  editEq.Model=equip.Model : null;
+        equip.SerialNO ?  editEq.SerialNO=equip.SerialNO : null;
+        equip.DueDate ? editEq.DueDate=equip.DueDate : null;
+        equip.Department ? editEq.Department=equip.Department : null;
+        equip.preVenM ? editEq.preVenM=equip.preVenM : null;
+        equip.frequency ? editEq.frequency=equip.frequency : null;
+        editEq.save();
+    })
+        .then( result => {
+            res.redirect('/showEq')
+        })
+        .catch(err =>  res.redirect('/showEq'))
+}
+
+
+
+
 exports.singUp=(req,res,next) => {
 
     const engineer  = new Engineers({
@@ -141,7 +203,30 @@ exports.singUp=(req,res,next) => {
             }
         });
     }
-exports.login=(req,res,next) => {
+exports.editEng=(req,res,next)=>{
+    const EditEngineer  = new Engineers({
+        FName:req.body.firstname,
+        LName:req.body.lastname,
+        Job:req.body.job,
+        Email:req.body.email,
+        Password:req.body.password
+    });
+// console.log(req.body);
+    Engineers.findOne({where:{ Email:EditEngineer.Email}}).then(engineer => {
+        EditEngineer.FName ? engineer.FName=EditEngineer.FName : null;
+        EditEngineer.LName ?  engineer.LName=EditEngineer.LName : null;
+        EditEngineer.Job ?  engineer.Job=EditEngineer.Job : null;
+        EditEngineer.Email ? engineer.Email=EditEngineer.Email : null;
+        engineer.save();
+    })
+        .then( result => {
+            res.redirect('/viewEng')
+        })
+        .catch(err =>  res.redirect('/viewEng'))
+
+
+}
+    exports.login=(req,res,next) => {
     let Email = req.body.email;
     let Password = req.body.pass;
     Engineers.findOne({where:{Email:Email}}).then(user => {
