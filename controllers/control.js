@@ -40,7 +40,13 @@ exports.ShowEditTech=(req,res,next)=>{
     res.sendFile(path.join(DirName,'views','edit_technician.html'));
 }
 exports.showEditEq=(req,res,next)=>{
-    res.sendFile(path.join(DirName,'views','edit_equipment.html'));
+    const Id = req.params.id;
+    console.log(Id)
+    Equipment.findAll({where:{serialNO:id}})
+        .then(equipment => {
+            console.log(equipment)
+            res.render('edit_equipment',{id:Id,equip:equipment,layout:false})
+        })
 }
 exports.showPreinstallationData=(req,res,next) => {
     Pre_installation.findAll()
