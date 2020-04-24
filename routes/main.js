@@ -34,6 +34,6 @@ router.post('/editEng',controller.editEng)
 router.get('/showEditTech',controller.ShowEditTech)
 router.post('/editTech',controller.EditTech)
 router.get('/showEditEq',controller.showEditEq)
-router.post('editEq',controller.editEq)
+router.post('/editEq',controller.editEq)
 
 module.exports=router;
