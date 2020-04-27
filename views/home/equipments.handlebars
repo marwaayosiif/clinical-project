@@ -64,20 +64,21 @@
                         </a>
                     </li>
                     <li class="sub-menu">
-                        <a href="javascript:;">
+                        <a href="/viewEng">
                             <i class="fa fa-user-md"></i>
-                            <span>Staff</span>
+                            <span>Engineers</span>
                         </a>
-                        <ul class="sub">
-                            <li><a href="/viewEng">Engineers</a></li>
-                            <li><a href="/viewTech">Technicians</a></li>
-
-                        </ul>
                     </li>
                     <li class="mt">
                         <a class="active" href="/showEq">
                             <i class="fa fa-cogs"></i>
                             <span>Equipments</span>
+                        </a>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="/showPreMain">
+                            <i class="fa fa-cogs"></i>
+                            <span>Preventive Maintainance</span>
                         </a>
                     </li>
                     <li class="sub-menu">
@@ -87,7 +88,6 @@
                         </a>
                         <ul class="sub">
                             <li><a href="/showPre-installationform">Pre-installation Report</a></li>
-                            <li><a href="preventive_maintance.html">Preventive Maintainance Report</a></li>
                             <li><a href="/showWorkOrders">Work Order Report</a></li>
                         </ul>
                     </li>
@@ -116,6 +116,9 @@
                                     <tr>
                                         <th>Name</th>
                                         <th>Model</th>
+                                        <th>Cost</th>
+                                        <th>Ventor</th>
+                                        <th>Warranty Period</th>
                                         <th class="hidden-phone">Serial Number</th>
                                         <th class="hidden-phone">Maintenance Date</th>
                                         <th class="hidden-phone">Department</th>
@@ -128,6 +131,9 @@
                                     <tr class="gradeA">
                                         <td>{{this.dataValues.Name}}</td>
                                         <td>{{this.dataValues.Model}}</td>
+                                        <td>{{this.dataValues.Cost}}</td>
+                                        <td>{{this.dataValues.Ventor}}</td>
+                                        <td>{{this.dataValues.WarrantyPeriod}}</td>
                                         <td class="  hidden-phone">{{this.dataValues.SerialNO}}</td>
                                         <td class=" hidden-phone">{{this.dataValues.DueDate}}</td>
                                         <td class=" hidden-phone">{{this.dataValues.Department}}</td>

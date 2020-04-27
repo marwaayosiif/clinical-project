@@ -64,20 +64,21 @@
                         </a>
                     </li>
                     <li class="sub-menu">
-                        <a class="active" href="javascript:;">
+                        <a href="/viewEng">
                             <i class="fa fa-user-md"></i>
-                            <span>Staff</span>
+                            <span>Engineers</span>
                         </a>
-                        <ul class="sub">
-                            <li class="active"><a href="/viewEng">Engineers</a></li>
-                            <li><a href="/viewTech">Technicians</a></li>
-
-                        </ul>
                     </li>
                     <li class="mt">
                         <a href="/showEq">
                             <i class="fa fa-cogs"></i>
                             <span>Equipments</span>
+                        </a>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="/showPreMain">
+                            <i class="fa fa-cogs"></i>
+                            <span>Preventive Maintainance</span>
                         </a>
                     </li>
                     <li class="sub-menu">
@@ -87,7 +88,6 @@
                         </a>
                         <ul class="sub">
                             <li><a href="/showPre-installationform">Pre-installation Report</a></li>
-                            <li><a href="/showPreMain">Preventive Maintainance Report</a></li>
                             <li><a href="/showWorkOrders">Work Order Report</a></li>
                         </ul>
                     </li>
@@ -125,9 +125,15 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="job" class="control-label col-lg-2">Job</label>
+                                        <label for="department" class="control-label col-lg-2">Department</label>
                                         <div class="col-lg-10">
-                                            <input class="form-control" id="job" name="job" type="text"  required />
+                                            <input class="form-control" id="department" name="department" type="text"  required />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="salary" class="control-label col-lg-2">Salary</label>
+                                        <div class="col-lg-10">
+                                            <input class="form-control" id="salary" name="salary" type="number"  required />
                                         </div>
                                     </div>
                                     <div class="form-group">

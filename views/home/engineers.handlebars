@@ -64,20 +64,21 @@
                         </a>
                     </li>
                     <li class="sub-menu">
-                        <a href="javascript:;" class="active">
+                        <a href="/viewEng">
                             <i class="fa fa-user-md"></i>
-                            <span>Staff</span>
+                            <span>Engineers</span>
                         </a>
-                        <ul class="sub">
-                            <li class="active"><a href="/viewEng">Engineers</a></li>
-                            <li><a href="/viewTech">Technicians</a></li>
-
-                        </ul>
                     </li>
                     <li class="sub-menu">
                         <a href="/showEq">
                             <i class="fa fa-cogs"></i>
                             <span>Equipments</span>
+                        </a>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="/showPreMain">
+                            <i class="fa fa-cogs"></i>
+                            <span>Preventive Maintainance</span>
                         </a>
                     </li>
                     <li class="sub-menu">
@@ -87,7 +88,6 @@
                         </a>
                         <ul class="sub">
                             <li><a href="/showPre-installationform">Pre-installation Report</a></li>
-                            <li><a href="preventive_maintance.html">Preventive Maintainance Report</a></li>
                             <li><a href="/showWorkOrders">Work Order Report</a></li>
                         </ul>
                     </li>
@@ -117,8 +117,9 @@
                                     <tr>
                                         <th>First Name</th>
                                         <th>Last Name</th>
-                                        <th>Job</th>
-                                        <th >Email</th>
+                                        <th>Department</th>
+                                        <th>Salary</th>
+                                        <th>Email</th>
 
                                         <th>Manage</th>
                                     </tr>
@@ -130,7 +131,9 @@
 
                                         <td>{{this.dataValues.LName}}</td>
 
-                                        <td>{{this.dataValues.Job}}</td>
+                                        <td>{{this.dataValues.Department}}</td>
+
+                                        <td>{{this.dataValues.Salary}}</td>
 
                                         <td>{{this.dataValues.Email}}</td>
 

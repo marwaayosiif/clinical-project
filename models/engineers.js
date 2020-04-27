@@ -9,10 +9,14 @@ const Enigneers= sequelize.define('Enigneers',{
     LName:{
         type: Sequelize.TEXT,
     },
-    Job: {
-    type:Sequelize.TEXT,
-    allowNull:true
+    Department: {
+        type:Sequelize.TEXT,
+        allowNull:true
     },
+    Salary: {
+        type:Sequelize.INTEGER,
+        allowNull:true
+        },
     Email:{
         type: Sequelize.STRING,
         primaryKey:true

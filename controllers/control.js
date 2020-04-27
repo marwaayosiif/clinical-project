@@ -2,11 +2,10 @@ const DirName=require('../util/path')
 const path= require('path')
 const bcrypt = require('bcryptjs')
 const Pre_installation = require('../models/pre-installation')
-const PreventiveMaintainance=require('../models/PreventiveMaintainance')
 const WorksOrders=require('../models/worksOrders')
 const Engineers= require('../models/engineers')
 const Equipment= require('../models/equipment')
-const Technician = require('../models/technician')
+// const Technician = require('../models/technician')
 
 
 exports.showWorkOrdeForm=(req,res,next) => {
@@ -121,6 +120,8 @@ exports.getWorkOrderData=(req,res,next) => {
         status:req.body.status,
         serialNO:req.body.serial,
         prioity:req.body.priority,
+
+        
         Date:req.body.date,
     });
     workorder.save().then(res.redirect('/showWorkOrdersForm'));
@@ -128,8 +129,12 @@ exports.getWorkOrderData=(req,res,next) => {
 exports.getEqData=(req,res,next) => {
     const equip = new Equipment({
         Name:req.body.name,
+        Ventor:req.body.ventor,
         Model:req.body.model,
         SerialNO:req.body.serial,
+        Operation:req.body.operation,
+        Cost:req.body.cost,
+        WarrantyPeriod:req.body.warrantyperiod,
         DueDate:req.body.maintainDate,
         Department:req.body.department,
         preVenM:req.body.PreventiveM,
@@ -149,16 +154,24 @@ exports.getEqData=(req,res,next) => {
 
 exports.editEq=(req,res,next) => {
     const equip = new Equipment({
-        Name: req.body.name,
-        Model: req.body.model,
-        SerialNO: req.body.serial,
-        DueDate: req.body.maintainDate,
-        Department: req.body.department,
-        preVenM: req.body.PreventiveM,
-        frequency: req.body.freq
+        Name:req.body.name,
+        Ventor:req.body.ventor,
+        Model:req.body.model,
+        SerialNO:req.body.serial,
+        Operation:req.body.operation,
+        Cost:req.body.cost,
+        WarrantyPeriod:req.body.warrantyperiod,
+        DueDate:req.body.maintainDate,
+        Department:req.body.department,
+        preVenM:req.body.preven,
+        frequency:req.body.freq
     });
     Equipment.findOne({where:{SerialNO:equip.SerialNO}}).then(editEq => {
         equip.Name ? editEq.Name=equip.Name : null;
+        equip.Ventor ? editEq.Ventor=equip.Ventor : null;
+        equip.Operation ? editEq.Operation=equip.Operation : null;
+        equip.Cost ? editEq.Cost=equip.Cost : null;
+        equip.WarrantyPeriod ? editEq.WarrantyPeriod=equip.WarrantyPeriod : null;
         equip.Model ?  editEq.Model=equip.Model : null;
         equip.SerialNO ?  editEq.SerialNO=equip.SerialNO : null;
         equip.DueDate ? editEq.DueDate=equip.DueDate : null;
@@ -168,9 +181,9 @@ exports.editEq=(req,res,next) => {
         editEq.save();
     })
         .then( result => {
-            res.redirect('/showEq')
+            res.redirect('/showEditEq')
         })
-        .catch(err =>  res.redirect('/showEq'))
+        .catch(err =>  res.redirect('/showEditEq'))
 }
 
 
@@ -181,7 +194,8 @@ exports.singUp=(req,res,next) => {
     const engineer  = new Engineers({
         FName:req.body.firstname,
         LName:req.body.lastname,
-        Job:req.body.job,
+        Department:req.body.department,
+        Salary:req.body.salary,
         Email:req.body.email,
         Password:req.body.password
     });
@@ -207,7 +221,8 @@ exports.editEng=(req,res,next)=>{
     const EditEngineer  = new Engineers({
         FName:req.body.firstname,
         LName:req.body.lastname,
-        Job:req.body.job,
+        Department:req.body.department,
+        Salary:req.body.salary,
         Email:req.body.email,
         Password:req.body.password
     });
@@ -215,14 +230,16 @@ exports.editEng=(req,res,next)=>{
     Engineers.findOne({where:{ Email:EditEngineer.Email}}).then(engineer => {
         EditEngineer.FName ? engineer.FName=EditEngineer.FName : null;
         EditEngineer.LName ?  engineer.LName=EditEngineer.LName : null;
-        EditEngineer.Job ?  engineer.Job=EditEngineer.Job : null;
+        EditEngineer.Department ?  engineer.Department=EditEngineer.Department : null;
+        EditEngineer.Salary ?  engineer.Salary=EditEngineer.Salary : null;
         EditEngineer.Email ? engineer.Email=EditEngineer.Email : null;
+        EditEngineer.Password ? engineer.Password=EditEngineer.Password : null;
         engineer.save();
     })
         .then( result => {
-            res.redirect('/viewEng')
+            res.redirect('showEditEng')
         })
-        .catch(err =>  res.redirect('/viewEng'))
+        .catch(err =>  res.redirect('showEditEng'))
 
 
 }

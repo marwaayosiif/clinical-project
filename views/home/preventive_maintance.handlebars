@@ -65,20 +65,21 @@
                         </a>
                     </li>
                     <li class="sub-menu">
-                        <a href="javascript:;">
+                        <a href="/viewEng">
                             <i class="fa fa-user-md"></i>
-                            <span>Staff</span>
+                            <span>Engineers</span>
                         </a>
-                        <ul class="sub">
-                            <li><a href="/viewEng">Engineers</a></li>
-                            <li><a href="/viewTech">Technicians</a></li>
-
-                        </ul>
                     </li>
                     <li class="sub-menu">
                         <a href="/showEq">
                             <i class="fa fa-cogs"></i>
                             <span>Equipments</span>
+                        </a>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="/showPreMain">
+                            <i class="fa fa-cogs"></i>
+                            <span>Preventive Maintainance</span>
                         </a>
                     </li>
                     <li class="sub-menu">
@@ -88,7 +89,6 @@
                         </a>
                         <ul class="sub">
                             <li><a href="/showPre-installationform">Pre-installation Report</a></li>
-                            <li class="active"><a href="preventive_maintance.handlebars">Preventive Maintainance Report</a></li>
                             <li><a href="/showWorkOrders">Work Order Report</a></li>
                         </ul>
                     </li>
@@ -109,16 +109,20 @@
                     <!-- page start-->
                     <div class="content-panel">
                         <div class="adv-table">
-                            <a type="button" class="btn btn-theme" href="../add_preventive.html" style="float: right!important;margin: 20px 20px!important;"><i class="fa  fa-plus-square" style="margin-right: 5px!important;"></i> Add A Preventive Maintainance Report</a>
+                            {{!-- <a type="button" class="btn btn-theme" href="../add_preventive.html" style="float: right!important;margin: 20px 20px!important;"><i class="fa  fa-plus-square" style="margin-right: 5px!important;"></i> Add A Preventive Maintainance Report</a> --}}
 
                             <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
 
                                 <thead>
 
                                     <tr>
-<!--                                        <th>Manufacture</th>-->
+                                        <th>Ventor</th>
+                                        <th>Name</th>
+                                        <th>Model</th>
                                         <th>Serail Number</th>
-                                        <th>Version</th>
+                                        <th>Depatment</th>
+                                        <th>Warranty Period</th>
+                                        <th>Operation</th>
                                         <th class="hidden-phone">Schedule Date</th>
                                         <th class="hidden-phone">Frequancy of Maintainance</th>
 <!--                                        <th class="hidden-phone">Processes</th>-->
@@ -131,12 +135,17 @@
                                 {{#each pre}}
                                 <tbody>
                                     <tr class="gradeA">
-                                        <td>{{this.dataValues.SerialNO}}</td>
+                                        <td>{{this.dataValues.Ventor}}</td>
+                                        <td>{{this.dataValues.Name}}</td>
                                         <td>{{this.dataValues.Model}}</td>
+                                        <td>{{this.dataValues.SerialNO}}</td>
+                                        <td>{{this.dataValues.Department}}</td>
+                                        <td>{{this.dataValues.WarrantyPeriod}}</td>
+                                        <td>{{this.dataValues.Operation}}</td>
                                         <td>{{this.dataValues.DueDate}}</td>
                                         <td class="  hidden-phone">{{this.dataValues.frequency}}</td>
                                         <td class="center">
-                                            <a href="../edit_preventive.html" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
+                                            {{!-- <a href="../edit_preventive.html" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a> --}}
                                             <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete"><i class="fa fa-trash-o"></i></button>
                                         </td>
                                     </tr>
