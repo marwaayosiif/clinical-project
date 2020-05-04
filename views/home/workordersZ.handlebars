@@ -77,13 +77,13 @@
                         </a>
                     </li>
                     <li class="sub-menu">
-                        <a class="active" href="/showPreMain">
+                        <a href="/showPreMain">
                             <i class="fa fa-wrench"></i>
                             <span>Preventive Maintainance</span>
                         </a>
                     </li>
-                <li class="sub-menu">
-                        <a href="javascript:;">
+                      <li class="sub-menu">
+                        <a class="active" href="javascript:;">
                             <i class="fa fa-book"></i>
                             <span>Departments</span>
                         </a>
@@ -126,6 +126,7 @@
                             </li>
                         </ul>
                     </li>
+
                 </ul>
                 <!-- sidebar menu end-->
             </div>
@@ -137,55 +138,47 @@
         <!--main content start-->
         <section id="main-content">
             <section class="wrapper">
-                <h3><i class="fa fa-angle-right"></i> Preventive Maintainance</h3>
+                <h3><i class="fa fa-angle-right"></i> Work Order Reports For Department Z</h3>
                 <div class="row mb">
                     <!-- page start-->
                     <div class="content-panel">
                         <div class="adv-table">
-                            {{!-- <a type="button" class="btn btn-theme" href="../add_preventive.html" style="float: right!important;margin: 20px 20px!important;"><i class="fa  fa-plus-square" style="margin-right: 5px!important;"></i> Add A Preventive Maintainance Report</a> --}}
+                            <a type="button" class="btn btn-theme" href="/showWorkOrdersForm" style="float: right!important;margin: 20px 20px!important;"><i class="fa  fa-plus-square" style="margin-right: 5px!important;"></i> Add A Work Order Report</a>
 
                             <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
 
                                 <thead>
-
                                     <tr>
-                                        <th>Ventor</th>
-                                        <th>Name</th>
+                                        <th>Equipment</th>
+                                        <th>Serial Number</th>
                                         <th>Model</th>
-                                        <th>Serail Number</th>
-                                        <th>Depatment</th>
-                                        <th>Warranty Period</th>
-                                        <th>Operation</th>
-                                        <th class="hidden-phone">Schedule Date</th>
-                                        <th class="hidden-phone">Frequancy of Maintainance</th>
-<!--                                        <th class="hidden-phone">Processes</th>-->
-<!--                                        <th class="hidden-phone">Days of Maintainance</th>-->
+                                        <th>Status</th>
+                                        <th class="hidden-phone">Description</th>
+                                        <th class="hidden-phone">Assest Type</th>
+                                        <th class="hidden-phone">Priority</th>
+                                        <th class="hidden-phone">Date</th>
                                         <th>Manage</th>
                                     </tr>
-
                                 </thead>
-
-                                {{#each pre}}
                                 <tbody>
+                                {{#each workorder}}
                                     <tr class="gradeA">
-                                        <td>{{this.dataValues.Ventor}}</td>
-                                        <td>{{this.dataValues.Name}}</td>
-                                        <td>{{this.dataValues.Model}}</td>
-                                        <td>{{this.dataValues.SerialNO}}</td>
-                                        <td>{{this.dataValues.Department}}</td>
-                                        <td>{{this.dataValues.WarrantyPeriod}}</td>
-                                        <td>{{this.dataValues.Operation}}</td>
-                                        <td>{{this.dataValues.DueDate}}</td>
-                                        <td class="  hidden-phone">{{this.dataValues.frequency}}</td>
+                                        <td>{{this.dataValues.nameEq}}</td>
+                                        <td>{{this.dataValues.serialNO}}</td>
+                                        <td>{{this.dataValues.model}}</td>
+                                        <td>{{this.dataValues.status}}</td>
+                                        <td class="  hidden-phone">{{this.dataValues.disc}}</td>
+                                        <td class=" hidden-phone">{{this.dataValues.assestType}}</td>
+                                        <td class=" hidden-phone">{{this.dataValues.prioity}}</td>
+                                        <td class=" hidden-phone">{{this.dataValues.Date}}</td>
+
                                         <td class="center">
-                                            {{!-- <a href="../edit_preventive.html" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a> --}}
+                                            <a href="edit_workorder.html" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
                                             <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete"><i class="fa fa-trash-o"></i></button>
                                         </td>
                                     </tr>
-
-                                </tbody>
                                 {{/each}}
-
+                                </tbody>
                             </table>
                         </div>
                     </div>
@@ -243,13 +236,15 @@
         function fnFormatDetails(oTable, nTr) {
             var aData = oTable.fnGetData(nTr);
             var sOut = '<table cellpadding="5" cellspacing="0" border="0" >';
-            sOut += "<tr><td>Manufacture's Name:</td><td>" + aData[1] + '</td></tr>';
+            sOut += "<tr><td>Equipment's Name:</td><td>" + aData[1] + '</td></tr>';
             sOut += '<tr><td>Serial Number:</td><td>' + aData[2] + '</td></tr>';
-            sOut += '<tr><td>Version:</td><td>' + aData[3] + '</td></tr>';
-            sOut += "<tr><td>Schedule Date: </td><td>" + aData[4] + '</td> </tr>';
-            sOut += "<tr><td>Frequancy of Maintainance (Per Year): </td><td>" + aData[5] + '</td> </tr>';
-            sOut += "<tr><td>Processes: </td><td>" + aData[6] + '</td> </tr>';
-            sOut += "<tr><td>Days of Maintainance: </td><td>" + aData[7] + '</td> </tr>';
+            sOut += '<tr><td>Model:</td><td>' + aData[3] + '</td></tr>';
+            sOut += "<tr><td>Status: </td><td>" + aData[4] + '</td> </tr>';
+            sOut += "<tr><td>Description: </td><td>" + aData[5] + '</td> </tr>';
+            sOut += "<tr><td>Assest Type: </td><td>" + aData[6] + '</td> </tr>';
+            sOut += "<tr><td>Priority: </td><td>" + aData[7] + '</td> </tr>';
+            sOut += "<tr><td>Date: </td><td>" + aData[8] + '</td> </tr>';
+
             sOut += '</table>';
 
 

@@ -71,7 +71,7 @@
                             <span>Engineers</span>
                         </a>
                     </li>
-                    <li class="mt">
+                    <li class="sub-menu">
                         <a class="active" href="/showEq">
                             <i class="fa fa-cogs"></i>
                             <span>Equipments</span>
@@ -79,21 +79,54 @@
                     </li>
                     <li class="sub-menu">
                         <a href="/showPreMain">
-                            <i class="fa fa-cogs"></i>
+                            <i class="fa fa-wrench"></i>
                             <span>Preventive Maintainance</span>
                         </a>
                     </li>
                     <li class="sub-menu">
                         <a href="javascript:;">
                             <i class="fa fa-book"></i>
-                            <span>Reports</span>
+                            <span>Departments</span>
                         </a>
-                        <ul class="sub">
-                            <li><a href="/showPre-installationform">Pre-installation Report</a></li>
-                            <li><a href="/showWorkOrders">Work Order Report</a></li>
+                        <ul style="padding-left: 0;">
+                            <li class="sub-menu">
+                                <a href="javascript:;">
+                                    <i class="fa  fa-hospital-o"></i>
+                                    <span>X</span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a href="/showPre-installationformX">Pre-installation Report</a></li>
+                                    <li><a href="/showDailyInspectionformX">Daily Inspection Report</a></li>
+                                    <li><a href="/showInventoryListingformX">Inventory Listing Report</a></li>
+                                    <li><a href="/showWorkOrdersX">Work Order Report</a></li>
+                                </ul>
+                            </li>
+                            <li class="sub-menu">
+                                <a href="javascript:;">
+                                    <i class="fa  fa-hospital-o"></i>
+                                    <span>Y</span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a href="/showPre-installationformY">Pre-installation Report</a></li>
+                                    <li><a href="/showDailyInspectionformY">Daily Inspection Report</a></li>
+                                    <li><a href="/showInventoryListingformY">Inventory Listing Report</a></li>
+                                    <li><a href="/showWorkOrdersY">Work Order Report</a></li>
+                                </ul>
+                            </li>
+                            <li class="sub-menu">
+                                <a href="javascript:;">
+                                    <i class="fa fa-hospital-o"></i>
+                                    <span>Z</span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a href="/showPre-installationformZ">Pre-installation Report</a></li>
+                                    <li><a href="/showDailyInspectionformZ">Daily Inspection Report</a></li>
+                                    <li><a href="/showInventoryListingformZ">Inventory Listing Report</a></li>
+                                    <li><a href="/showWorkOrdersZ">Work Order Report</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
-
                 </ul>
                 <!-- sidebar menu end-->
             </div>
@@ -117,71 +150,71 @@
                                     <div class="form-group">
                                         <label for="name" class="control-label col-lg-2">Name</label>
                                         <div class="col-lg-10">
-                                            <input class=" form-control"  name="name" type="text" required/>
+                                            <input class=" form-control" name="name" type="text" required/>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="ventor" class="control-label col-lg-2">Ventor</label>
                                         <div class="col-lg-10">
-                                            <input class=" form-control"  name="ventor" type="text" required/>
+                                            <input class=" form-control" name="ventor" type="text" required/>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="model" class="control-label col-lg-2">Model</label>
-                                        
-                                            <div class="col-lg-10">
-                                            <input class=" form-control"  name="model" type="text" required/>
+
+                                        <div class="col-lg-10">
+                                            <input class=" form-control" name="model" type="text" required/>
                                         </div>
-                                           
-                                        
+
+
                                     </div>
                                     <div class="form-group">
                                         <label for="operation" class="control-label col-lg-2">Operation</label>
-                                        
-                                            <div class="col-lg-10">
-                                            <input class=" form-control"  name="operation" type="text" required/>
+
+                                        <div class="col-lg-10">
+                                            <input class=" form-control" name="operation" type="text" required/>
                                         </div>
-                                           
-                                        
+
+
                                     </div>
                                     <div class="form-group">
                                         <label for="cost" class="control-label col-lg-2">Cost</label>
-                                        
-                                            <div class="col-lg-10">
-                                            <input class=" form-control"  name="cost" type="number" required/>
+
+                                        <div class="col-lg-10">
+                                            <input class=" form-control" name="cost" type="number" required/>
                                         </div>
-                                           
-                                        
+
+
                                     </div>
                                     <div class="form-group">
-                                        <label  class="control-label col-lg-2">Serial Number</label>
+                                        <label class="control-label col-lg-2">Serial Number</label>
                                         <div class="col-lg-10">
-                                            <input class="form-control"  name="serial" type="string" required />
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label  class="control-label col-lg-2">Preventive Maintance</label>
-                                        <div class="col-lg-10">
-                                            <input class="form-control"  name="PreventiveM" type="text" />
+                                            <input class="form-control" name="serial" type="string" required />
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label  class="control-label col-lg-2">Frequancy</label>
+                                        <label class="control-label col-lg-2">Preventive Maintance</label>
                                         <div class="col-lg-10">
-                                            <input class="form-control"  name="freq" type="text"  />
+                                            <input class="form-control" name="PreventiveM" type="text" />
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label  class="control-label col-lg-2">Warranty Period</label>
+                                        <label class="control-label col-lg-2">Frequancy</label>
                                         <div class="col-lg-10">
-                                            <input class="form-control"  name="warrantyperiod" type="text"  />
+                                            <input class="form-control" name="freq" type="text" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-lg-2">Warranty Period</label>
+                                        <div class="col-lg-10">
+                                            <input class="form-control" name="warrantyperiod" type="text" />
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="maintainDate" class="control-label col-lg-2">Maintainance Date</label>
                                         <div class="col-lg-3">
                                             <div data-date-viewmode="years" data-date-format="dd-mm-yyyy" data-date="01-01-2014" class="input-append date dpYears">
-                                                <input type="text" readonly="" id="maintainDate" name="maintainDate"  size="16" class="form-control" required>
+                                                <input type="text" readonly="" id="maintainDate" name="maintainDate" size="16" class="form-control" required>
                                                 <span class="input-group-btn add-on">
                             <button class="btn btn-theme" type="button"><i class="fa fa-calendar"></i></button>
                             </span>
