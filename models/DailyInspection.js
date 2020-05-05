@@ -11,6 +11,10 @@ const DailyInspection = sequelize.define('DailyInspection',{
         type: Sequelize.STRING,
         allowNull: false
     },
+    Department: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
     Authorized_Operator: {
         type: Sequelize.STRING,
         allowNull: false

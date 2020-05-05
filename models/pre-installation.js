@@ -3,17 +3,14 @@ const sequelize=require('../util/db.js');
 
 
 const Pre_installation= sequelize.define('Pre_installation',{
-    Hospital:{
-        type: Sequelize.TEXT,
-    },
     Date: {
     type:Sequelize.DATE,
     allowNull:true
     },
-    // SerialNO:{
-    //     type: Sequelize.INTEGER,
-    //     primaryKey:true
-    // },
+    SerialNO:{
+        type: Sequelize.INTEGER,
+        primaryKey:true
+    },
     Name:{
         type:Sequelize.TEXT,
         allowNull:true

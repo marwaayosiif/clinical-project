@@ -35,6 +35,17 @@ exports.mainRoute=(req,res,next) => {
 exports.showEditEng=(req,res,next)=>{
     res.sendFile(path.join(DirName,'views','edit_engineer.html'));
 }
+
+exports.pre_installationform=(req,res,next)=>{
+    res.sendFile(path.join(DirName,'views','add_preinstallation.html'));
+}
+exports.showDailyInspectionForm=(req,res,next)=>{
+    res.sendFile(path.join(DirName,'views','add_dailyinspection.html'));
+}
+exports.showInventoryListingForm=(req,res,next)=>{
+    res.sendFile(path.join(DirName,'views','add_inventorylisting.html'));
+}
+
 exports.ShowEditTech=(req,res,next)=>{
     res.sendFile(path.join(DirName,'views','edit_technician.html'));
 }
@@ -151,7 +162,6 @@ exports.EditTech=(req,res,next) => {
             res.redirect('/viewTech')
         })
         .catch(err =>  res.redirect('/viewTech'))
-
 }
 
 exports.getTechdata=(req,res,next) => {
@@ -176,8 +186,6 @@ exports.getWorkOrderData=(req,res,next) => {
         status:req.body.status,
         serialNO:req.body.serial,
         prioity:req.body.priority,
-
-        
         Date:req.body.date,
     });
     workorder.save().then(res.redirect('/showWorkOrdersForm'));
@@ -206,6 +214,7 @@ exports.getEqData=(req,res,next) => {
             res.redirect('/showEqform');
         }
     });
+
 }
 
 exports.editEq=(req,res,next) => {
@@ -295,8 +304,7 @@ exports.editEng=(req,res,next)=>{
         .then( result => {
             res.redirect('showEditEng')
         })
-        .catch(err =>  res.redirect('showEditEng'))
-
+        .catch(err =>  res.redirect('/showEditEng'))
 
 }
     exports.login=(req,res,next) => {
@@ -319,9 +327,9 @@ exports.editEng=(req,res,next)=>{
        }
     });
 }
-exports.PreinstallationCatheterData =(req,res,next) => {
+exports.pre_installationformData =(req,res,next) => {
     const newform = new Pre_installation({
-        Hospital:req.body.hospital,
+        SerialNO : req.body.serial,
         Date : req.body.date,
         Name : req.body.name,
         Equipment : req.body.equipment,
@@ -350,4 +358,20 @@ exports.PreinstallationCatheterData =(req,res,next) => {
     newform.save().then(savedUser => {
         res.redirect('/PreinstallationCatheterData');
     });
+}
+
+exports.pre_installationformData=(req,res,next) => {
+    const TECH = new Technician({
+        FirstName:req.body.firstname,
+        LastName:req.body.lastname,
+        ID:req.body.id,
+        SerialNO:req.body.serial,
+        CompanyName:req.body.company,
+        PhoneNumber:req.body.phone
+    })
+
+        .then( result => {
+            res.redirect('/viewTech')
+        })
+        .catch(err =>  res.redirect('/viewTech'))
 }

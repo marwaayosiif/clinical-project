@@ -37,9 +37,13 @@ router.get('/pre-installationformCatheter',controller.showPreinstallationform);
 // router.post('/pre-installationformCatheter',controller.PreinstallationCatheterData);
 
 
-
-
-
+router.get('/pre-installationform',controller.pre_installationform);
+router.get('/showDailyInspectionForm',controller.showDailyInspectionForm);
+router.get('/showInventoryListingForm',controller.showInventoryListingForm);
+// router.get('/showWorkOrdersForm',controller.showWorkOrdersForm);
+router.post('/pre-installationform',controller.pre_installationformData);
+// router.post('/pre-installationform',controller.pre_installationformData);
+// router.post('/pre-installationform',controller.pre_installationformData);
 
 
 
@@ -56,9 +60,6 @@ router.post('/editEng',controller.editEng)
 router.get('/showEditEq',controller.showEditEq)
 router.post('/editEq',controller.editEq)
 
-
-
-
 router.get('/index', controller.mainRoute);
 router.get('/managementSystem', controller.managementSystem);
 router.get('/showLogin', controller.showLogin);
@@ -68,7 +69,7 @@ router.get('/showWorkOrdersForm', controller.showWorkOrdeForm);
 router.post('/getWorkOrderData', controller.getWorkOrderData);
 // router.get('/showPre-installationform', controller.showPreinstallationData);
 router.get('/pre-installationform', controller.showPreinstallationform);
-router.post('/pre-installationform', controller.getData);
+// router.post('/pre-installationform', controller.getData);
 router.get('/viewEng', controller.showEng);
 router.get('/addEng', controller.ShowEditEngForm);
 router.post('/addEng', controller.singUp);
