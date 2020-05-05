@@ -35,6 +35,8 @@
 </head>
 
 <body>
+{{#each newform}}
+
     <section id="container">
         <!-- **********************************************************************************************************************************************************
         TOP BAR CONTENT & NOTIFICATIONS
@@ -126,7 +128,6 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {{#each newform}}
                                     <tr class="gradeA">
                                         <td>{{this.dataValues.Equipment}}</td>
                                         <td>{{this.dataValues.Date}}</td>
@@ -141,7 +142,7 @@
                                             <button class="btn btn-danger btn-xs"  data-toggle="modal" data-target="#delete"><i class="fa fa-trash-o"></i></button>
                                         </td>
                                     </tr>
-                                {{/each}}    
+
                                 </tbody>
                             </table>
                         </div>
@@ -226,17 +227,18 @@
 </div>
 
 <div class="row notheader">
+
     <div class="cell">
         Pre-Installation Form Copied
     </div>
     <div class="cell">
-        <span>` + "True" + `</span>
+        <span>   {{this.dataValues.Pre_installationFormCopiedCheck}} </span>
     </div>
     <div class="cell">
-        <span>` + "Name" + `</span>
+        <span>  {{this.dataValues.Pre_installationFormCopiedRON}}  </span>
     </div>
     <div class="cell pl-3">
-        <span>` + "Comment" + `</span>
+        <span> {{this.dataValues.Pre_installationFormCopiedComment}}  </span>
     </div>
 </div>
 
@@ -245,27 +247,28 @@
         Required Tools Available
     </div>
     <div class="cell">
-        <span>` + "True" + `</span>
+        <span>  {{this.dataValues.RequiredToolsAvailableCheck}}  </span>
     </div>
     <div class="cell">
-        <span>` + "Name" + `</span>
+        <span>  {{this.dataValues.RequiredToolsAvailableRON}}  </span>
     </div>
     <div class="cell pl-3">
-        <span>` + "Comment" + `</span>
+        <span>  {{this.dataValues.RequiredToolsAvailableComment}}  </span>
     </div>
 </div>
+
 <div class="row notheader">
     <div class="cell">
         Required Supplies Available
     </div>
     <div class="cell">
-        <span>` + "True" + `</span>
+        <span> {{this.dataValues.RequiredToolsAvailableCheck}}  </span>
     </div>
     <div class="cell">
-        <span>` + "Name" + `</span>
+        <span> {{this.dataValues.RequiredToolsAvailableRON}} </span>
     </div>
     <div class="cell pl-3">
-        <span>` + "Comment" + `</span>
+        <span>  {{this.dataValues.RequiredToolsAvailableComment}}  </span>
     </div>
 </div>
 
@@ -274,13 +277,13 @@
         Site Can Be Locked After Hours
     </div>
     <div class="cell">
-        <span>` + "True" + `</span>
+        <span>  {{this.dataValues.SiteCanBeLockedAfterHoursCheck}}</span>
     </div>
     <div class="cell">
-        <span>` + "Name" + `</span>
+        <span>  {{this.dataValues.SiteCanBeLockedAfterHoursRON}}  </span>
     </div>
     <div class="cell pl-3">
-        <span>` + "Comment" + `</span>
+        <span> {{this.dataValues.SiteCanBeLockedAfterHoursComment}}  </span>
     </div>
 </div>
 
@@ -289,14 +292,15 @@
         Lock Keys Assigned To Personnel
     </div>
     <div class="cell">
-        <span>` + "True" + `</span>
+        <span>  {{this.dataValues.LockKeysAssignedToPersonalCheck}}  </span>
     </div>
     <div class="cell">
-        <span>` + "Name" + `</span>
+        <span>  {{this.dataValues.LockKeysAssignedToPersonalRON}}  </span>
     </div>
     <div class="cell pl-3">
-        <span>` + "Comment" + `</span>
+        <span>  {{this.dataValues.LockKeysAssignedToPersonalComment}}  </span>
     </div>
+
 </div>`
 
             return sOut;
@@ -350,6 +354,7 @@
             });
         });
     </script>
+{{/each}}
 </body>
 
 </html>

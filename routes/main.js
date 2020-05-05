@@ -7,7 +7,8 @@ const router = express.Router();
 const WorksOrders=require('../models/worksOrders')
 const Pre_installation = require('../models/pre-installation')
 const Engineers= require('../models/engineers')
-
+const spareParts = require('../models/spareParts')
+const DailyInspection = require('../models/DailyInspection')
 router.get('/index',controller.mainRoute);
 router.get('/managementSystem',controller.managementSystem);
 router.get('/showLogin',controller.showLogin);
@@ -34,5 +35,5 @@ router.post('/editEng',controller.editEng)
 // router.post('/editTech',controller.EditTech)
 router.get('/showEditEq',controller.showEditEq)
 router.post('/editEq',controller.editEq)
-router.
+// router.
 module.exports=router;

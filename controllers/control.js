@@ -5,8 +5,8 @@ const Pre_installation = require('../models/pre-installation')
 const WorksOrders=require('../models/worksOrders')
 const Engineers= require('../models/engineers')
 const Equipment= require('../models/equipment')
-// const Technician = require('../models/technician')
-
+const spareParts = require('../models/spareParts')
+const DailyInspection = require('../models/DailyInspection')
 
 exports.showWorkOrdeForm=(req,res,next) => {
     res.sendFile(path.join(DirName,'views','add_workorder.html'));
@@ -291,8 +291,13 @@ exports.getData =(req,res,next) => {
         LockKeysAssignedToPersonalRON:req.body.lockkeyRON,
         LockKeysAssignedToPersonalComment:req.body.lockkeyComment,
     });
+    if (newform.Pre_installationFormCopiedCheck == 'on'){
+        newform.Pre_installationFormCopiedCheck = 'True'
+    }
+    else {
+        newform.Pre_installationFormCopiedCheck ='false'
+    }
     newform.save().then(savedUser => {
-        console.log("eheldonya");
-        res.redirect('/pre-installationform'); 
+        res.redirect('/pre-installationform');
     });
 }
