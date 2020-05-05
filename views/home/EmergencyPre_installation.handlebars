@@ -151,19 +151,20 @@
                             <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
 
                                 <thead>
-                                    <tr>
-                                        <th>Equipment</th>
-                                        <th>Date</th>
-                                        <th>Name</th>
+                                    <tr class="centerRow">
+                                        <th  >Equipment</th>
+                                        <th >Serial Number</th>
+                                        <th >Date</th>
+                                        <th >Name</th>
                                         <th class="hidden-phone">Floor</th>
                                         <th class="hidden-phone">Room</th>
-                                        <th>Manage</th>
+                                        <th >Manage</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    
                                     <tr class="gradeA">
                                         <td>{{this.dataValues.Equipment}}</td>
+                                        <td>{{this.dataValues.SerialNO}}</td>
                                         <td>{{this.dataValues.Date}}</td>
                                         <td>{{this.dataValues.Name}}</td>
                                         <td class=" hidden-phone">{{this.dataValues.Floor}}</td>
@@ -235,10 +236,11 @@
             var aData = oTable.fnGetData(nTr);
             var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;margin:auto">';
             sOut += "<tr><td>Equipment's Name:</td><td>" + aData[1] + '</td></tr>';
-            sOut += '<tr><td>Date:</td><td>' + aData[2] + '</td></tr>';
-            sOut += '<tr><td>The Person Who Filled The Form:</td><td>' + aData[3] + '</td></tr>';
-            sOut += "<tr><td>Floor's Number: </td><td>" + aData[4] + '</td> </tr>';
-            sOut += "<tr><td>Room's Number: </td><td>" + aData[5] + '</td> </tr>';
+            sOut += "<tr><td>Equipment's Serial Number:</td><td>" + aData[2] + '</td></tr>';
+            sOut += '<tr><td>Date:</td><td>' + aData[3] + '</td></tr>';
+            sOut += '<tr><td>The Person Who Filled The Form:</td><td>' + aData[4] + '</td></tr>';
+            sOut += "<tr><td>Floor's Number: </td><td>" + aData[5] + '</td> </tr>';
+            sOut += "<tr><td>Room's Number: </td><td>" + aData[6] + '</td> </tr>';
             sOut += '</table>';
             sOut += `<div class="table">
 

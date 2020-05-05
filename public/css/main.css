@@ -15,6 +15,10 @@
     background: #D1CFD0;
 }
 
+.centerRow th {
+    text-align: center;
+}
+
 .table .row.head {
     color: #ffffff;
     background: #2F323A;
