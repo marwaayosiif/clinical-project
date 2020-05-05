@@ -16,13 +16,13 @@ if (typeof jQuery === 'undefined') {
 })(jQuery);
 
 (function () {
-var _typeof = typeof Symbol ==="function" && typeof Symbol.iterator ==="symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol ==="function" && obj.constructor === Symbol && obj !== Symbol.prototype ?"symbol" : typeof obj; };
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call ==="object" || typeof call ==="function") ? call : self; }
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !=="function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -132,7 +132,7 @@ var Util = function ($) {
     getUID: function getUID(prefix) {
       do {
         // eslint-disable-next-line no-bitwise
-        prefix += ~~(Math.random() * MAX_UID); //"~~" acts like a faster Math.floor() here
+        prefix += ~~(Math.random() * MAX_UID); // "~~" acts like a faster Math.floor() here
       } while (document.getElementById(prefix));
       return prefix;
     },
@@ -166,7 +166,7 @@ var Util = function ($) {
           var valueType = value && isElement(value) ? 'element' : toType(value);
 
           if (!new RegExp(expectedTypes).test(valueType)) {
-            throw new Error(componentName.toUpperCase() + ': ' + ('Option"' + property + '" provided type"' + valueType + '" ') + ('but expected type"' + expectedTypes + '".'));
+            throw new Error(componentName.toUpperCase() + ': ' + ('Option "' + property + '" provided type "' + valueType + '" ') + ('but expected type "' + expectedTypes + '".'));
           }
         }
       }
@@ -949,7 +949,7 @@ var Carousel = function ($) {
           data.to(config);
         } else if (typeof action === 'string') {
           if (data[action] === undefined) {
-            throw new Error('No method named"' + action + '"');
+            throw new Error('No method named "' + action + '"');
           }
           data[action]();
         } else if (_config.interval) {
@@ -1336,7 +1336,7 @@ var Collapse = function ($) {
 
         if (typeof config === 'string') {
           if (data[config] === undefined) {
-            throw new Error('No method named"' + config + '"');
+            throw new Error('No method named "' + config + '"');
           }
           data[config]();
         }
@@ -1658,7 +1658,7 @@ var Dropdown = function ($) {
 
         if (typeof config === 'string') {
           if (data[config] === undefined) {
-            throw new Error('No method named"' + config + '"');
+            throw new Error('No method named "' + config + '"');
           }
           data[config]();
         }
@@ -2315,7 +2315,7 @@ var Modal = function ($) {
 
         if (typeof config === 'string') {
           if (data[config] === undefined) {
-            throw new Error('No method named"' + config + '"');
+            throw new Error('No method named "' + config + '"');
           }
           data[config](relatedTarget);
         } else if (_config.show) {
@@ -2654,7 +2654,7 @@ var ScrollSpy = function ($) {
 
         if (typeof config === 'string') {
           if (data[config] === undefined) {
-            throw new Error('No method named"' + config + '"');
+            throw new Error('No method named "' + config + '"');
           }
           data[config]();
         }
@@ -2913,7 +2913,7 @@ var Tab = function ($) {
 
         if (typeof config === 'string') {
           if (data[config] === undefined) {
-            throw new Error('No method named"' + config + '"');
+            throw new Error('No method named "' + config + '"');
           }
           data[config]();
         }
@@ -3569,7 +3569,7 @@ var Tooltip = function ($) {
 
         if (typeof config === 'string') {
           if (data[config] === undefined) {
-            throw new Error('No method named"' + config + '"');
+            throw new Error('No method named "' + config + '"');
           }
           data[config]();
         }
@@ -3760,7 +3760,7 @@ var Popover = function ($) {
 
         if (typeof config === 'string') {
           if (data[config] === undefined) {
-            throw new Error('No method named"' + config + '"');
+            throw new Error('No method named "' + config + '"');
           }
           data[config]();
         }

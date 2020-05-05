@@ -60,15 +60,15 @@ html {
 body,
 p {
     color: #626262;
-    font: 400 0.875rem/1.375rem"Raleway", sans-serif;
+    font: 400 0.875rem/1.375rem "Raleway", sans-serif;
 }
 
 .p-large {
-    font: 400 1rem/1.5rem"Raleway", sans-serif;
+    font: 400 1rem/1.5rem "Raleway", sans-serif;
 }
 
 .p-small {
-    font: 400 0.75rem/1.25rem"Raleway", sans-serif;
+    font: 400 0.75rem/1.25rem "Raleway", sans-serif;
 }
 
 .p-heading {
@@ -85,32 +85,32 @@ p {
 
 h1 {
     color: #393939;
-    font: 700 3rem/3.5rem"Raleway", sans-serif;
+    font: 700 3rem/3.5rem "Raleway", sans-serif;
 }
 
 h2 {
     color: #393939;
-    font: 700 2.25rem/2.75rem"Raleway", sans-serif;
+    font: 700 2.25rem/2.75rem "Raleway", sans-serif;
 }
 
 h3 {
     color: #393939;
-    font: 700 1.75rem/2rem"Raleway", sans-serif;
+    font: 700 1.75rem/2rem "Raleway", sans-serif;
 }
 
 h4 {
     color: #393939;
-    font: 700 1.375rem/1.875rem"Raleway", sans-serif;
+    font: 700 1.375rem/1.875rem "Raleway", sans-serif;
 }
 
 h5 {
     color: #393939;
-    font: 700 1.125rem/1.625rem"Raleway", sans-serif;
+    font: 700 1.125rem/1.625rem "Raleway", sans-serif;
 }
 
 h6 {
     color: #393939;
-    font: 700 1rem/1.5rem"Raleway", sans-serif;
+    font: 700 1rem/1.5rem "Raleway", sans-serif;
 }
 
 a {
@@ -132,11 +132,11 @@ a.white {
 }
 
 .testimonial-text {
-    font: italic 400 1rem/1.5rem"Raleway", sans-serif;
+    font: italic 400 1rem/1.5rem "Raleway", sans-serif;
 }
 
 .testimonial-author {
-    font: 700 1rem/1.5rem"Raleway", sans-serif;
+    font: 700 1rem/1.5rem "Raleway", sans-serif;
 }
 
 .turquoise {
@@ -150,7 +150,7 @@ a.white {
     border-radius: 2rem;
     background-color: #00bfd8;
     color: #fff;
-    font: 700 0.75rem/0"Raleway", sans-serif;
+    font: 700 0.75rem/0 "Raleway", sans-serif;
     text-decoration: none;
     transition: all 0.2s;
 }
@@ -168,7 +168,7 @@ a.white {
     border-radius: 2rem;
     background-color: #00bfd8;
     color: #fff;
-    font: 700 0.75rem/0"Raleway", sans-serif;
+    font: 700 0.75rem/0 "Raleway", sans-serif;
     text-decoration: none;
     transition: all 0.2s;
 }
@@ -186,7 +186,7 @@ a.white {
     border-radius: 2rem;
     background-color: transparent;
     color: #00bfd8;
-    font: 700 0.75rem/0"Raleway", sans-serif;
+    font: 700 0.75rem/0 "Raleway", sans-serif;
     text-decoration: none;
     transition: all 0.2s;
 }
@@ -204,7 +204,7 @@ a.white {
     border-radius: 2rem;
     background-color: transparent;
     color: #00bfd8;
-    font: 700 0.75rem/0"Raleway", sans-serif;
+    font: 700 0.75rem/0 "Raleway", sans-serif;
     text-decoration: none;
     transition: all 0.2s;
 }
@@ -222,7 +222,7 @@ a.white {
     border-radius: 2rem;
     background-color: transparent;
     color: #00bfd8;
-    font: 700 0.625rem/0"Raleway", sans-serif;
+    font: 700 0.625rem/0 "Raleway", sans-serif;
     text-decoration: none;
     transition: all 0.2s;
 }
@@ -252,7 +252,7 @@ a.white {
     left: 1.375rem;
     color: #626262;
     opacity: 1;
-    font: 400 0.875rem/1.375rem"Raleway", sans-serif;
+    font: 400 0.875rem/1.375rem "Raleway", sans-serif;
     cursor: text;
     transition: all 0.2s ease;
 }
@@ -289,7 +289,7 @@ screen and (-ms-high-contrast: none) {
     border-radius: 0.25rem;
     background-color: #fff;
     color: #626262;
-    font: 400 0.875rem/1.875rem"Raleway", sans-serif;
+    font: 400 0.875rem/1.875rem "Raleway", sans-serif;
     transition: all 0.2s;
     -webkit-appearance: none;
     /* removes inner shadow on form inputs on ios safari */
@@ -349,7 +349,7 @@ select::-ms-expand {
     border-radius: 0.25rem;
     background-color: #fff;
     color: #626262;
-    font: 400 0.875rem/1.75rem"Raleway", sans-serif;
+    font: 400 0.875rem/1.75rem "Raleway", sans-serif;
     transition: all 0.2s;
 }
 
@@ -368,7 +368,7 @@ select::-ms-expand {
 }
 
 .checkbox {
-    font: 400 0.75rem/1.25rem"Raleway", sans-serif;
+    font: 400 0.75rem/1.25rem "Raleway", sans-serif;
 }
 
 input[type='checkbox'] {
@@ -394,7 +394,7 @@ screen and (-ms-high-contrast: none) {
     border-radius: 1.5rem;
     background-color: #00bfd8;
     color: #fff;
-    font: 700 0.75rem/1.75rem"Raleway", sans-serif;
+    font: 700 0.75rem/1.75rem "Raleway", sans-serif;
     cursor: pointer;
     transition: all 0.2s;
 }
@@ -416,7 +416,7 @@ screen and (-ms-high-contrast: none) {
     display: block;
     margin-bottom: 0;
     color: #626262;
-    font: 400 1.125rem/1rem"Raleway", sans-serif;
+    font: 400 1.125rem/1rem "Raleway", sans-serif;
 }
 
 .help-block.with-errors .list-unstyled {
@@ -720,7 +720,7 @@ screen and (-ms-high-contrast: none) {
 .navbar-custom {
     background-color: #fff;
     box-shadow: 0 0.0625rem 0.375rem 0 rgba(0, 0, 0, 0.1);
-    font: 600 0.875rem/0.875rem"Raleway", sans-serif;
+    font: 600 0.875rem/0.875rem "Raleway", sans-serif;
     transition: all 0.2s;
 }
 
@@ -730,7 +730,7 @@ screen and (-ms-high-contrast: none) {
 }
 
 .navbar-custom .navbar-brand.logo-text {
-    font: 600 2rem/1.5rem"Raleway", sans-serif;
+    font: 600 2rem/1.5rem "Raleway", sans-serif;
     color: #393939;
     text-decoration: none;
 }
@@ -795,7 +795,7 @@ screen and (-ms-high-contrast: none) {
 }
 
 .navbar-custom .dropdown-item .item-text {
-    font: 600 0.875rem/0.875rem"Raleway", sans-serif;
+    font: 600 0.875rem/0.875rem "Raleway", sans-serif;
 }
 
 .navbar-custom .dropdown-item:hover .item-text {
@@ -1345,7 +1345,7 @@ screen and (-ms-high-contrast: none) {
 }
 
 .basic-3 .video-play-button:before {
-    content:"";
+    content: "";
     position: absolute;
     z-index: 0;
     top: 50%;
@@ -1362,7 +1362,7 @@ screen and (-ms-high-contrast: none) {
 }
 
 .basic-3 .video-play-button:after {
-    content:"";
+    content: "";
     position: absolute;
     z-index: 1;
     top: 50%;

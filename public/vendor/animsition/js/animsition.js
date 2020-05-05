@@ -34,8 +34,8 @@
         timeoutCountdown      :   5000,
         onLoadEvent           :   true,
         browser               : [ 'animation-duration', '-webkit-animation-duration'],
-        //"browser" option allows you to disable the"animsition" in case the css property in the array is not supported by your browser.
-        // The default setting is to disable the"animsition" in a browser that does not support"animation-duration".
+        // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+        // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
         overlay               :   false,
         overlayClass          :   'animsition-overlay-slide',
         overlayParentElement  :   'body',
@@ -59,8 +59,8 @@
         }
       };
 
-      // Remove the"Animsition" in a browser
-      // that does not support the"animaition-duration".
+      // Remove the "Animsition" in a browser
+      // that does not support the "animaition-duration".
       var support = __.supportCheck.call(this, options);
 
       if(!support && options.browser.length > 0){

@@ -1,4 +1,4 @@
-var Script = function() {
+var Script = function () {
 
 
     /* initialize the external events
@@ -18,8 +18,8 @@ var Script = function() {
         // make the event draggable using jQuery UI
         $(this).draggable({
             zIndex: 999,
-            revert: true, // will cause the event to go back to its
-            revertDuration: 0 //  original position after the drag
+            revert: true,      // will cause the event to go back to its
+            revertDuration: 0  //  original position after the drag
         });
 
     });
@@ -54,35 +54,36 @@ var Script = function() {
             copiedEventObject.allDay = allDay;
 
             // render the event on the calendar
-            // the last `true` argument determines if the event"sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
+            // the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
             $('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
 
-            // is the"remove after drop" checkbox checked?
+            // is the "remove after drop" checkbox checked?
             if ($('#drop-remove').is(':checked')) {
-                // if so, remove the element from the"Draggable Events" list
+                // if so, remove the element from the "Draggable Events" list
                 $(this).remove();
             }
 
         },
-        events: [{
+        events: [
+            {
                 title: 'All Day Event',
                 start: new Date(y, m, 1)
             },
             {
                 title: 'Long Event',
-                start: new Date(y, m, d - 5),
-                end: new Date(y, m, d - 2)
+                start: new Date(y, m, d-5),
+                end: new Date(y, m, d-2)
             },
             {
                 id: 999,
                 title: 'Repeating Event',
-                start: new Date(y, m, d - 3, 16, 0),
+                start: new Date(y, m, d-3, 16, 0),
                 allDay: false
             },
             {
                 id: 999,
                 title: 'Repeating Event',
-                start: new Date(y, m, d + 4, 16, 0),
+                start: new Date(y, m, d+4, 16, 0),
                 allDay: false
             },
             {
@@ -98,8 +99,8 @@ var Script = function() {
             },
             {
                 title: 'Birthday Party',
-                start: new Date(y, m, d + 1, 19, 0),
-                end: new Date(y, m, d + 1, 22, 30),
+                start: new Date(y, m, d+1, 19, 0),
+                end: new Date(y, m, d+1, 22, 30),
                 allDay: false
             },
             {

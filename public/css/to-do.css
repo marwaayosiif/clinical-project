@@ -21,7 +21,7 @@
 
 .tasks-widget .task-footer:after,
 .tasks-widget .task-footer:before {
-	content:"";
+	content: "";
 	display: table;
 	line-height: 0;
 }

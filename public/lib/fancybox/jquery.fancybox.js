@@ -27,7 +27,7 @@
 			return obj && obj.hasOwnProperty && obj instanceof $;
 		},
 		isString = function(str) {
-			return str && $.type(str) ==="string";
+			return str && $.type(str) === "string";
 		},
 		isPercentage = function(str) {
 			return isString(str) && str.indexOf('%') > 0;
@@ -118,7 +118,7 @@
 				},
 				close  : [27], // escape key
 				play   : [32], // space - start/stop slideshow
-				toggle : [70]  // letter"f" - toggle fullscreen
+				toggle : [70]  // letter "f" - toggle fullscreen
 			},
 
 			direction : {
@@ -252,7 +252,7 @@
 					hrefParts,
 					selector;
 
-				if ($.type(element) ==="object") {
+				if ($.type(element) === "object") {
 					// Check if is DOM element
 					if (element.nodeType) {
 						element = $(element);
@@ -309,7 +309,7 @@
 					}
 
 					// Split url into two pieces with source url and content selector, e.g,
-					//"/mypage.html #my_id" will load"/mypage.html" and display element having id"my_id"
+					// "/mypage.html #my_id" will load "/mypage.html" and display element having id "my_id"
 					if (type === 'ajax') {
 						hrefParts = href.split(/\s+/, 2);
 						href      = hrefParts.shift();
@@ -586,7 +586,7 @@
 		// Shrink content to fit inside viewport or restore if resized
 		toggle: function ( action ) {
 			if (F.isOpen) {
-				F.current.fitToView = $.type(action) ==="boolean" ? action : !F.current.fitToView;
+				F.current.fitToView = $.type(action) === "boolean" ? action : !F.current.fitToView;
 
 				// Help browser to restore document dimensions
 				if (isTouch) {
@@ -890,7 +890,7 @@
 				inner : $('.fancybox-inner', coming.wrap)
 			});
 
-			$.each(["Top","Right","Bottom","Left"], function(i, v) {
+			$.each(["Top", "Right", "Bottom", "Left"], function(i, v) {
 				coming.skin.css('padding' + v, getValue(coming.padding[ i ]));
 			});
 
@@ -936,7 +936,7 @@
 		},
 
 		_loadImage: function () {
-			// Reset preload image so it is later possible to check"complete" property
+			// Reset preload image so it is later possible to check "complete" property
 			var img = F.imgPreload = new Image();
 
 			img.onload = function () {
@@ -1581,7 +1581,7 @@
 				elastic  = effect === 'elastic',
 				endPos   = $.extend({opacity : 1}, startPos);
 
-			// Remove"position" property that breaks older IE
+			// Remove "position" property that breaks older IE
 			delete endPos.position;
 
 			if (elastic) {
@@ -1694,12 +1694,12 @@
 			showEarly  : true,      // indicates if should be opened immediately or wait until the content is ready
 			css        : {},        // custom CSS properties
 			locked     : !isTouch,  // if true, the content will be locked into overlay
-			fixed      : true       // if false, the overlay CSS position property will not be set to"fixed"
+			fixed      : true       // if false, the overlay CSS position property will not be set to "fixed"
 		},
 
 		overlay : null,      // current handle
-		fixed   : false,     // indicates if the overlay has position"fixed"
-		el      : $('html'), // element that contains"the lock"
+		fixed   : false,     // indicates if the overlay has position "fixed"
+		el      : $('html'), // element that contains "the lock"
 
 		// Public methods
 		create : function(opts) {
@@ -1813,7 +1813,7 @@
 
 			if (opts.locked && this.fixed && obj.fixed) {
 				if (!overlay) {
-					this.margin = D.height() > W.height() ? $('html').css('margin-right').replace("px","") : false;
+					this.margin = D.height() > W.height() ? $('html').css('margin-right').replace("px", "") : false;
 				}
 
 				obj.locked = this.overlay.append( obj.wrap );
@@ -1963,7 +1963,7 @@
 			that.unbind('click.fb-start').bind('click.fb-start', run);
 
 		} else {
-			D.undelegate(selector, 'click.fb-start').delegate(selector +":not('.fancybox-item, .fancybox-nav')", 'click.fb-start', run);
+			D.undelegate(selector, 'click.fb-start').delegate(selector + ":not('.fancybox-item, .fancybox-nav')", 'click.fb-start', run);
 		}
 
 		this.filter('[data-fancybox-start=1]').trigger('click');
@@ -2014,7 +2014,7 @@
 
 		H.removeClass('fancybox-lock-test');
 
-		$("<style type='text/css'>.fancybox-margin{margin-right:" + (w2 - w1) +"px;}</style>").appendTo("head");
+		$("<style type='text/css'>.fancybox-margin{margin-right:" + (w2 - w1) + "px;}</style>").appendTo("head");
 	});
 
 }(window, document, jQuery));

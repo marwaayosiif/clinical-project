@@ -4,14 +4,14 @@
  * ===========================================================
  * Copyright 2012 Jasny BV, Netherlands.
  *
- * Licensed under the Apache License, Version 2.0 (the"License")
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an"AS IS" BASIS,
+ * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
@@ -19,14 +19,14 @@
 
 !function ($) {
 
-"use strict"; // jshint ;_
+  "use strict"; // jshint ;_
 
  /* FILEUPLOAD PUBLIC CLASS DEFINITION
   * ================================= */
 
   var Fileupload = function (element, options) {
     this.$element = $(element)
-    this.type = this.$element.data('uploadtype') || (this.$element.find('.thumbnail').length > 0 ?"image" :"file")
+    this.type = this.$element.data('uploadtype') || (this.$element.find('.thumbnail').length > 0 ? "image" : "file")
       
     this.$input = this.$element.find(':file')
     if (this.$input.length === 0) return
@@ -77,7 +77,7 @@
       this.$hidden.attr('name', '')
       this.$input.attr('name', this.name)
 
-      if (this.type ==="image" && this.$preview.length > 0 && (typeof file.type !=="undefined" ? file.type.match('image.*') : file.name.match('\\.(gif|png|jpe?g)$')) && typeof FileReader !=="undefined") {
+      if (this.type === "image" && this.$preview.length > 0 && (typeof file.type !== "undefined" ? file.type.match('image.*') : file.name.match('\\.(gif|png|jpe?g)$')) && typeof FileReader !== "undefined") {
         var reader = new FileReader()
         var preview = this.$preview
         var element = this.$element
