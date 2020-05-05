@@ -8,7 +8,7 @@ const Pre_installation= sequelize.define('Pre_installation',{
     allowNull:true
     },
     SerialNO:{
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         primaryKey:true
     },
     Name:{

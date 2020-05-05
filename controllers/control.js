@@ -355,6 +355,10 @@ exports.pre_installationformData =(req,res,next) => {
         LockKeysAssignedToPersonalRON:req.body.lockkeyRON,
         LockKeysAssignedToPersonalComment:req.body.lockkeyComment,
     });
+    newform.RequiredSuppliesAvailableCheck == 'on' ? newform.RequiredSuppliesAvailableCheck == 'true':newform.RequiredSuppliesAvailableCheck == 'false'
+
+    newform.Pre_installationFormCopiedCheck =='on' ? newform.Pre_installationFormCopiedCheck =='true':newform.Pre_installationFormCopiedCheck =='false'
+
     newform.save().then(savedUser => {
         res.redirect('/pre-installationform');
     });
