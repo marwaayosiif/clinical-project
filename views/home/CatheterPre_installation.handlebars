@@ -35,6 +35,7 @@
 </head>
 
 <body>
+    {{#each newform}}
     <section id="container">
         <!-- **********************************************************************************************************************************************************
         TOP BAR CONTENT & NOTIFICATIONS
@@ -166,7 +167,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {{#each newform}}
+                                    
                                     <tr class="gradeA">
                                         <td>{{this.dataValues.Equipment}}</td>
                                         <td>{{this.dataValues.Date}}</td>
@@ -178,7 +179,7 @@
                                             <button class="btn btn-danger btn-xs"  data-toggle="modal" data-target="#delete"><i class="fa fa-trash-o"></i></button>
                                         </td>
                                     </tr>
-                                {{/each}}    
+                                  
                                 </tbody>
                             </table>
                         </div>
@@ -212,6 +213,7 @@
         </div>
 
     </section>
+
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="lib/jquery/jquery.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
@@ -233,6 +235,7 @@
 
     <!--script for this page-->
     <script type="text/javascript">
+    
         /* Formating function for row details */
         function fnFormatDetails(oTable, nTr) {
             var aData = oTable.fnGetData(nTr);
@@ -261,32 +264,46 @@
 </div>
 
 <div class="row notheader">
+   
     <div class="cell">
         Pre-Installation Form Copied
     </div>
     <div class="cell">
-        <span>` + "True" + `</span>
+        <span> {{this.dataValues.Pre_installationFormCopiedCheck}} </span>
     </div>
     <div class="cell">
-        <span>` + "Name" + `</span>
+        <span> {{this.dataValues.Pre_installationFormCopiedRON}}</span>
     </div>
     <div class="cell pl-3">
-        <span>` + "Comment" + `</span>
+        <span> {{this.dataValues.Pre_installationFormCopiedComment}}</span>
     </div>
 </div>
-
+<div class="row notheader">
+    <div class="cell">
+        Site Power Outlet Available
+    </div>
+    <div class="cell">
+        <span> {{this.dataValues.SitePowerOutletAvailableCheck}} </span>
+    </div>
+    <div class="cell">
+        <span> {{this.dataValues.SitePowerOutletAvailableRON}} </span>
+    </div>
+    <div class="cell pl-3">
+        <span> {{this.dataValues.SitePowerOutletAvailableComment}} </span>
+    </div>
+</div>
 <div class="row notheader">
     <div class="cell">
         Required Tools Available
     </div>
     <div class="cell">
-        <span>` + "True" + `</span>
+        <span> {{this.dataValues.RequiredToolsAvailableCheck}} </span>
     </div>
     <div class="cell">
-        <span>` + "Name" + `</span>
+        <span> {{this.dataValues.RequiredToolsAvailableRON}}</span>
     </div>
     <div class="cell pl-3">
-        <span>` + "Comment" + `</span>
+        <span> {{this.dataValues.RequiredToolsAvailableComment}} </span>
     </div>
 </div>
 <div class="row notheader">
@@ -294,13 +311,13 @@
         Required Supplies Available
     </div>
     <div class="cell">
-        <span>` + "True" + `</span>
+        <span> {{this.dataValues.RequiredSuppliesAvailableCheck}} </span>
     </div>
     <div class="cell">
-        <span>` + "Name" + `</span>
+        <span> {{this.dataValues.RequiredSuppliesAvailableRON}} </span>
     </div>
     <div class="cell pl-3">
-        <span>` + "Comment" + `</span>
+        <span>{{this.dataValues.RequiredSuppliesAvailableComment}} </span>
     </div>
 </div>
 
@@ -309,13 +326,13 @@
         Site Can Be Locked After Hours
     </div>
     <div class="cell">
-        <span>` + "True" + `</span>
+        <span> {{this.dataValues.SiteCanBeLockedAfterHoursCheck}} </span>
     </div>
     <div class="cell">
-        <span>` + "Name" + `</span>
+        <span> {{this.dataValues.SiteCanBeLockedAfterHoursRON}} </span>
     </div>
     <div class="cell pl-3">
-        <span>` + "Comment" + `</span>
+        <span> {{this.dataValues.SiteCanBeLockedAfterHoursComment}} </span>
     </div>
 </div>
 
@@ -324,13 +341,13 @@
         Lock Keys Assigned To Personnel
     </div>
     <div class="cell">
-        <span>` + "True" + `</span>
+        <span> {{this.dataValues.LockKeysAssignedToPersonalCheck}} </span>
     </div>
     <div class="cell">
-        <span>` + "Name" + `</span>
+        <span> {{this.dataValues.LockKeysAssignedToPersonalRON}} </span>
     </div>
     <div class="cell pl-3">
-        <span>` + "Comment" + `</span>
+        <span> {{this.dataValues.LockKeysAssignedToPersonalComment}} </span>
     </div>
 </div>`
 
@@ -384,7 +401,9 @@
                 }
             });
         });
+        
     </script>
+     {{/each}} 
 </body>
 
 </html>

@@ -356,22 +356,22 @@ exports.pre_installationformData =(req,res,next) => {
         LockKeysAssignedToPersonalComment:req.body.lockkeyComment,
     });
     newform.save().then(savedUser => {
-        res.redirect('/PreinstallationCatheterData');
+        res.redirect('/pre-installationform');
     });
 }
 
-exports.pre_installationformData=(req,res,next) => {
-    const TECH = new Technician({
-        FirstName:req.body.firstname,
-        LastName:req.body.lastname,
-        ID:req.body.id,
-        SerialNO:req.body.serial,
-        CompanyName:req.body.company,
-        PhoneNumber:req.body.phone
-    })
+// exports.pre_installationformData=(req,res,next) => {
+//     const TECH = new Technician({
+//         FirstName:req.body.firstname,
+//         LastName:req.body.lastname,
+//         ID:req.body.id,
+//         SerialNO:req.body.serial,
+//         CompanyName:req.body.company,
+//         PhoneNumber:req.body.phone
+//     })
 
-        .then( result => {
-            res.redirect('/viewTech')
-        })
-        .catch(err =>  res.redirect('/viewTech'))
-}
+//         .then( result => {
+//             res.redirect('/viewTech')
+//         })
+//         .catch(err =>  res.redirect('/viewTech'))
+// }
