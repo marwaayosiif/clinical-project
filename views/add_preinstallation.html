@@ -76,12 +76,7 @@
                             <span>Equipments</span>
                         </a>
                     </li>
-                    <li class="sub-menu">
-                        <a href="/showPreMain">
-                            <i class="fa fa-wrench"></i>
-                            <span>Preventive Maintainance</span>
-                        </a>
-                    </li>
+
                     <li class="sub-menu">
                         <a href="javascript:;">
                             <i class="fa  fa-hospital-o"></i>
@@ -96,7 +91,6 @@
                                     <li><a href="/showPre-installationSurgery">Pre-installation Reports</a></li>
                                     <li><a href="/showDailyInspectionSurgery">Daily Inspection Reports</a></li>
                                     <li><a href="/showInventoryListingSurgery">Inventory Listing Reports</a></li>
-                                    <li><a href="/showWorkOrdersSurgery">Work Order Reports</a></li>
                                 </ul>
                             </li>
                             <li class="sub-menu">
@@ -107,7 +101,7 @@
                                     <li><a href="/showPre-installationEmergency">Pre-installation Reports</a></li>
                                     <li><a href="/showDailyInspectionEmergency">Daily Inspection Reports</a></li>
                                     <li><a href="/showInventoryListingEmergency">Inventory Listing Reports</a></li>
-                                    <li><a href="/showWorkOrdersEmergency">Work Order Reports</a></li>
+
                                 </ul>
                             </li>
                             <li class="sub-menu">
@@ -118,7 +112,7 @@
                                     <li><a href="/showPre-installationCatheter">Pre-installation Reports</a></li>
                                     <li><a href="/showDailyInspectionCatheter">Daily Inspection Reports</a></li>
                                     <li><a href="/showInventoryListingCatheter">Inventory Listing Reports</a></li>
-                                    <li><a href="/showWorkOrdersCatheter">Work Order Reports</a></li>
+
                                 </ul>
                             </li>
                         </ul>
@@ -132,7 +126,7 @@
                             <li class="active"><a href="/pre-installationform">Add Pre-installation Report</a></li>
                             <li><a href="/showDailyInspectionForm">Add Daily Inspection Report</a></li>
                             <li><a href="/showInventoryListingForm">Add Inventory Listing Report</a></li>
-                            <li><a href="/showWorkOrdersForm">Add Work Order Report</a></li>
+
                         </ul>
                     </li>
                 </ul>
@@ -157,7 +151,11 @@
                                     <div class="form-group">
                                         <label for="department" class="control-label col-lg-2">Department's Name</label>
                                         <div class="col-lg-10">
-                                            <input class="form-control" id="department" name="department" type="text" required />
+                                            <select class="form-control" id="department" name="department" required>
+                                                <option value="Surgery">Surgery</option>
+                                                <option value="Emergency">Emergency</option>
+                                                <option value="Catheterization">Catheterization</option>
+                                              </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -197,21 +195,21 @@
                                                 <td>Pre-Installation Form Copied</td>
                                                 <td>
                                                     <div class="form-group" style="margin-left: 5px!important;">
-                                                        <input type="checkbox" style="width: 20px" class="checkbox form-control"  name="preinstallCheck">
-                                                </div>
+                                                        <input disabled type="checkbox" style="width: 20px" class="checkbox form-control" name="preinstallCheck">
+                                                    </div>
                                                 </td>
 
                                                 <td>
                                                     <div class="form-group">
                                                         <div class="col-lg-10">
-                                                            <input class=" form-control"  name="preinstallRON" placeholder="Enter The Name" type="text" />
+                                                            <input class=" form-control" name="preinstallRON" placeholder="Enter The Name" type="text" />
                                                         </div>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="form-group">
                                                         <div class="col-lg-10">
-                                                            <input class=" form-control"  name="preinstallComment" placeholder="Enter Any Comments" type="text" />
+                                                            <input class=" form-control" name="preinstallComment" placeholder="Enter Any Comments" type="text" />
                                                         </div>
                                                     </div>
                                                 </td>

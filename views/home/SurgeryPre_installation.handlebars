@@ -78,12 +78,7 @@
                             <span>Equipments</span>
                         </a>
                     </li>
-                    <li class="sub-menu">
-                        <a href="/showPreMain">
-                            <i class="fa fa-wrench"></i>
-                            <span>Preventive Maintainance</span>
-                        </a>
-                    </li>
+                    
                     <li class="sub-menu">
                         <a class="active" href="javascript:;">
                             <i class="fa  fa-hospital-o"></i>
@@ -98,7 +93,6 @@
                                     <li class="active"><a href="/showPre-installationSurgery">Pre-installation Reports</a></li>
                                     <li><a href="/showDailyInspectionSurgery">Daily Inspection Reports</a></li>
                                     <li><a href="/showInventoryListingSurgery">Inventory Listing Reports</a></li>
-                                    <li><a href="/showWorkOrdersSurgery">Work Order Reports</a></li>
                                 </ul>
                             </li>
                             <li class="sub-menu">
@@ -109,7 +103,7 @@
                                     <li><a href="/showPre-installationEmergency">Pre-installation Reports</a></li>
                                     <li><a href="/showDailyInspectionEmergency">Daily Inspection Reports</a></li>
                                     <li><a href="/showInventoryListingEmergency">Inventory Listing Reports</a></li>
-                                    <li><a href="/showWorkOrdersEmergency">Work Order Reports</a></li>
+
                                 </ul>
                             </li>
                             <li class="sub-menu">
@@ -120,7 +114,7 @@
                                     <li><a href="/showPre-installationCatheter">Pre-installation Reports</a></li>
                                     <li><a href="/showDailyInspectionCatheter">Daily Inspection Reports</a></li>
                                     <li><a href="/showInventoryListingCatheter">Inventory Listing Reports</a></li>
-                                    <li><a href="/showWorkOrdersCatheter">Work Order Reports</a></li>
+
                                 </ul>
                             </li>
                         </ul>
@@ -134,7 +128,7 @@
                             <li><a href="/pre-installationform">Add Pre-installation Report</a></li>
                             <li><a href="/showDailyInspectionForm">Add Daily Inspection Report</a></li>
                             <li><a href="/showInventoryListingForm">Add Inventory Listing Report</a></li>
-                            <li><a href="/showWorkOrdersForm">Add Work Order Report</a></li>
+
                         </ul>
                     </li>
 
@@ -262,48 +256,68 @@
 </div>
 
 <div class="row notheader">
-
+   
     <div class="cell">
         Pre-Installation Form Copied
     </div>
     <div class="cell">
-        <span>   {{this.dataValues.Pre_installationFormCopiedCheck}} </span>
+        <div class="form-group" style="margin-left: 5px!important;">
+            <input disabled type="checkbox" style="width: 20px" class="checkbox form-control" >
+        </div>
     </div>
     <div class="cell">
-        <span>  {{this.dataValues.Pre_installationFormCopiedRON}}  </span>
+        <span> {{this.dataValues.Pre_installationFormCopiedRON}}</span>
     </div>
     <div class="cell pl-3">
-        <span> {{this.dataValues.Pre_installationFormCopiedComment}}  </span>
+        <span> {{this.dataValues.Pre_installationFormCopiedComment}}</span>
     </div>
 </div>
-
+<div class="row notheader">
+    <div class="cell">
+        Site Power Outlet Available
+    </div>
+    <div class="cell">
+        <div class="form-group" style="margin-left: 5px!important;">
+            <input disabled type="checkbox" style="width: 20px" class="checkbox form-control" >
+        </div>
+    </div>
+    <div class="cell">
+        <span> {{this.dataValues.SitePowerOutletAvailableRON}} </span>
+    </div>
+    <div class="cell pl-3">
+        <span> {{this.dataValues.SitePowerOutletAvailableComment}} </span>
+    </div>
+</div>
 <div class="row notheader">
     <div class="cell">
         Required Tools Available
     </div>
     <div class="cell">
-        <span>  {{this.dataValues.RequiredToolsAvailableCheck}}  </span>
+        <div class="form-group" style="margin-left: 5px!important;">
+            <input disabled type="checkbox" style="width: 20px" class="checkbox form-control" >
+        </div>
     </div>
     <div class="cell">
-        <span>  {{this.dataValues.RequiredToolsAvailableRON}}  </span>
+        <span> {{this.dataValues.RequiredToolsAvailableRON}}</span>
     </div>
     <div class="cell pl-3">
-        <span>  {{this.dataValues.RequiredToolsAvailableComment}}  </span>
+        <span> {{this.dataValues.RequiredToolsAvailableComment}} </span>
     </div>
 </div>
-
 <div class="row notheader">
     <div class="cell">
         Required Supplies Available
     </div>
     <div class="cell">
-        <span> {{this.dataValues.RequiredToolsAvailableCheck}}  </span>
+        <div class="form-group" style="margin-left: 5px!important;">
+            <input disabled type="checkbox" style="width: 20px" class="checkbox form-control" >
+        </div>
     </div>
     <div class="cell">
-        <span> {{this.dataValues.RequiredToolsAvailableRON}} </span>
+        <span> {{this.dataValues.RequiredSuppliesAvailableRON}} </span>
     </div>
     <div class="cell pl-3">
-        <span>  {{this.dataValues.RequiredToolsAvailableComment}}  </span>
+        <span>{{this.dataValues.RequiredSuppliesAvailableComment}} </span>
     </div>
 </div>
 
@@ -312,13 +326,15 @@
         Site Can Be Locked After Hours
     </div>
     <div class="cell">
-        <span>  {{this.dataValues.SiteCanBeLockedAfterHoursCheck}}</span>
+        <div class="form-group" style="margin-left: 5px!important;">
+            <input disabled type="checkbox" style="width: 20px" class="checkbox form-control" >
+        </div>
     </div>
     <div class="cell">
-        <span>  {{this.dataValues.SiteCanBeLockedAfterHoursRON}}  </span>
+        <span> {{this.dataValues.SiteCanBeLockedAfterHoursRON}} </span>
     </div>
     <div class="cell pl-3">
-        <span> {{this.dataValues.SiteCanBeLockedAfterHoursComment}}  </span>
+        <span> {{this.dataValues.SiteCanBeLockedAfterHoursComment}} </span>
     </div>
 </div>
 
@@ -327,15 +343,16 @@
         Lock Keys Assigned To Personnel
     </div>
     <div class="cell">
-        <span>  {{this.dataValues.LockKeysAssignedToPersonalCheck}}  </span>
+        <div class="form-group" style="margin-left: 5px!important;">
+            <input disabled type="checkbox" style="width: 20px" class="checkbox form-control" >
+        </div>
     </div>
     <div class="cell">
-        <span>  {{this.dataValues.LockKeysAssignedToPersonalRON}}  </span>
+        <span> {{this.dataValues.LockKeysAssignedToPersonalRON}} </span>
     </div>
     <div class="cell pl-3">
-        <span>  {{this.dataValues.LockKeysAssignedToPersonalComment}}  </span>
+        <span> {{this.dataValues.LockKeysAssignedToPersonalComment}} </span>
     </div>
-
 </div>`
 
             return sOut;

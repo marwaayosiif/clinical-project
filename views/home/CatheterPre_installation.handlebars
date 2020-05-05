@@ -77,12 +77,7 @@
                             <span>Equipments</span>
                         </a>
                     </li>
-                    <li class="sub-menu">
-                        <a href="/showPreMain">
-                            <i class="fa fa-wrench"></i>
-                            <span>Preventive Maintainance</span>
-                        </a>
-                    </li>
+                    
                     <li class="sub-menu">
                         <a class="active" href="javascript:;">
                             <i class="fa  fa-hospital-o"></i>
@@ -97,7 +92,6 @@
                                     <li><a href="/showPre-installationSurgery">Pre-installation Reports</a></li>
                                     <li><a href="/showDailyInspectionSurgery">Daily Inspection Reports</a></li>
                                     <li><a href="/showInventoryListingSurgery">Inventory Listing Reports</a></li>
-                                    <li><a href="/showWorkOrdersSurgery">Work Order Reports</a></li>
                                 </ul>
                             </li>
                             <li class="sub-menu">
@@ -108,7 +102,7 @@
                                     <li><a href="/showPre-installationEmergency">Pre-installation Reports</a></li>
                                     <li><a href="/showDailyInspectionEmergency">Daily Inspection Reports</a></li>
                                     <li><a href="/showInventoryListingEmergency">Inventory Listing Reports</a></li>
-                                    <li><a href="/showWorkOrdersEmergency">Work Order Reports</a></li>
+
                                 </ul>
                             </li>
                             <li class="sub-menu">
@@ -119,7 +113,7 @@
                                     <li class="active"><a href="/showPre-installationCatheter">Pre-installation Reports</a></li>
                                     <li><a href="/showDailyInspectionCatheter">Daily Inspection Reports</a></li>
                                     <li><a href="/showInventoryListingCatheter">Inventory Listing Reports</a></li>
-                                    <li><a href="/showWorkOrdersCatheter">Work Order Reports</a></li>
+
                                 </ul>
                             </li>
                         </ul>
@@ -133,7 +127,7 @@
                             <li><a href="/pre-installationform">Add Pre-installation Report</a></li>
                             <li><a href="/showDailyInspectionForm">Add Daily Inspection Report</a></li>
                             <li><a href="/showInventoryListingForm">Add Inventory Listing Report</a></li>
-                            <li><a href="/showWorkOrdersForm">Add Work Order Report</a></li>
+
                         </ul>
                     </li>
 
@@ -269,7 +263,9 @@
         Pre-Installation Form Copied
     </div>
     <div class="cell">
-        <span> {{this.dataValues.Pre_installationFormCopiedCheck}} </span>
+        <div class="form-group" style="margin-left: 5px!important;">
+            <input disabled type="checkbox" style="width: 20px" class="checkbox form-control" >
+        </div>
     </div>
     <div class="cell">
         <span> {{this.dataValues.Pre_installationFormCopiedRON}}</span>
@@ -283,7 +279,9 @@
         Site Power Outlet Available
     </div>
     <div class="cell">
-        <span> {{this.dataValues.SitePowerOutletAvailableCheck}} </span>
+        <div class="form-group" style="margin-left: 5px!important;">
+            <input disabled type="checkbox" style="width: 20px" class="checkbox form-control" >
+        </div>
     </div>
     <div class="cell">
         <span> {{this.dataValues.SitePowerOutletAvailableRON}} </span>
@@ -297,7 +295,9 @@
         Required Tools Available
     </div>
     <div class="cell">
-        <span> {{this.dataValues.RequiredToolsAvailableCheck}} </span>
+        <div class="form-group" style="margin-left: 5px!important;">
+            <input disabled type="checkbox" style="width: 20px" class="checkbox form-control" >
+        </div>
     </div>
     <div class="cell">
         <span> {{this.dataValues.RequiredToolsAvailableRON}}</span>
@@ -311,7 +311,9 @@
         Required Supplies Available
     </div>
     <div class="cell">
-        <span> {{this.dataValues.RequiredSuppliesAvailableCheck}} </span>
+        <div class="form-group" style="margin-left: 5px!important;">
+            <input disabled type="checkbox" style="width: 20px" class="checkbox form-control" >
+        </div>
     </div>
     <div class="cell">
         <span> {{this.dataValues.RequiredSuppliesAvailableRON}} </span>
@@ -326,7 +328,9 @@
         Site Can Be Locked After Hours
     </div>
     <div class="cell">
-        <span> {{this.dataValues.SiteCanBeLockedAfterHoursCheck}} </span>
+        <div class="form-group" style="margin-left: 5px!important;">
+            <input disabled type="checkbox" style="width: 20px" class="checkbox form-control" >
+        </div>
     </div>
     <div class="cell">
         <span> {{this.dataValues.SiteCanBeLockedAfterHoursRON}} </span>
@@ -341,7 +345,9 @@
         Lock Keys Assigned To Personnel
     </div>
     <div class="cell">
-        <span> {{this.dataValues.LockKeysAssignedToPersonalCheck}} </span>
+        <div class="form-group" style="margin-left: 5px!important;">
+            <input disabled type="checkbox" style="width: 20px" class="checkbox form-control" >
+        </div>
     </div>
     <div class="cell">
         <span> {{this.dataValues.LockKeysAssignedToPersonalRON}} </span>
