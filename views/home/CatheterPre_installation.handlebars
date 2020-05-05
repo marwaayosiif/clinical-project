@@ -35,8 +35,6 @@
 </head>
 
 <body>
-{{#each newform}}
-
     <section id="container">
         <!-- **********************************************************************************************************************************************************
         TOP BAR CONTENT & NOTIFICATIONS
@@ -60,7 +58,7 @@
             <div id="sidebar" class="nav-collapse">
                 <!-- sidebar menu start-->
                 <ul class="sidebar-menu" id="nav-accordion">
-                    <li class="mt">
+                    <li class="sub-menu">
                         <a href="/managementSystem">
                             <i class="fa fa-medkit"></i>
                             <span>Dashboard</span>
@@ -80,18 +78,61 @@
                     </li>
                     <li class="sub-menu">
                         <a href="/showPreMain">
-                            <i class="fa fa-cogs"></i>
+                            <i class="fa fa-wrench"></i>
                             <span>Preventive Maintainance</span>
                         </a>
                     </li>
                     <li class="sub-menu">
                         <a class="active" href="javascript:;">
+                            <i class="fa  fa-hospital-o"></i>
+                            <span>Departments</span>
+                        </a>
+                        <ul style="padding-left: 0;">
+                            <li class="sub-menu">
+                                <a href="javascript:;">
+                                    <span>Surgery</span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a href="/showPre-installationSurgery">Pre-installation Reports</a></li>
+                                    <li><a href="/showDailyInspectionSurgery">Daily Inspection Reports</a></li>
+                                    <li><a href="/showInventoryListingSurgery">Inventory Listing Reports</a></li>
+                                    <li><a href="/showWorkOrdersSurgery">Work Order Reports</a></li>
+                                </ul>
+                            </li>
+                            <li class="sub-menu">
+                                <a href="javascript:;">
+                                    <span>Emergency</span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a href="/showPre-installationEmergency">Pre-installation Reports</a></li>
+                                    <li><a href="/showDailyInspectionEmergency">Daily Inspection Reports</a></li>
+                                    <li><a href="/showInventoryListingEmergency">Inventory Listing Reports</a></li>
+                                    <li><a href="/showWorkOrdersEmergency">Work Order Reports</a></li>
+                                </ul>
+                            </li>
+                            <li class="sub-menu">
+                                <a class="active" href="javascript:;">
+                                    <span>Catheterization</span>
+                                </a>
+                                <ul class="sub">
+                                    <li class="active"><a href="/showPre-installationCatheter">Pre-installation Reports</a></li>
+                                    <li><a href="/showDailyInspectionCatheter">Daily Inspection Reports</a></li>
+                                    <li><a href="/showInventoryListingCatheter">Inventory Listing Reports</a></li>
+                                    <li><a href="/showWorkOrdersCatheter">Work Order Reports</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:;">
                             <i class="fa fa-book"></i>
-                            <span>Reports</span>
+                            <span>Add Reports</span>
                         </a>
                         <ul class="sub">
-                            <li class="active"><a href="/showPre-installationform">Pre-installation Report</a></li>
-                            <li><a href="/showWorkOrders">Work Order Report</a></li>
+                            <li><a href="/pre-installationform">Add Pre-installation Report</a></li>
+                            <li><a href="/showDailyInspectionForm">Add Daily Inspection Report</a></li>
+                            <li><a href="/showInventoryListingForm">Add Inventory Listing Report</a></li>
+                            <li><a href="/showWorkOrdersForm">Add Work Order Report</a></li>
                         </ul>
                     </li>
 
@@ -106,12 +147,11 @@
         <!--main content start-->
         <section id="main-content">
             <section class="wrapper">
-                <h3><i class="fa fa-angle-right"></i> Pre-installation Reports</h3>
+                <h3><i class="fa fa-angle-right"></i> Pre-installation Reports For Catheterization Department</h3>
                 <div class="row mb">
                     <!-- page start-->
                     <div class="content-panel">
                         <div class="adv-table">
-                            <a type="button" class="btn btn-theme" href="/pre-installationform" style="float: right!important;margin: 20px 20px!important;"><i class="fa  fa-plus-square" style="margin-right: 5px!important;"></i> Add A Pre-Installation Report</a>
 
                             <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
 
@@ -120,29 +160,25 @@
                                         <th>Equipment</th>
                                         <th>Date</th>
                                         <th>Name</th>
-                                        <th class="hidden-phone">Hospital</th>
-                                        <th class="hidden-phone">Department</th>
                                         <th class="hidden-phone">Floor</th>
                                         <th class="hidden-phone">Room</th>
                                         <th>Manage</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    {{#each newform}}
                                     <tr class="gradeA">
                                         <td>{{this.dataValues.Equipment}}</td>
                                         <td>{{this.dataValues.Date}}</td>
                                         <td>{{this.dataValues.Name}}</td>
-                                        <td class="  hidden-phone">{{this.dataValues.Hospital}}</td>
-                                        <td class=" hidden-phone">{{this.dataValues.Department}}</td>
                                         <td class=" hidden-phone">{{this.dataValues.Floor}}</td>
                                         <td class=" hidden-phone">{{this.dataValues.Room}}</td>
 
                                         <td class="center">
-                                            {{!-- <a href="edit_preinstallation.html" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a> --}}
                                             <button class="btn btn-danger btn-xs"  data-toggle="modal" data-target="#delete"><i class="fa fa-trash-o"></i></button>
                                         </td>
                                     </tr>
-
+                                {{/each}}    
                                 </tbody>
                             </table>
                         </div>
@@ -204,10 +240,8 @@
             sOut += "<tr><td>Equipment's Name:</td><td>" + aData[1] + '</td></tr>';
             sOut += '<tr><td>Date:</td><td>' + aData[2] + '</td></tr>';
             sOut += '<tr><td>The Person Who Filled The Form:</td><td>' + aData[3] + '</td></tr>';
-            sOut += "<tr><td>Hospital's Name: </td><td>" + aData[4] + '</td> </tr>';
-            sOut += "<tr><td>Department's Name: </td><td>" + aData[5] + '</td> </tr>';
-            sOut += "<tr><td>Floor's Number: </td><td>" + aData[6] + '</td> </tr>';
-            sOut += "<tr><td>Room's Number: </td><td>" + aData[7] + '</td> </tr>';
+            sOut += "<tr><td>Floor's Number: </td><td>" + aData[4] + '</td> </tr>';
+            sOut += "<tr><td>Room's Number: </td><td>" + aData[5] + '</td> </tr>';
             sOut += '</table>';
             sOut += `<div class="table">
 
@@ -227,18 +261,17 @@
 </div>
 
 <div class="row notheader">
-
     <div class="cell">
         Pre-Installation Form Copied
     </div>
     <div class="cell">
-        <span>   {{this.dataValues.Pre_installationFormCopiedCheck}} </span>
+        <span>` + "True" + `</span>
     </div>
     <div class="cell">
-        <span>  {{this.dataValues.Pre_installationFormCopiedRON}}  </span>
+        <span>` + "Name" + `</span>
     </div>
     <div class="cell pl-3">
-        <span> {{this.dataValues.Pre_installationFormCopiedComment}}  </span>
+        <span>` + "Comment" + `</span>
     </div>
 </div>
 
@@ -247,28 +280,27 @@
         Required Tools Available
     </div>
     <div class="cell">
-        <span>  {{this.dataValues.RequiredToolsAvailableCheck}}  </span>
+        <span>` + "True" + `</span>
     </div>
     <div class="cell">
-        <span>  {{this.dataValues.RequiredToolsAvailableRON}}  </span>
+        <span>` + "Name" + `</span>
     </div>
     <div class="cell pl-3">
-        <span>  {{this.dataValues.RequiredToolsAvailableComment}}  </span>
+        <span>` + "Comment" + `</span>
     </div>
 </div>
-
 <div class="row notheader">
     <div class="cell">
         Required Supplies Available
     </div>
     <div class="cell">
-        <span> {{this.dataValues.RequiredToolsAvailableCheck}}  </span>
+        <span>` + "True" + `</span>
     </div>
     <div class="cell">
-        <span> {{this.dataValues.RequiredToolsAvailableRON}} </span>
+        <span>` + "Name" + `</span>
     </div>
     <div class="cell pl-3">
-        <span>  {{this.dataValues.RequiredToolsAvailableComment}}  </span>
+        <span>` + "Comment" + `</span>
     </div>
 </div>
 
@@ -277,13 +309,13 @@
         Site Can Be Locked After Hours
     </div>
     <div class="cell">
-        <span>  {{this.dataValues.SiteCanBeLockedAfterHoursCheck}}</span>
+        <span>` + "True" + `</span>
     </div>
     <div class="cell">
-        <span>  {{this.dataValues.SiteCanBeLockedAfterHoursRON}}  </span>
+        <span>` + "Name" + `</span>
     </div>
     <div class="cell pl-3">
-        <span> {{this.dataValues.SiteCanBeLockedAfterHoursComment}}  </span>
+        <span>` + "Comment" + `</span>
     </div>
 </div>
 
@@ -292,15 +324,14 @@
         Lock Keys Assigned To Personnel
     </div>
     <div class="cell">
-        <span>  {{this.dataValues.LockKeysAssignedToPersonalCheck}}  </span>
+        <span>` + "True" + `</span>
     </div>
     <div class="cell">
-        <span>  {{this.dataValues.LockKeysAssignedToPersonalRON}}  </span>
+        <span>` + "Name" + `</span>
     </div>
     <div class="cell pl-3">
-        <span>  {{this.dataValues.LockKeysAssignedToPersonalComment}}  </span>
+        <span>` + "Comment" + `</span>
     </div>
-
 </div>`
 
             return sOut;
@@ -354,7 +385,6 @@
             });
         });
     </script>
-{{/each}}
 </body>
 
 </html>

@@ -21,33 +21,10 @@ app.set('view engine', 'handlebars');
 app.set('views','views/home');
 // parsing the request's body  to enable working with it
 app.use(bodyParser.urlencoded({extended:false}))
-//multer for images
-// const filestorage =multer.diskStorage ({
-//   destination:(req,file,cb) => {
-//     cb(null,'public/images');
-//   },
-//   filename:(req,file,cb) => {
-//     cb(null,'_'+file.originalname);
-//   }
-// })
-// const filefilter = ( req ,file,cb) => {
-// if(file.mimetype === 'image/png' || file.mimetype === 'image/jpg' || file.mimetype === 'image/jpeg'  )
-// {
-//   cb(null,true);
-// } else{
-//  cb(null,false);
-// }
-// }
 
-// app.use(multer({dest:'public/images',storage:filestorage,fileFilter:filefilter }).single('image'));
-// const viewsDirectory = path.join(DirName,'views/home');
 app.use(express.static(DirName+'/public/'));
 // using the routes in the routes file 
 app.use(mainRoutes);
-
-// app.use(session({secret:'123'}));
-// app.use(flash());
-// flash({ locals: 'flash' })
 
 
 

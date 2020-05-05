@@ -56,7 +56,7 @@
             <div id="sidebar" class="nav-collapse">
                 <!-- sidebar menu start-->
                 <ul class="sidebar-menu" id="nav-accordion">
-                    <li class="mt">
+                    <li class="sub-menu">
                         <a class="active" href="/managementSystem">
                             <i class="fa fa-medkit"></i>
                             <span>Dashboard</span>
@@ -76,21 +76,63 @@
                     </li>
                     <li class="sub-menu">
                         <a href="/showPreMain">
-                            <i class="fa fa-cogs"></i>
+                            <i class="fa fa-wrench"></i>
                             <span>Preventive Maintainance</span>
                         </a>
                     </li>
                     <li class="sub-menu">
                         <a href="javascript:;">
-                            <i class="fa fa-book"></i>
-                            <span>Reports</span>
+                            <i class="fa  fa-hospital-o"></i>
+                            <span>Departments</span>
                         </a>
-                        <ul class="sub">
-                            <li><a href="/showPre-installationform">Pre-installation Report</a></li>
-                            <li><a href="/showWorkOrders">Work Order Report</a></li>
+                        <ul style="padding-left: 0px;">
+                            <li class="sub-menu">
+                                <a href="javascript:;">
+                                    <span>Surgery</span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a href="/showPre-installationSurgery">Pre-installation Reports</a></li>
+                                    <li><a href="/showDailyInspectionSurgery">Daily Inspection Reports</a></li>
+                                    <li><a href="/showInventoryListingSurgery">Inventory Listing Reports</a></li>
+                                    <li><a href="/showWorkOrdersSurgery">Work Order Reports</a></li>
+                                </ul>
+                            </li>
+                            <li class="sub-menu">
+                                <a href="javascript:;">
+                                    <span>Emergency</span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a href="/showPre-installationEmergency">Pre-installation Reports</a></li>
+                                    <li><a href="/showDailyInspectionEmergency">Daily Inspection Reports</a></li>
+                                    <li><a href="/showInventoryListingEmergency">Inventory Listing Reports</a></li>
+                                    <li><a href="/showWorkOrdersEmergency">Work Order Reports</a></li>
+                                </ul>
+                            </li>
+                            <li class="sub-menu">
+                                <a href="javascript:;">
+                                    <span>Catheterization</span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a href="/showPre-installationCatheter">Pre-installation Reports</a></li>
+                                    <li><a href="/showDailyInspectionCatheter">Daily Inspection Reports</a></li>
+                                    <li><a href="/showInventoryListingCatheter">Inventory Listing Reports</a></li>
+                                    <li><a href="/showWorkOrdersCatheter">Work Order Reports</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
-
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="fa fa-book"></i>
+                            <span>Add Reports</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="/pre-installationform">Add Pre-installation Report</a></li>
+                            <li><a href="/showDailyInspectionForm">Add Daily Inspection Report</a></li>
+                            <li><a href="/showInventoryListingForm">Add Inventory Listing Report</a></li>
+                            <li><a href="/showWorkOrdersForm">Add Work Order Report</a></li>
+                        </ul>
+                    </li>
                 </ul>
                 <!-- sidebar menu end-->
             </div>
@@ -184,7 +226,7 @@
                                     <div class="darkblue-header">
                                         <h5>SITE STATICS</h5>
                                     </div>
-                                    <h1 class="mt"><i class="fa fa-user fa-3x"></i></h1>
+                                    <h1 class="sub-menu"><i class="fa fa-user fa-3x"></i></h1>
                                     <p>+89 NEW VISITS</p>
                                     <footer>
                                         <div class="centered">

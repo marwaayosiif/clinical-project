@@ -41,11 +41,67 @@ exports.ShowEditTech=(req,res,next)=>{
 exports.showEditEq=(req,res,next)=>{
     res.sendFile(path.join(DirName,'views','edit_equipment.html'));
 }
-exports.showPreinstallationData=(req,res,next) => {
-    Pre_installation.findAll()
-    .then(newform => {
-        res.render('pre_installation',{newform:newform,layout:false})})
-    }
+
+exports.showPreinstallationCatheterData=(req,res,next) => {
+    Department = 'Catheter'
+    Pre_installation.findAll({where: {Department: Department}}).then(prev => {
+        res.render('CatheterPre_installation', {newform: prev, layout: false})
+    })
+}
+exports.showPreinstallationSurgeryData=(req,res,next) => {
+    Department = 'Surgery'
+    Pre_installation.findAll({where: {Department: Department}}).then(prev => {
+        res.render('SurgeryPre_installation', {newform: prev, layout: false})
+    })
+}
+exports.showPreinstallationEmergencyData=(req,res,next) => {
+    Department = 'Emergency'
+    Pre_installation.findAll({where: {Department: Department}}).then(prev => {
+        res.render('EmergencyPre_installation', {newform: prev, layout: false})
+    })
+}
+
+exports.showDailyInspectionCatheterData=(req,res,next) => {
+    Department = 'Catheter'
+    DailyInspection.findAll({where: {Department: Department}}).then(prev => {
+        res.render('CatheterDailyInspection', {pre: prev, layout: false})
+    })
+}
+exports.showDailyInspectionSurgeryData=(req,res,next) => {
+    Department = 'Surgery'
+    DailyInspection.findAll({where: {Department: Department}}).then(prev => {
+        res.render('SurgeryDailyInspection', {pre: prev, layout: false})
+    })
+}
+exports.showDailyInspectionEmergencyData=(req,res,next) => {
+    Department = 'Emergency'
+    DailyInspection.findAll({where: {Department: Department}}).then(prev => {
+        res.render('EmergencyDailyInspection', {pre: prev, layout: false})
+    })
+}
+
+exports.showInventoryListingCatheterData=(req,res,next) => {
+    Department = 'Catheter'
+    spareParts.findAll({where: {Department: Department}}).then(prev => {
+        res.render('CatheterPre_installation', {newform: prev, layout: false})
+    })
+}
+exports.showInventoryListingSurgeryData=(req,res,next) => {
+    Department = 'Surgery'
+    spareParts.findAll({where: {Department: Department}}).then(prev => {
+        res.render('SurgeryPre_installation', {newform: prev, layout: false})
+    })
+}
+exports.showInventoryListingEmergencyData=(req,res,next) => {
+    Department = 'Emergency'
+    spareParts.findAll({where: {Department: Department}}).then(prev => {
+        res.render('EmergencyPre_installation', {newform: prev, layout: false})
+    })
+}
+
+
+
+
 exports.showEng=(req,res,next) => {
     Engineers.findAll().then(viewEng=> {
             res.render('engineers',{engineer:viewEng,layout:false})
@@ -263,7 +319,7 @@ exports.editEng=(req,res,next)=>{
        }
     });
 }
-exports.getData =(req,res,next) => {
+exports.PreinstallationCatheterData =(req,res,next) => {
     const newform = new Pre_installation({
         Hospital:req.body.hospital,
         Date : req.body.date,
@@ -291,13 +347,7 @@ exports.getData =(req,res,next) => {
         LockKeysAssignedToPersonalRON:req.body.lockkeyRON,
         LockKeysAssignedToPersonalComment:req.body.lockkeyComment,
     });
-    if (newform.Pre_installationFormCopiedCheck == 'on'){
-        newform.Pre_installationFormCopiedCheck = 'True'
-    }
-    else {
-        newform.Pre_installationFormCopiedCheck ='false'
-    }
     newform.save().then(savedUser => {
-        res.redirect('/pre-installationform');
+        res.redirect('/PreinstallationCatheterData');
     });
 }
