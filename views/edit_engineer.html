@@ -134,6 +134,7 @@
                             <li><a href="/showWorkOrdersForm">Add Work Order Report</a></li>
                         </ul>
                     </li>
+
                 </ul>
                 <!-- sidebar menu end-->
             </div>
@@ -145,14 +146,15 @@
         <!--main content start-->
         <section id="main-content">
             <section class="wrapper">
-                <h3><i class="fa fa-angle-right"></i> Add A New Engineer</h3>
+                <h3><i class="fa fa-angle-right"></i> Edit Engineer</h3>
 
                 <!-- /row -->
                 <div class="row mt">
                     <div class="col-lg-12">
                         <div class="form-panel">
                             <div class="form">
-                                <form class="cmxform form-horizontal style-form" id="signupForm" method="Post" action="/addEng">
+
+                                <form class="cmxform form-horizontal style-form" id="signupForm" method="POST" action="/editEng">
                                     <div class="form-group">
                                         <label for="firstname" class="control-label col-lg-2">First Name</label>
                                         <div class="col-lg-10">
@@ -192,7 +194,7 @@
 
                                     <div class="form-group">
                                         <div class="col-lg-offset-2 col-lg-10">
-                                            <button class="btn btn-theme" href="/viewEng" type="submit">Add</button>
+                                            <button class="btn btn-theme" href="/viewEng" type="submit">Save</button>
                                             <a class="btn btn-theme04" type="button" href="/viewEng">Cancel</a>
                                         </div>
                                     </div>
