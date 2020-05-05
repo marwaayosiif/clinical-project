@@ -31,9 +31,9 @@ Thanks to Philip Thrasher for the jquery plugin boilerplate for coffee script
         _this.options = $.extend({}, $.easyPieChart.defaultOptions, options);
         percent = parseInt(_this.$el.data('percent'), 10);
         _this.percentage = 0;
-        _this.canvas = $("<canvas width='" + _this.options.size + "' height='" + _this.options.size + "'></canvas>").get(0);
+        _this.canvas = $("<canvas width='" + _this.options.size +"' height='" + _this.options.size +"'></canvas>").get(0);
         _this.$el.append(_this.canvas);
-        if (typeof G_vmlCanvasManager !== "undefined" && G_vmlCanvasManager !== null) {
+        if (typeof G_vmlCanvasManager !=="undefined" && G_vmlCanvasManager !== null) {
           G_vmlCanvasManager.initElement(_this.canvas);
         }
         _this.ctx = _this.canvas.getContext('2d');
@@ -51,7 +51,7 @@ Thanks to Philip Thrasher for the jquery plugin boilerplate for coffee script
         _this.$el.css({
           width: _this.options.size,
           height: _this.options.size,
-          lineHeight: "" + _this.options.size + "px"
+          lineHeight:"" + _this.options.size +"px"
         });
         _this.update(percent);
         return _this;

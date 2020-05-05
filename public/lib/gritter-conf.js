@@ -95,7 +95,7 @@ var Gritter = function () {
             // (string | mandatory) the heading of the notification
             title: 'This is a Light Notification',
             // (string | mandatory) the text inside the notification
-            text: 'Just add a "gritter-light" class_name to your $.gritter.add or globally to $.gritter.options.class_name',
+            text: 'Just add a"gritter-light" class_name to your $.gritter.add or globally to $.gritter.options.class_name',
             class_name: 'gritter-light'
         });
 

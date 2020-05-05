@@ -25,6 +25,7 @@
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/style-responsive.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
 
     <!-- =======================================================
     Template Name: Dashio
@@ -159,7 +160,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="serial" class="control-label col-lg-2">Serial's Name</label>
+                                        <label for="serial" class="control-label col-lg-2">Serial's Number</label>
                                         <div class="col-lg-10">
                                             <input class="form-control" id="serial" name="serial" type="text" required />
                                         </div>
@@ -173,185 +174,188 @@
                                     <div class="form-group">
                                         <label for="floor" class="control-label col-lg-2">Floor's Number</label>
                                         <div class="col-lg-4">
-                                            <input class="form-control" id="floor" style="width: 80%!important;" name="floor" type="number" required />
+                                            <input class="form-control" id="floor" style="width: 100%!important;" name="floor" type="number" required />
                                         </div>
-                                        <label for="room" class="control-label col-lg-2">Room's Number</label>
+                                        <label style="width:140px; margin-left: 40px;" for="room" class="control-label col-lg-2">Room's Number</label>
                                         <div class="col-lg-4">
-                                            <input class="form-control" style="width: 80%!important;" id="room" name="room" type="number" required />
+                                            <input class="form-control" style="width: 100%!important;" id="room" name="room" type="number" required />
                                         </div>
                                     </div>
-                                    <table class="table table-striped table-advance table-hover">
+                                    <div class="form-group" style="margin-left: 0px;margin-right: 0px;">
 
-                                        <thead>
-                                            <tr>
-                                                <th>Task Description</th>
-                                                <th>Check</th>
-                                                <th>Responsibility of (Name)</th>
-                                                <th>Comments</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Pre-Installation Form Copied</td>
-                                                <td>
-                                                    <div class="form-group" style="margin-left: 5px!important;">
-                                                        <input type="checkbox" style="width: 20px" class="checkbox form-control" name="preinstallCheck">
-                                                    </div>
-                                                </td>
+                                        <table class="table table-striped table-advance table-hover">
 
-                                                <td>
-                                                    <div class="form-group">
-                                                        <div class="col-lg-10">
-                                                            <input class=" form-control" name="preinstallRON" placeholder="Enter The Name" type="text" />
+                                            <thead>
+                                                <tr>
+                                                    <th style="text-align: center;">Task Description</th>
+                                                    <th>Check</th>
+                                                    <th>Responsibility of (Name)</th>
+                                                    <th>Comments</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Pre-Installation Form Copied</td>
+                                                    <td>
+                                                        <div style="margin-left: 5px!important;">
+                                                            <input type="checkbox" style="width: 20px" class="checkbox form-control" name="preinstallCheck">
                                                         </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="form-group">
-                                                        <div class="col-lg-10">
-                                                            <input class=" form-control" name="preinstallComment" placeholder="Enter Any Comments" type="text" />
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Site Power Outlet Available</td>
-                                                <td>
-                                                    <div class="form-group" style="margin-left: 5px!important;">
-                                                        <input type="checkbox" style="width: 20px" class="checkbox form-control" id="preinstallCheck" name="sitepowerCheck">
-                                                    </div>
-                                                </td>
+                                                    </td>
 
-                                                <td>
-                                                    <div class="form-group">
-                                                        <div class="col-lg-10">
-                                                            <input class=" form-control" id="preinstallRON" name="sitepowerRON" placeholder="Enter The Name" type="text" />
+                                                    <td>
+                                                        <div>
+                                                            <div class="col-lg-10">
+                                                                <input class=" form-control" name="preinstallRON" placeholder="Enter The Name" type="text" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="form-group">
-                                                        <div class="col-lg-10">
-                                                            <input class=" form-control" id="preinstallComment" name="sitepowerComment" placeholder="Enter Any Comments" type="text" />
+                                                    </td>
+                                                    <td>
+                                                        <div>
+                                                            <div class="col-lg-10">
+                                                                <input class=" form-control" name="preinstallComment" placeholder="Enter Any Comments" type="text" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Required Tools Available</td>
-                                                <td>
-                                                    <div class="form-group" style="margin-left: 5px!important;">
-                                                        <input type="checkbox" style="width: 20px" class="checkbox form-control" id="requiredtoolCheck" name="requiredtoolCheck"></div>
-                                                </td>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Site Power Outlet Available</td>
+                                                    <td>
+                                                        <div style="margin-left: 5px!important;">
+                                                            <input type="checkbox" style="width: 20px" class="checkbox form-control" id="preinstallCheck" name="sitepowerCheck">
+                                                        </div>
+                                                    </td>
 
-                                                <td>
-                                                    <div class="form-group">
-                                                        <div class="col-lg-10">
-                                                            <input class=" form-control" id="requiredtoolRON" name="requiredtoolRON" placeholder="Enter The Name" type="text" />
+                                                    <td>
+                                                        <div>
+                                                            <div class="col-lg-10">
+                                                                <input class=" form-control" id="preinstallRON" name="sitepowerRON" placeholder="Enter The Name" type="text" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="form-group">
-                                                        <div class="col-lg-10">
-                                                            <input class=" form-control" id="requiredtoolComment" name="requiredtoolComment" placeholder="Enter Any Comments" type="text" />
+                                                    </td>
+                                                    <td>
+                                                        <div>
+                                                            <div class="col-lg-10">
+                                                                <input class=" form-control" id="preinstallComment" name="sitepowerComment" placeholder="Enter Any Comments" type="text" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Required Supplies Available</td>
-                                                <td>
-                                                    <div class="form-group" style="margin-left: 5px!important;">
-                                                        <input type="checkbox" style="width: 20px" class="checkbox form-control" id="requiredsupllyCheck" name="requiredsupllyCheck">
-                                                    </div>
-                                                </td>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Required Tools Available</td>
+                                                    <td>
+                                                        <div style="margin-left: 5px!important;">
+                                                            <input type="checkbox" style="width: 20px" class="checkbox form-control" id="requiredtoolCheck" name="requiredtoolCheck"></div>
+                                                    </td>
 
-                                                <td>
-                                                    <div class="form-group">
-                                                        <div class="col-lg-10">
-                                                            <input class=" form-control" id="requiredsupllyRON" name="requiredsupllyRON" placeholder="Enter The Name" type="text" />
+                                                    <td>
+                                                        <div>
+                                                            <div class="col-lg-10">
+                                                                <input class=" form-control" id="requiredtoolRON" name="requiredtoolRON" placeholder="Enter The Name" type="text" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="form-group">
-                                                        <div class="col-lg-10">
-                                                            <input class=" form-control" id="requiredsupllyComment" name="requiredsupllyComment" placeholder="Enter Any Comments" type="text" />
+                                                    </td>
+                                                    <td>
+                                                        <div>
+                                                            <div class="col-lg-10">
+                                                                <input class=" form-control" id="requiredtoolComment" name="requiredtoolComment" placeholder="Enter Any Comments" type="text" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Site Can Be Locked After Hours</td>
-                                                <td>
-                                                    <div class="form-group" style="margin-left: 5px!important;">
-                                                        <input type="checkbox" style="width: 20px" class="checkbox form-control" id="sitelockCheck" name="sitelockCheck"></div>
-                                                </td>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Required Supplies Available</td>
+                                                    <td>
+                                                        <div style="margin-left: 5px!important;">
+                                                            <input type="checkbox" style="width: 20px" class="checkbox form-control" id="requiredsupllyCheck" name="requiredsupllyCheck">
+                                                        </div>
+                                                    </td>
 
-                                                <td>
-                                                    <div class="form-group">
-                                                        <div class="col-lg-10">
-                                                            <input class=" form-control" id="sitelockRON" name="sitelockRON" placeholder="Enter The Name" type="text" />
+                                                    <td>
+                                                        <div>
+                                                            <div class="col-lg-10">
+                                                                <input class=" form-control" id="requiredsupllyRON" name="requiredsupllyRON" placeholder="Enter The Name" type="text" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="form-group">
-                                                        <div class="col-lg-10">
-                                                            <input class=" form-control" id="sitelockComment" name="sitelockComment" placeholder="Enter Any Comments" type="text" />
+                                                    </td>
+                                                    <td>
+                                                        <div>
+                                                            <div class="col-lg-10">
+                                                                <input class=" form-control" id="requiredsupllyComment" name="requiredsupllyComment" placeholder="Enter Any Comments" type="text" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Lock Keys Assigned To Personnel</td>
-                                                <td>
-                                                    <div class="form-group" style="margin-left: 5px!important;">
-                                                        <input type="checkbox" style="width: 20px" class="checkbox form-control" id="lockkeyCheck" name="lockkeyCheck"></div>
-                                                </td>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Site Can Be Locked After Hours</td>
+                                                    <td>
+                                                        <div style="margin-left: 5px!important;">
+                                                            <input type="checkbox" style="width: 20px" class="checkbox form-control" id="sitelockCheck" name="sitelockCheck"></div>
+                                                    </td>
 
-                                                <td>
-                                                    <div class="form-group">
-                                                        <div class="col-lg-10">
-                                                            <input class=" form-control" id="lockkeyRON" name="lockkeyRON" placeholder="Enter The Name" type="text" />
+                                                    <td>
+                                                        <div>
+                                                            <div class="col-lg-10">
+                                                                <input class=" form-control" id="sitelockRON" name="sitelockRON" placeholder="Enter The Name" type="text" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="form-group">
-                                                        <div class="col-lg-10">
-                                                            <input class=" form-control" id="lockkeyComment" name="lockkeyComment" placeholder="Enter Any Comments" type="text" />
+                                                    </td>
+                                                    <td>
+                                                        <div>
+                                                            <div class="col-lg-10">
+                                                                <input class=" form-control" id="sitelockComment" name="sitelockComment" placeholder="Enter Any Comments" type="text" />
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Lock Keys Assigned To Personnel</td>
+                                                    <td>
+                                                        <div style="margin-left: 5px!important;">
+                                                            <input type="checkbox" style="width: 20px" class="checkbox form-control" id="lockkeyCheck" name="lockkeyCheck"></div>
+                                                    </td>
 
+                                                    <td>
+                                                        <div>
+                                                            <div class="col-lg-10">
+                                                                <input class=" form-control" id="lockkeyRON" name="lockkeyRON" placeholder="Enter The Name" type="text" />
+                                                            </div>
                                                         </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <div class="form-group">
-                                        <label for="name" class="control-label col-lg-2">Your Name</label>
-                                        <div class="col-lg-10">
-                                            <input class=" form-control" id="name" name="name" type="text" required/>
+                                                    </td>
+                                                    <td>
+                                                        <div>
+                                                            <div class="col-lg-10">
+                                                                <input class=" form-control" id="lockkeyComment" name="lockkeyComment" placeholder="Enter Any Comments" type="text" />
+
+                                                            </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="date" class="control-label col-lg-2">Date</label>
-                                        <div class="col-lg-3">
-                                            <div data-date-viewmode="years" data-date-format="dd-mm-yyyy" data-date="01-01-2014" class="input-append date dpYears">
-                                                <input type="text" readonly="" id="date" name="date" size="16" class="form-control" required>
-                                                <span class="input-group-btn add-on">
+                                        <div class="form-group">
+                                            <label for="name" class="control-label col-lg-2">Your Name</label>
+                                            <div class="col-lg-10">
+                                                <input class=" form-control" id="name" name="name" type="text" required/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="date" class="control-label col-lg-2">Date</label>
+                                            <div class="col-lg-3">
+                                                <div data-date-viewmode="years" data-date-format="dd-mm-yyyy" data-date="01-01-2014" class="input-append date dpYears">
+                                                    <input type="text" readonly="" id="date" name="date" size="16" class="form-control" required>
+                                                    <span class="input-group-btn add-on">
                             <button class="btn btn-theme" type="button"><i class="fa fa-calendar"></i></button>
                             </span>
+                                                </div>
+                                                <span class="help-block">Select date</span>
                                             </div>
-                                            <span class="help-block">Select date</span>
                                         </div>
-                                    </div>
 
-                                    <div class="form-group">
-                                        <div class="col-lg-offset-2 col-lg-10">
-                                            <button class="btn btn-theme" href="/pre-installationform" type="submit">Add</button>
+                                        <div class="form-group">
+                                            <div class="col-lg-offset-2 col-lg-10">
+                                                <button class="btn btn-theme" href="/pre-installationform" type="submit">Add</button>
+                                            </div>
                                         </div>
-                                    </div>
                                 </form>
                                 </div>
                             </div>

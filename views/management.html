@@ -160,15 +160,15 @@
                                 <div class="title">JAN</div>
                                 <div class="value tooltips" data-original-title="0" data-toggle="tooltip" data-placement="top">0%</div>
                             </div>
-                            <div class="bar ">
+                            <div class="bar">
                                 <div class="title">FEB</div>
                                 <div class="value tooltips" data-original-title="0" data-toggle="tooltip" data-placement="top">0%</div>
                             </div>
-                            <div class="bar ">
+                            <div class="bar">
                                 <div class="title">MAR</div>
                                 <div class="value tooltips" data-original-title="20" data-toggle="tooltip" data-placement="top">20%</div>
                             </div>
-                            <div class="bar ">
+                            <div class="bar">
                                 <div class="title">APR</div>
                                 <div class="value tooltips" data-original-title="60" data-toggle="tooltip" data-placement="top">60%</div>
                             </div>
@@ -176,7 +176,7 @@
                                 <div class="title">MAY</div>
                                 <div class="value tooltips" data-original-title="40" data-toggle="tooltip" data-placement="top">40%</div>
                             </div>
-                            <div class="bar ">
+                            <div class="bar">
                                 <div class="title">JUN</div>
                                 <div class="value tooltips" data-original-title="0" data-toggle="tooltip" data-placement="top">0%</div>
                             </div>
@@ -196,10 +196,10 @@
                                     <script>
                                         var doughnutData = [{
                                             value: 70,
-                                            color: "#FF6B6B"
+                                            color:"#FF6B6B"
                                         }, {
                                             value: 30,
-                                            color: "#fdfdfd"
+                                            color:"#fdfdfd"
                                         }];
                                         var myDoughnut = new Chart(document.getElementById("serverstatus01").getContext("2d")).Doughnut(doughnutData);
                                     </script>
@@ -240,10 +240,10 @@
                                     <script>
                                         var doughnutData = [{
                                             value: 60,
-                                            color: "#2b2b2b"
+                                            color:"#2b2b2b"
                                         }, {
                                             value: 40,
-                                            color: "#fffffd"
+                                            color:"#fffffd"
                                         }];
                                         var myDoughnut = new Chart(document.getElementById("serverstatus03").getContext("2d")).Doughnut(doughnutData);
                                     </script>
@@ -267,10 +267,10 @@
                             <script>
                                 var doughnutData = [{
                                     value: 70,
-                                    color: "#4ECDC4"
+                                    color:"#4ECDC4"
                                 }, {
                                     value: 30,
-                                    color: "#fdfdfd"
+                                    color:"#fdfdfd"
                                 }];
                                 var myDoughnut = new Chart(document.getElementById("newchart").getContext("2d")).Doughnut(doughnutData);
                             </script>
@@ -330,7 +330,7 @@
         $(document).ready(function() {
             $("#date-popover").popover({
                 html: true,
-                trigger: "manual"
+                trigger:"manual"
             });
             $("#date-popover").hide();
             $("#date-popover").click(function(e) {
@@ -345,16 +345,16 @@
                     return myNavFunction(this.id);
                 },
                 ajax: {
-                    url: "show_data.php?action=1",
+                    url:"show_data.php?action=1",
                     modal: true
                 },
                 legend: [{
-                    type: "text",
-                    label: "Special event",
-                    badge: "00"
+                    type:"text",
+                    label:"Special event",
+                    badge:"00"
                 }, {
-                    type: "block",
-                    label: "Regular event",
+                    type:"block",
+                    label:"Regular event",
                 }]
             });
         });

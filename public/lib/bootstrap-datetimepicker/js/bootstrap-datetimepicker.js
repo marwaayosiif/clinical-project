@@ -9,14 +9,14 @@
 
  * Project URL : http://www.malot.fr/bootstrap-datetimepicker
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the"License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
+ * distributed under the License is distributed on an"AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
@@ -38,8 +38,8 @@
 		var that = this;
 
 		this.element = $(element);
-		this.language = options.language || this.element.data('date-language') || "en";
-		this.language = this.language in dates ? this.language : "en";
+		this.language = options.language || this.element.data('date-language') ||"en";
+		this.language = this.language in dates ? this.language :"en";
 		this.isRTL = dates[this.language].rtl || ($('body').css("direction") == 'rtl');
 		this.formatType = options.formatType || this.element.data('format-type') || 'standard';
 		this.format = DPGlobal.parseFormat(options.format || this.element.data('date-format') || dates[this.language].format || DPGlobal.getDefaultFormat(this.formatType, 'input'), this.formatType);
@@ -61,7 +61,7 @@
 
 		this._attachEvents();
 		
-			this.formatViewType = "datetime";
+			this.formatViewType ="datetime";
 			if ('formatViewType' in options) {
 					this.formatViewType = options.formatViewType;
 			} else if ('formatViewType' in this.element.data()) {
@@ -497,7 +497,7 @@
 				today = new Date();
 			this.picker.find('.datetimepicker-days thead th:eq(1)')
 						.text(dates[this.language].months[month]+' '+year);
-				if (this.formatViewType == "time") {
+				if (this.formatViewType =="time") {
 						var hourConverted = hours % 12 ? hours % 12 : 12;
 						var hoursDisplay = (hourConverted < 10 ? '0' : '') + hourConverted;
 						var minutesDisplay = (minutes < 10 ? '0' : '') + minutes;
@@ -1217,14 +1217,14 @@
 	$.fn.datetimepicker.Constructor = Datetimepicker;
 	var dates = $.fn.datetimepicker.dates = {
 		en: {
-			days: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-			daysShort: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-			daysMin: ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"],
-			months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-			monthsShort: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-			meridiem: ["am", "pm"],
-			suffix: ["st", "nd", "rd", "th"],
-			today: "Today"
+			days: ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+			daysShort: ["Sun","Mon","Tue","Wed","Thu","Fri","Sat","Sun"],
+			daysMin: ["Su","Mo","Tu","We","Th","Fr","Sa","Su"],
+			months: ["January","February","March","April","May","June","July","August","September","October","November","December"],
+			monthsShort: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+			meridiem: ["am","pm"],
+			suffix: ["st","nd","rd","th"],
+			today:"Today"
 		}
 	};
 
@@ -1262,12 +1262,12 @@
 			return [31, (DPGlobal.isLeapYear(year) ? 29 : 28), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month]
 		},
 		getDefaultFormat: function (type, field) {
-			if (type == "standard") {
+			if (type =="standard") {
 				if (field == 'input')
 					return 'yyyy-mm-dd hh:ii';
 				else
 					return 'yyyy-mm-dd hh:ii:ss';
-			} else if (type == "php") {
+			} else if (type =="php") {
 				if (field == 'input')
 					return 'Y-m-d H:i';
 				else
@@ -1277,9 +1277,9 @@
 			}
 		},
 		validParts: function (type) {
-			if (type == "standard") {
+			if (type =="standard") {
 				return /hh?|HH?|p|P|ii?|ss?|dd?|DD?|mm?|MM?|yy(?:yy)?/g;
-			} else if (type == "php") {
+			} else if (type =="php") {
 				return /[dDjlNwzFmMnStyYaABgGhHis]/g;
 			} else {
 				throw new Error("Invalid format type.");

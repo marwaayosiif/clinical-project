@@ -160,7 +160,7 @@
                                         <th class="hidden-phone">Maintenance Date</th>
                                         <th class="hidden-phone">Department</th>
 
-                                        <th>Manage</th>
+                                        
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -174,10 +174,7 @@
                                         <td class="  hidden-phone">{{this.dataValues.SerialNO}}</td>
                                         <td class=" hidden-phone">{{this.dataValues.DueDate}}</td>
                                         <td class=" hidden-phone">{{this.dataValues.Department}}</td>
-                                        <td class="center">
-                                            <a href="/showEditEq" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
-                                            <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete"><i class="fa fa-trash-o"></i></button>
-                                        </td>
+                                        
                                     </tr>
                                     {{/each}}
                                 </tbody>
@@ -241,8 +238,8 @@
             sOut += '<tr><td>Name:</td><td>' + aData[1] + '</td></tr>';
             sOut += '<tr><td>Model:</td><td>' + aData[2] + '</td></tr>';
             sOut += '<tr><td>Serial Number:</td><td>' + aData[3] + '</td></tr>';
-            sOut += "<tr><td>Maintenance Date:</td><td>" + aData[4] + '</td> </tr>';
-            sOut += "<tr><td>Department:</td><td>" + aData[5] + '</td> </tr>';
+            sOut +="<tr><td>Maintenance Date:</td><td>" + aData[4] + '</td> </tr>';
+            sOut +="<tr><td>Department:</td><td>" + aData[5] + '</td> </tr>';
             sOut += '</table>';
 
             return sOut;
@@ -255,7 +252,7 @@
             var nCloneTh = document.createElement('th');
             var nCloneTd = document.createElement('td');
             nCloneTd.innerHTML = '<img src="lib/advanced-datatable/images/details_open.png">';
-            nCloneTd.className = "center";
+            nCloneTd.className ="center";
 
             $('#hidden-table-info thead tr').each(function() {
                 this.insertBefore(nCloneTh, this.childNodes[0]);
@@ -269,11 +266,11 @@
              * Initialse DataTables, with no sorting on the 'details' column
              */
             var oTable = $('#hidden-table-info').dataTable({
-                "aoColumnDefs": [{
-                    "bSortable": false,
-                    "aTargets": [0]
+            "aoColumnDefs": [{
+                "bSortable": false,
+                "aTargets": [0]
                 }],
-                "aaSorting": [
+            "aaSorting": [
                     [1, 'asc']
                 ]
             });
@@ -286,11 +283,11 @@
                 var nTr = $(this).parents('tr')[0];
                 if (oTable.fnIsOpen(nTr)) {
                     /* This row is already open - close it */
-                    this.src = "lib/advanced-datatable/images/details_open.png";
+                    this.src ="lib/advanced-datatable/images/details_open.png";
                     oTable.fnClose(nTr);
                 } else {
                     /* Open this row */
-                    this.src = "lib/advanced-datatable/images/details_close.png";
+                    this.src ="lib/advanced-datatable/images/details_close.png";
                     oTable.fnOpen(nTr, fnFormatDetails(oTable, nTr), 'details');
                 }
             });

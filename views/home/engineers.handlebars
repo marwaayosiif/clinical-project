@@ -158,7 +158,7 @@
                                         <th>Salary</th>
                                         <th>Email</th>
 
-                                        <th>Manage</th>
+                                        
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -174,11 +174,7 @@
 
                                         <td>{{this.dataValues.Email}}</td>
 
-                                <td class="center">
-                                <a href="/showEditEng" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
-                                            <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete"><i class="fa fa-trash-o"></i></button>
-
-                                        </td>
+                               
                                    </tr>
                                 {{/each}}
                                 </tbody>
@@ -239,7 +235,7 @@
         function fnFormatDetails(oTable, nTr) {
             var aData = oTable.fnGetData(nTr);
             var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">';
-            sOut += '<tr><td>Name:</td><td>' + aData[1] + "" + aData[2] + '</td></tr>';
+            sOut += '<tr><td>Name:</td><td>' + aData[1] +"" + aData[2] + '</td></tr>';
             sOut += '<tr><td>Job:</td><td>' + aData[3] + '</td></tr>';
             sOut += '<tr><td>Email:</td><td>' + aData[4] + '</td></tr>';
             sOut += '<tr><td>Password:</td><td>' + aData[5] + '</td></tr>';
@@ -255,7 +251,7 @@
             var nCloneTh = document.createElement('th');
             var nCloneTd = document.createElement('td');
             nCloneTd.innerHTML = '<img src="lib/advanced-datatable/images/details_open.png">';
-            nCloneTd.className = "center";
+            nCloneTd.className ="center";
             //
             $('#hidden-table-info thead tr').each(function() {
                 this.insertBefore(nCloneTh, this.childNodes[0]);
@@ -269,11 +265,11 @@
              * Initialse DataTables, with no sorting on the 'details' column
              */
             var oTable = $('#hidden-table-info').dataTable({
-                "aoColumnDefs": [{
-                    "bSortable": false,
-                    "aTargets": [0]
+            "aoColumnDefs": [{
+                "bSortable": false,
+                "aTargets": [0]
                 }],
-                "aaSorting": [
+            "aaSorting": [
                     [1, 'asc']
                 ]
             });
@@ -286,11 +282,11 @@
                 var nTr = $(this).parents('tr')[0];
                 if (oTable.fnIsOpen(nTr)) {
                     /* This row is already open - close it */
-                    this.src = "lib/advanced-datatable/images/details_open.png";
+                    this.src ="lib/advanced-datatable/images/details_open.png";
                     oTable.fnClose(nTr);
                 } else {
                     /* Open this row */
-                    this.src = "lib/advanced-datatable/images/details_close.png";
+                    this.src ="lib/advanced-datatable/images/details_close.png";
                     oTable.fnOpen(nTr, fnFormatDetails(oTable, nTr), 'details');
                 }
             });

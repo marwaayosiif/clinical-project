@@ -22,7 +22,7 @@ function require(path, parent, orig) {
   if (null == resolved) {
     orig = orig || path;
     parent = parent || 'root';
-    var err = new Error('Failed to require "' + orig + '" from "' + parent + '"');
+    var err = new Error('Failed to require"' + orig + '" from"' + parent + '"');
     err.path = orig;
     err.parent = parent;
     err.require = true;
@@ -140,7 +140,7 @@ require.register = function(path, definition) {
 
 require.alias = function(from, to) {
   if (!has.call(require.modules, from)) {
-    throw new Error('Failed to alias "' + from + '", it does not exist');
+    throw new Error('Failed to alias"' + from + '", it does not exist');
   }
   require.aliases[to] = from;
 };
@@ -183,7 +183,7 @@ require.relative = function(parent) {
 
   localRequire.resolve = function(path) {
     // resolve deps by returning
-    // the dep in the nearest "deps"
+    // the dep in the nearest"deps"
     // directory
     if ('.' != path.charAt(0)) {
       var segs = parent.split('/');
@@ -375,7 +375,7 @@ require.register("dropzone/lib/dropzone.js", function(exports, require, module){
 # Copyright (c) 2012, Matias Meno  
 # 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
+# of this software and associated documentation files (the"Software"), to deal
 # in the Software without restriction, including without limitation the rights
 # to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 # copies of the Software, and to permit persons to whom the Software is
@@ -384,7 +384,7 @@ require.register("dropzone/lib/dropzone.js", function(exports, require, module){
 # The above copyright notice and this permission notice shall be included in
 # all copies or substantial portions of the Software.
 # 
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# THE SOFTWARE IS PROVIDED"AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 # IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 # FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
@@ -401,15 +401,15 @@ require.register("dropzone/lib/dropzone.js", function(exports, require, module){
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     __slice = [].slice;
 
-  o = typeof jQuery !== "undefined" && jQuery !== null ? jQuery : require("jquery");
+  o = typeof jQuery !=="undefined" && jQuery !== null ? jQuery : require("jquery");
 
-  Em = typeof Emitter !== "undefined" && Emitter !== null ? Emitter : require("emitter");
+  Em = typeof Emitter !=="undefined" && Emitter !== null ? Emitter : require("emitter");
 
   Dropzone = (function(_super) {
 
     __extends(Dropzone, _super);
 
-    Dropzone.prototype.version = "1.3.10";
+    Dropzone.prototype.version ="1.3.10";
 
     /*
       This is a list of all available events you can register on a dropzone object.
@@ -420,7 +420,7 @@ require.register("dropzone/lib/dropzone.js", function(exports, require, module){
     */
 
 
-    Dropzone.prototype.events = ["drop", "dragstart", "dragend", "dragenter", "dragover", "dragleave", "selectedfiles", "addedfile", "removedfile", "thumbnail", "error", "processingfile", "uploadprogress", "sending", "success", "complete", "reset"];
+    Dropzone.prototype.events = ["drop","dragstart","dragend","dragenter","dragover","dragleave","selectedfiles","addedfile","removedfile","thumbnail","error","processingfile","uploadprogress","sending","success","complete","reset"];
 
     Dropzone.prototype.blacklistedBrowsers = [/opera.*Macintosh.*version\/12/i];
 
@@ -428,7 +428,7 @@ require.register("dropzone/lib/dropzone.js", function(exports, require, module){
       url: null,
       parallelUploads: 2,
       maxFilesize: 256,
-      paramName: "file",
+      paramName:"file",
       createImageThumbnails: true,
       maxThumbnailFilesize: 2,
       thumbnailWidth: 100,
@@ -484,14 +484,14 @@ require.register("dropzone/lib/dropzone.js", function(exports, require, module){
         file.previewTemplate = o(this.options.previewTemplate);
         this.previewsContainer.append(file.previewTemplate);
         file.previewTemplate.find(".filename span").text(file.name);
-        return file.previewTemplate.find(".details").append(o("<div class=\"size\">" + (this.filesize(file.size)) + "</div>"));
+        return file.previewTemplate.find(".details").append(o("<div class=\"size\">" + (this.filesize(file.size)) +"</div>"));
       },
       removedfile: function(file) {
         return file.previewTemplate.remove();
       },
       thumbnail: function(file, dataUrl) {
         file.previewTemplate.removeClass("file-preview").addClass("image-preview");
-        return file.previewTemplate.find(".details").append(o("<img alt=\"" + file.name + "\" src=\"" + dataUrl + "\"/>"));
+        return file.previewTemplate.find(".details").append(o("<img alt=\"" + file.name +"\" src=\"" + dataUrl +"\"/>"));
       },
       error: function(file, message) {
         file.previewTemplate.addClass("error");
@@ -502,7 +502,7 @@ require.register("dropzone/lib/dropzone.js", function(exports, require, module){
       },
       uploadprogress: function(file, progress) {
         return file.previewTemplate.find(".progress .upload").css({
-          width: "" + progress + "%"
+          width:"" + progress +"%"
         });
       },
       sending: o.noop,
@@ -510,12 +510,12 @@ require.register("dropzone/lib/dropzone.js", function(exports, require, module){
         return file.previewTemplate.addClass("success");
       },
       complete: o.noop,
-      previewTemplate: "<div class=\"preview file-preview\">\n  <div class=\"details\">\n   <div class=\"filename\"><span></span></div>\n  </div>\n  <div class=\"progress\"><span class=\"upload\"></span></div>\n  <div class=\"success-mark\"><span>✔</span></div>\n  <div class=\"error-mark\"><span>✘</span></div>\n  <div class=\"error-message\"><span></span></div>\n</div>"
+      previewTemplate:"<div class=\"preview file-preview\">\n  <div class=\"details\">\n   <div class=\"filename\"><span></span></div>\n  </div>\n  <div class=\"progress\"><span class=\"upload\"></span></div>\n  <div class=\"success-mark\"><span>✔</span></div>\n  <div class=\"error-mark\"><span>✘</span></div>\n  <div class=\"error-message\"><span></span></div>\n</div>"
     };
 
     function Dropzone(element, options) {
       var elementId, elementOptions, extend, _ref;
-      this.defaultOptions.previewTemplate = this.defaultOptions.previewTemplate.replace(/\n*/g, "");
+      this.defaultOptions.previewTemplate = this.defaultOptions.previewTemplate.replace(/\n*/g,"");
       this.element = o(element);
       if (this.element.length !== 1) {
         throw new Error("You can only instantiate dropzone on a single element.");
@@ -553,8 +553,8 @@ require.register("dropzone/lib/dropzone.js", function(exports, require, module){
     Dropzone.prototype.init = function() {
       var capableBrowser, regex, _i, _len, _ref, _ref1,
         _this = this;
-      if (this.elementTagName === "form" && this.element.attr("enctype") !== "multipart/form-data") {
-        this.element.attr("enctype", "multipart/form-data");
+      if (this.elementTagName ==="form" && this.element.attr("enctype") !=="multipart/form-data") {
+        this.element.attr("enctype","multipart/form-data");
       }
       if (this.element.hasClass("dropzone") && this.element.find(".message").length === 0) {
         this.element.append(o("<div class=\"default message\"><span>Drop files here to upload</span></div>"));
@@ -603,15 +603,15 @@ require.register("dropzone/lib/dropzone.js", function(exports, require, module){
 
     Dropzone.prototype.getFallbackForm = function() {
       var fields;
-      fields = o("<div class=\"fallback-elements\"><input type=\"file\" name=\"" + this.options.paramName + "\" multiple=\"multiple\" /><button type=\"submit\">Upload!</button></div>");
-      if (this.elementTagName !== "FORM") {
-        fields = o("<form action=\"" + this.options.url + "\" enctype=\"multipart/form-data\" method=\"post\"></form>").append(fields);
+      fields = o("<div class=\"fallback-elements\"><input type=\"file\" name=\"" + this.options.paramName +"\" multiple=\"multiple\" /><button type=\"submit\">Upload!</button></div>");
+      if (this.elementTagName !=="FORM") {
+        fields = o("<form action=\"" + this.options.url +"\" enctype=\"multipart/form-data\" method=\"post\"></form>").append(fields);
       } else {
         if (!this.element.attr("enctype")) {
-          this.element.attr("enctype", "multipart/form-data");
+          this.element.attr("enctype","multipart/form-data");
         }
         if (!this.element.attr("method")) {
-          this.element.attr("method", "post");
+          this.element.attr("method","post");
         }
       }
       return fields;
@@ -668,21 +668,21 @@ require.register("dropzone/lib/dropzone.js", function(exports, require, module){
       var string;
       if (size >= 100000000000) {
         size = size / 100000000000;
-        string = "TB";
+        string ="TB";
       } else if (size >= 100000000) {
         size = size / 100000000;
-        string = "GB";
+        string ="GB";
       } else if (size >= 100000) {
         size = size / 100000;
-        string = "MB";
+        string ="MB";
       } else if (size >= 100) {
         size = size / 100;
-        string = "KB";
+        string ="KB";
       } else {
         size = size * 10;
-        string = "b";
+        string ="b";
       }
-      return "<strong>" + (Math.round(size) / 10) + "</strong> " + string;
+      return"<strong>" + (Math.round(size) / 10) +"</strong>" + string;
     };
 
     Dropzone.prototype.drop = function(e) {
@@ -709,7 +709,7 @@ require.register("dropzone/lib/dropzone.js", function(exports, require, module){
 
     Dropzone.prototype.accept = function(file, done) {
       if (file.size > this.options.maxFilesize * 1024 * 1024) {
-        return done("File is too big (" + (Math.round(file.size / 1024 / 10.24) / 100) + "MB). Max filesize: " + this.options.maxFilesize + "MB");
+        return done("File is too big (" + (Math.round(file.size / 1024 / 10.24) / 100) +"MB). Max filesize:" + this.options.maxFilesize +"MB");
       } else {
         return this.options.accept.call(this, file, done);
       }
@@ -821,7 +821,7 @@ require.register("dropzone/lib/dropzone.js", function(exports, require, module){
       xhr = new XMLHttpRequest();
       xhr.open("POST", this.options.url, true);
       handleError = function() {
-        return _this.errorProcessing(file, xhr.responseText || ("Server responded with " + xhr.status + " code."));
+        return _this.errorProcessing(file, xhr.responseText || ("Server responded with" + xhr.status +" code."));
       };
       xhr.onload = function(e) {
         var response;
@@ -843,9 +843,9 @@ require.register("dropzone/lib/dropzone.js", function(exports, require, module){
       progressObj.onprogress = function(e) {
         return _this.emit("uploadprogress", file, Math.max(0, Math.min(100, (e.loaded / e.total) * 100)));
       };
-      xhr.setRequestHeader("Accept", "application/json");
-      xhr.setRequestHeader("Cache-Control", "no-cache");
-      xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+      xhr.setRequestHeader("Accept","application/json");
+      xhr.setRequestHeader("Cache-Control","no-cache");
+      xhr.setRequestHeader("X-Requested-With","XMLHttpRequest");
       xhr.setRequestHeader("X-File-Name", file.name);
       formData = new FormData();
       if (this.options.params) {
@@ -855,13 +855,13 @@ require.register("dropzone/lib/dropzone.js", function(exports, require, module){
           formData.append(key, value);
         }
       }
-      if (this.elementTagName = "FORM") {
+      if (this.elementTagName ="FORM") {
         _ref2 = this.element.find("input, textarea, select, button");
         for (_i = 0, _len = _ref2.length; _i < _len; _i++) {
           inputElement = _ref2[_i];
           input = o(inputElement);
           inputName = input.attr("name");
-          if (!input.attr("type") || input.attr("type").toLowerCase() !== "checkbox" || inputElement.checked) {
+          if (!input.attr("type") || input.attr("type").toLowerCase() !=="checkbox" || inputElement.checked) {
             formData.append(input.attr("name"), input.val());
           }
         }
@@ -922,7 +922,7 @@ require.register("dropzone/lib/dropzone.js", function(exports, require, module){
     return o(".dropzone").dropzone();
   });
 
-  if (typeof module !== "undefined" && module !== null) {
+  if (typeof module !=="undefined" && module !== null) {
     module.exports = Dropzone;
   } else {
     window.Dropzone = Dropzone;
@@ -931,11 +931,11 @@ require.register("dropzone/lib/dropzone.js", function(exports, require, module){
 }).call(this);
 
 });
-require.alias("component-emitter/index.js", "dropzone/deps/emitter/index.js");
+require.alias("component-emitter/index.js","dropzone/deps/emitter/index.js");
 
-if (typeof exports == "object") {
+if (typeof exports =="object") {
   module.exports = require("dropzone");
-} else if (typeof define == "function" && define.amd) {
+} else if (typeof define =="function" && define.amd) {
   define(require("dropzone"));
 } else {
   window["Dropzone"] = require("dropzone");

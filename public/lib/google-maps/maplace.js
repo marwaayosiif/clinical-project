@@ -96,7 +96,7 @@
 		},
 
 		getHtml: function () {
-			var html = $("<ul class='ullist controls " + this.o.controls_cssclass + "'></ul>").css(this.o.controls_applycss ? {
+			var html = $("<ul class='ullist controls" + this.o.controls_cssclass +"'></ul>").css(this.o.controls_applycss ? {
 				margin: 0,
 				padding: 0,
 				listStyleType: 'none'

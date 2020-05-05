@@ -134,7 +134,7 @@ exports.showEq = (req, res, next) => {
     });
 }
 exports.showPrevMain = (req, res, next) => {
-    let preVenM = "yes"
+    let preVenM ="yes"
     Equipment.findAll({ where: { preVenM: preVenM } }).then(prev => {
         console.log(prev.preVenM)
         res.render('preventive_maintance', { pre: prev, layout: false })
