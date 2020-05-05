@@ -42,8 +42,8 @@ router.get('/showDailyInspectionForm',controller.showDailyInspectionForm);
 router.get('/showInventoryListingForm',controller.showInventoryListingForm);
 // router.get('/showWorkOrdersForm',controller.showWorkOrdersForm);
 router.post('/pre-installationform',controller.pre_installationformData);
-// router.post('/pre-installationform',controller.pre_installationformData);
-// router.post('/pre-installationform',controller.pre_installationformData);
+router.post('/showDailyInspectionForm',controller.showDailyInspectionData);
+router.post('/showInventoryListingForm',controller.showInventoryListingData);
 
 
 

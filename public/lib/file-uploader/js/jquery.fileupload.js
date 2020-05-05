@@ -54,11 +54,11 @@
     // The fileupload widget listens for change events on file input fields defined
     // via fileInput setting and paste or drop events of the given dropZone.
     // In addition to the default jQuery Widget methods, the fileupload widget
-    // exposes the "add" and "send" methods, to add or directly send files using
+    // exposes the"add" and"send" methods, to add or directly send files using
     // the fileupload API.
     // By default, files added via file input selection, paste, drag & drop or
-    // "add" method are uploaded immediately, but it is possible to override
-    // the "add" callback option to queue file uploads.
+    //"add" method are uploaded immediately, but it is possible to override
+    // the"add" callback option to queue file uploads.
     $.widget('blueimp.fileupload', {
 
         options: {
@@ -80,7 +80,7 @@
             replaceFileInput: true,
             // The parameter name for the file form data (the request argument name).
             // If undefined or empty, the name property of the file input field is
-            // used, or "files[]" if the file input name property is also empty,
+            // used, or"files[]" if the file input name property is also empty,
             // can be a string or an array of strings:
             paramName: undefined,
             // By default, each file of a selection is uploaded using an individual
@@ -127,8 +127,8 @@
             // When a non-multipart upload or a chunked multipart upload has been
             // aborted, this option can be used to resume the upload by setting
             // it to the size of the already uploaded bytes. This option is most
-            // useful when modifying the options object inside of the "add" or
-            // "send" callbacks, as the options are cloned for each file upload.
+            // useful when modifying the options object inside of the"add" or
+            //"send" callbacks, as the options are cloned for each file upload.
             uploadedBytes: undefined,
             // By default, failed (abort or error) file uploads are removed from the
             // global progress calculation. Set the following option to false to
@@ -557,7 +557,7 @@
             if (!options.url) {
                 options.url = options.form.prop('action') || location.href;
             }
-            // The HTTP request method must be "POST" or "PUT":
+            // The HTTP request method must be"POST" or"PUT":
             options.type = (options.type ||
                 ($.type(options.form.prop('method')) === 'string' &&
                     options.form.prop('method')) || ''

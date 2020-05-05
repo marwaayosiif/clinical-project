@@ -35,7 +35,6 @@
 </head>
 
 <body>
-{{#each newform}}
 
     <section id="container">
         <!-- **********************************************************************************************************************************************************
@@ -162,8 +161,9 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    {{#each daily}}
                                     <tr class="gradeA">
-                                        <td>{{this.dataValues.SerialNO}}</td>
+                                        <td>{{this.dataValues.SerailNo}}</td>
                                         <td>{{this.dataValues.Location}}</td>
                                         <td>{{this.dataValues.BeginDate}}</td>
                                         <td>{{this.dataValues.EndDate}}</td>
@@ -172,7 +172,7 @@
 
                                      
                                     </tr>
-
+                                    {{/each}}
                                 </tbody>
                             </table>
                         </div>
@@ -705,7 +705,6 @@
             });
         });
     </script>
-{{/each}}
 </body>
 
 </html>

@@ -75,38 +75,38 @@ exports.showPreinstallationEmergencyData = (req, res, next) => {
 exports.showDailyInspectionCatheterData = (req, res, next) => {
     Department = 'Catheterization'
     DailyInspection.findAll({ where: { Department: Department } }).then(prev => {
-        res.render('CatheterDailyInspection', { pre: prev, layout: false })
+        res.render('CatheterDailyInspection', { daily: prev, layout: false })
     })
 }
 exports.showDailyInspectionSurgeryData = (req, res, next) => {
     Department = 'Surgery'
     DailyInspection.findAll({ where: { Department: Department } }).then(prev => {
-        res.render('SurgeryDailyInspection', { pre: prev, layout: false })
+        res.render('SurgeryDailyInspection', { daily: prev, layout: false })
     })
 }
 exports.showDailyInspectionEmergencyData = (req, res, next) => {
     Department = 'Emergency'
     DailyInspection.findAll({ where: { Department: Department } }).then(prev => {
-        res.render('EmergencyDailyInspection', { pre: prev, layout: false })
+        res.render('EmergencyDailyInspection', { daily: prev, layout: false })
     })
 }
 
 exports.showInventoryListingCatheterData = (req, res, next) => {
     Department = 'Catheterization'
     spareParts.findAll({ where: { Department: Department } }).then(prev => {
-        res.render('CatheterInventorylisting', { newform: prev, layout: false })
+        res.render('CatheterInventorylisting', { inventory: prev, layout: false })
     })
 }
 exports.showInventoryListingSurgeryData = (req, res, next) => {
     Department = 'Surgery'
     spareParts.findAll({ where: { Department: Department } }).then(prev => {
-        res.render('SurgeryInventorylisting', { newform: prev, layout: false })
+        res.render('SurgeryInventorylisting', { inventory: prev, layout: false })
     })
 }
 exports.showInventoryListingEmergencyData = (req, res, next) => {
     Department = 'Emergency'
     spareParts.findAll({ where: { Department: Department } }).then(prev => {
-        res.render('EmergencyInventorylisting', { newform: prev, layout: false })
+        res.render('EmergencyInventorylisting', { inventory: prev, layout: false })
     })
 }
 
@@ -354,15 +354,109 @@ exports.pre_installationformData = (req, res, next) => {
         LockKeysAssignedToPersonalRON: req.body.lockkeyRON,
         LockKeysAssignedToPersonalComment: req.body.lockkeyComment,
     });
-    newform.RequiredSuppliesAvailableCheck == 'on' ? newform.RequiredSuppliesAvailableCheck == 'true' : newform.RequiredSuppliesAvailableCheck == 'false'
+    // newform.RequiredSuppliesAvailableCheck == 'on' ? newform.RequiredSuppliesAvailableCheck == 'true' : newform.RequiredSuppliesAvailableCheck == 'false'
 
-    newform.Pre_installationFormCopiedCheck == 'on' ? newform.Pre_installationFormCopiedCheck == 'true' : newform.Pre_installationFormCopiedCheck == 'false'
+    // newform.Pre_installationFormCopiedCheck == 'on' ? newform.Pre_installationFormCopiedCheck == 'true' : newform.Pre_installationFormCopiedCheck == 'false'
 
     newform.save().then(savedUser => {
         res.redirect('/pre-installationform');
     });
 }
-
+exports.showDailyInspectionData = (req, res, next) => {
+    const daily = new DailyInspection({
+        SerailNo:req.body.serial,
+        Location:req.body.location,
+        Department:req.body.department,
+        Authorized_Operator:req.body.name,
+        ForeignSubstances1:req.body.ForeignSubstances1,
+        ForeignSubstances2:req.body.ForeignSubstances2,
+        ForeignSubstances3:req.body.ForeignSubstances3,
+        ForeignSubstances4:req.body.ForeignSubstances4,
+        ForeignSubstances5:req.body.ForeignSubstances5,
+        ForeignSubstances6:req.body.ForeignSubstances6,
+        ForeignSubstances7:req.body.ForeignSubstances7,
+        DamageOrCracks1:req.body.DamageOrCracks1,
+        DamageOrCracks2:req.body.DamageOrCracks2,
+        DamageOrCracks3:req.body.DamageOrCracks3,
+        DamageOrCracks4:req.body.DamageOrCracks4,
+        DamageOrCracks5:req.body.DamageOrCracks5,
+        DamageOrCracks6:req.body.DamageOrCracks6,
+        DamageOrCracks7:req.body.DamageOrCracks7,
+        BrokenOrLooseBattery1:req.body.BrokenOrLooseBattery1,
+        BrokenOrLooseBattery2:req.body.BrokenOrLooseBattery2,
+        BrokenOrLooseBattery3:req.body.BrokenOrLooseBattery3,
+        BrokenOrLooseBattery4:req.body.BrokenOrLooseBattery4,
+        BrokenOrLooseBattery5:req.body.BrokenOrLooseBattery5,
+        BrokenOrLooseBattery6:req.body.BrokenOrLooseBattery6,
+        BrokenOrLooseBattery7:req.body.BrokenOrLooseBattery7,
+        DamagedORLeakingBattery1:req.body.DamagedORLeakingBattery1,
+        DamagedORLeakingBattery2:req.body.DamagedORLeakingBattery2,
+        DamagedORLeakingBattery3:req.body.DamagedORLeakingBattery3,
+        DamagedORLeakingBattery4:req.body.DamagedORLeakingBattery4,
+        DamagedORLeakingBattery5:req.body.DamagedORLeakingBattery5,
+        DamagedORLeakingBattery6:req.body.DamagedORLeakingBattery6,
+        DamagedORLeakingBattery7:req.body.DamagedORLeakingBattery7,
+        SpareBatteryAvailable1:req.body.SpareBatteryAvailable1,
+        SpareBatteryAvailable2:req.body.SpareBatteryAvailable2,
+        SpareBatteryAvailable3:req.body.SpareBatteryAvailable3,
+        SpareBatteryAvailable4:req.body.SpareBatteryAvailable4,
+        SpareBatteryAvailable5:req.body.SpareBatteryAvailable5,
+        SpareBatteryAvailable6:req.body.SpareBatteryAvailable6,
+        SpareBatteryAvailable7:req.body.SpareBatteryAvailable7,
+        CableDamage1:req.body.CableDamage1,
+        CableDamage2:req.body.CableDamage2,
+        CableDamage3:req.body.CableDamage3,
+        CableDamage4:req.body.CableDamage4,
+        CableDamage5:req.body.CableDamage5,
+        CableDamage6:req.body.CableDamage6,
+        CableDamage7:req.body.CableDamage7,
+        selfTestMessage1:req.body.selfTestMessage1,
+        selfTestMessage2:req.body.selfTestMessage2,
+        selfTestMessage3:req.body.selfTestMessage3,
+        selfTestMessage4:req.body.selfTestMessage4,
+        selfTestMessage5:req.body.selfTestMessage5,
+        selfTestMessage6:req.body.selfTestMessage6,
+        selfTestMessage7:req.body.selfTestMessage7,
+        SpeakerBeep1:req.body.SpeakerBeep1,
+        SpeakerBeep2:req.body.SpeakerBeep2,
+        SpeakerBeep3:req.body.SpeakerBeep3,
+        SpeakerBeep4:req.body.SpeakerBeep4,
+        SpeakerBeep5:req.body.SpeakerBeep5,
+        SpeakerBeep6:req.body.SpeakerBeep6,
+        SpeakerBeep7:req.body.SpeakerBeep7,
+        TwoFullyChargedBatteries1:req.body.TwoFullyChargedBatteries1,
+        TwoFullyChargedBatteries2:req.body.TwoFullyChargedBatteries2,
+        TwoFullyChargedBatteries3:req.body.TwoFullyChargedBatteries3,
+        TwoFullyChargedBatteries4:req.body.TwoFullyChargedBatteries4,
+        TwoFullyChargedBatteries5:req.body.TwoFullyChargedBatteries5,
+        TwoFullyChargedBatteries6:req.body.TwoFullyChargedBatteries6,
+        TwoFullyChargedBatteries7:req.body.TwoFullyChargedBatteries7,
+        serviceIndicator1:req.body.serviceIndicator1,
+        serviceIndicator2:req.body.serviceIndicator2,
+        serviceIndicator3:req.body.serviceIndicator3,
+        serviceIndicator4:req.body.serviceIndicator4,
+        serviceIndicator5:req.body.serviceIndicator5,
+        serviceIndicator6:req.body.serviceIndicator6,
+        serviceIndicator7:req.body.serviceIndicator7,
+    });
+    daily.save().then(savedUser => {
+        res.redirect('/showDailyInspectionForm');
+    });
+}
+exports.showInventoryListingData = (req, res, next) => {
+    const inventory = new spareParts({
+        PartNumber:req.body.serial,
+        Name:req.body.name,
+        Category:req.body.category,
+        UnitCost:req.body.cost,
+        Vendor:req.body.vendor,
+        Department:req.body.department,
+        Quantity:req.body.quantity,
+    });
+    inventory.save().then(savedUser => {
+        res.redirect('/showInventoryListingForm');
+    });
+}
 // exports.pre_installationformData=(req,res,next) => {
 //     const TECH = new Technician({
 //         FirstName:req.body.firstname,

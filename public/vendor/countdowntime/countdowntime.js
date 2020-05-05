@@ -1,5 +1,5 @@
 (function ($) {
-    "use strict";
+  "use strict";
 
     function getTimeRemaining(endtime) { 
       var t = Date.parse(endtime) - Date.parse(new Date());

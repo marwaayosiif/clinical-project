@@ -1,5 +1,5 @@
 jQuery(document).ready(function($) {
-  "use strict";
+"use strict";
 
   //Contact
   $('form.php-mail-form').submit(function() {
@@ -100,7 +100,7 @@ jQuery(document).ready(function($) {
     this_form.find('.error-message').slideUp();
     this_form.find('.loading').slideDown();
     $.ajax({
-      type: "POST",
+      type:"POST",
       url: action,
       data: str,
       success: function(msg) {

@@ -1565,7 +1565,7 @@ PANELS CONFIGURATIONS
 }
 
 .steps label:before {
-    content: "";
+    content:"";
     width: 12px;
     height: 12px;
     display: block;
@@ -2248,7 +2248,7 @@ ul.my-friends li .friends-pic {
 .recent-activity:before {
     background-color: #eeeeee;
     bottom: 0;
-    content: "";
+    content:"";
     left: 50%;
     position: absolute;
     top: 50px;
@@ -3454,7 +3454,7 @@ ul.chat-available-user li a:hover {
     margin: 15px 0;
 }
 .contact-form .loading:before {
-    content: "";
+    content:"";
     display: inline-block;
     border-radius: 50%;
     width: 24px;

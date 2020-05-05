@@ -10,7 +10,7 @@ var Script = function () {
     $('.percentage-light').easyPieChart({
         barColor: function(percent) {
             percent /= 100;
-            return "rgb(" + Math.round(255 * (1-percent)) + ", " + Math.round(255 * percent) + ", 0)";
+            return"rgb(" + Math.round(255 * (1-percent)) +"," + Math.round(255 * percent) +", 0)";
         },
         trackColor: '#666',
         scaleColor: false,

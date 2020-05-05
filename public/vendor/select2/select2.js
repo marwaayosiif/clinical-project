@@ -84,7 +84,7 @@ var requirejs, require, define;
             starMap = (map && map['*']) || {};
 
         //Adjust any relative paths.
-        if (name && name.charAt(0) === ".") {
+        if (name && name.charAt(0) ===".") {
             //If have a base name, try to normalize against it,
             //otherwise, assume it is a top-level require that will
             //be relative to baseUrl in the end.
@@ -99,17 +99,17 @@ var requirejs, require, define;
 
                 //Lop off the last part of baseParts, so that . matches the
                 //"directory" and not name of the baseName's module. For instance,
-                //baseName of "one/two/three", maps to "one/two/three.js", but we
-                //want the directory, "one/two" for this normalization.
+                //baseName of"one/two/three", maps to"one/two/three.js", but we
+                //want the directory,"one/two" for this normalization.
                 name = baseParts.slice(0, baseParts.length - 1).concat(name);
 
                 //start trimDots
                 for (i = 0; i < name.length; i += 1) {
                     part = name[i];
-                    if (part === ".") {
+                    if (part ===".") {
                         name.splice(i, 1);
                         i -= 1;
-                    } else if (part === "..") {
+                    } else if (part ==="..") {
                         if (i === 1 && (name[2] === '..' || name[0] === '..')) {
                             //End of the line. Keep at least one non-dot
                             //path segment at the front so it can be mapped
@@ -335,13 +335,13 @@ var requirejs, require, define;
                 depName = map.f;
 
                 //Fast path CommonJS standard dependencies.
-                if (depName === "require") {
+                if (depName ==="require") {
                     args[i] = handlers.require(name);
-                } else if (depName === "exports") {
+                } else if (depName ==="exports") {
                     //CommonJS module spec 1.1
                     args[i] = handlers.exports(name);
                     usingExports = true;
-                } else if (depName === "module") {
+                } else if (depName ==="module") {
                     //CommonJS module spec 1.1
                     cjsModule = args[i] = handlers.module(name);
                 } else if (hasProp(defined, depName) ||
@@ -359,7 +359,7 @@ var requirejs, require, define;
             ret = callback ? callback.apply(defined[name], args) : undefined;
 
             if (name) {
-                //If setting exports via "module" is in play,
+                //If setting exports via"module" is in play,
                 //favor that over return value and exports. After that,
                 //favor a non-undefined return value over exports use.
                 if (cjsModule && cjsModule.exports !== undef &&
@@ -378,7 +378,7 @@ var requirejs, require, define;
     };
 
     requirejs = require = req = function (deps, callback, relName, forceSync, alt) {
-        if (typeof deps === "string") {
+        if (typeof deps ==="string") {
             if (handlers[deps]) {
                 //callback in this case is really relName
                 return handlers[deps](callback);
@@ -424,7 +424,7 @@ var requirejs, require, define;
             main(undef, deps, callback, relName);
         } else {
             //Using a non-zero value because of concern for what old browsers
-            //do, and latest browsers "upgrade" to 4 if lower value is used:
+            //do, and latest browsers"upgrade" to 4 if lower value is used:
             //http://www.whatwg.org/specs/web-apps/current-work/multipage/timers.html#dom-windowtimers-settimeout:
             //If want a value immediately, use require('id') instead -- something
             //that works in almond on the global level, but not guaranteed and
@@ -4792,7 +4792,7 @@ S2.define('select2/defaults',[
             // because of how Select2 helps load all possible translation files.
             if (options.debug && window.console && console.warn) {
               console.warn(
-                'Select2: The language file for "' + name + '" could not be ' +
+                'Select2: The language file for"' + name + '" could not be ' +
                 'automatically loaded. A fallback will be used instead.'
               );
             }

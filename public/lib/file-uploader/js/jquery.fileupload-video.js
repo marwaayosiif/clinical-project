@@ -35,7 +35,7 @@
     $.blueimp.fileupload.prototype.options.processQueue.unshift(
         {
             action: 'loadVideo',
-            // Use the action as prefix for the "@" options:
+            // Use the action as prefix for the"@" options:
             prefix: true,
             fileTypes: '@',
             maxFileSize: '@',

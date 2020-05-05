@@ -68,7 +68,7 @@
 	*/
 	var Gritter = {
 		
-		// Public - options to over-ride with $.gritter.options in "add"
+		// Public - options to over-ride with $.gritter.options in"add"
 		position: '',
 		fade_in_speed: '',
 		fade_out_speed: '',
@@ -96,7 +96,7 @@
 
 			// We might have some issues if we don't have a title or text!
 			if(!params.text){
-				throw 'You must supply "text" parameter.'; 
+				throw 'You must supply"text" parameter.'; 
 			}
 			
 			// Check the options and set them once
@@ -283,7 +283,7 @@
 		* Remove a specific notification based on an ID
 		* @param {Integer} unique_id The ID used to delete a specific notification
 		* @param {Object} params A set of options passed in to determine how to get rid of it
-		* @param {Object} e The jQuery element that we're "fading" then removing
+		* @param {Object} e The jQuery element that we're"fading" then removing
 		* @param {Boolean} unbind_events If we clicked on the (X) we set this to true to unbind mouseenter/mouseleave
 		*/
 		removeSpecific: function(unique_id, params, e, unbind_events){
@@ -293,7 +293,7 @@
 			}
 
 			// We set the fourth param to let the _fade function know to 
-			// unbind the "mouseleave" event.  Once you click (X) there's no going back!
+			// unbind the"mouseleave" event.  Once you click (X) there's no going back!
 			this._fade(e, unique_id, params || {}, unbind_events);
 			
 		},

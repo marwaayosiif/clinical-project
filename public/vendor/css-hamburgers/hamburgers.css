@@ -42,7 +42,7 @@
     transition-duration: 0.15s;
     transition-timing-function: ease; }
   .hamburger-inner::before, .hamburger-inner::after {
-    content: "";
+    content:"";
     display: block; }
   .hamburger-inner::before {
     top: -10px; }

@@ -35,7 +35,6 @@
 </head>
 
 <body>
-    {{#each newform}}
     <section id="container">
         <!-- **********************************************************************************************************************************************************
         TOP BAR CONTENT & NOTIFICATIONS
@@ -162,6 +161,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    {{#each inventory}}
                                     <tr class="gradeA">
                                         <td>{{this.dataValues.Name}}</td>
                                         <td>{{this.dataValues.PartNumber}}</td>
@@ -172,7 +172,7 @@
 
                                         
                                     </tr>
-                                  
+                                    {{/each}}
                                 </tbody>
                             </table>
                         </div>
@@ -293,7 +293,6 @@
         });
         
     </script>
-     {{/each}} 
 </body>
 
 </html>
