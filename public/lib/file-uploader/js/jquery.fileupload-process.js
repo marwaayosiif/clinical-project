@@ -58,7 +58,7 @@
             /*
             log: function (data, options) {
                 console[options.type](
-                    'Processing"' + data.files[data.index].name + '"'
+                    'Processing "' + data.files[data.index].name + '"'
                 );
             }
             */
@@ -96,9 +96,9 @@
         },
 
         // Replaces the settings of each processQueue item that
-        // are strings starting with an"@", using the remaining
+        // are strings starting with an "@", using the remaining
         // substring as key for the option map,
-        // e.g."@autoUpload" is replaced with options.autoUpload:
+        // e.g. "@autoUpload" is replaced with options.autoUpload:
         _transformProcessQueue: function (options) {
             var processQueue = [];
             $.each(options.processQueue, function () {

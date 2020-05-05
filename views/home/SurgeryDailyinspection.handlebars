@@ -239,10 +239,10 @@
             sOut += '<tr><td>The Person Who Filled The Form:</td><td>' + aData[5] + '</td></tr>';
 
             sOut += '</table>';
-            sOut += `<table id="dailyTable" class="table table-striped table-advance table-hover">
+            sOut += `<table id="dailyTable" class="table">
 
     <thead>
-        <tr>
+        <tr class="row head">
             <th class="cell">Instruction</th>
             <th class="cell">Recommended Action</th>
             <th class="cell">
@@ -276,7 +276,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <tr class="row notheader">
             <td class="cell">
                 <b>1. Inspect Physical Condition For:</b>
                 <span style="display: block;">Foreign substances</span>
@@ -353,7 +353,7 @@
                 </div>
             </td>
         </tr>
-        <tr>
+        <tr class="row notheader">
             <td class="cell">
                 <b>2. Inspect Battery Wells and Batteries For:</b>
                 <span style="display: block;">Broken, loose, or worn battery pins</span>
@@ -461,7 +461,7 @@
                 </div>
             </td>
         </tr>
-        <tr>
+        <tr class="row notheader">
             <td class="cell">
                 <b>3. Inspect Cable and Cable Port For:</b>
                 <span style="display: block;">Cracking, damage, broken, or bent parts or pins</span>
@@ -513,7 +513,7 @@
 
             </td>
         </tr>
-        <tr>
+        <tr class="row notheader">
             <td class="cell">
                 <b>4. Press On and Observe For:</b>
                 <span style="display: block;">Momentary illumination of self-test messeges and LEDs</span>

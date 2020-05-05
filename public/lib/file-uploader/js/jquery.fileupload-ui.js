@@ -54,7 +54,7 @@
             // The ID of the download template:
             downloadTemplateId: 'template-download',
             // The container for the list of files. If undefined, it is set to
-            // an element with class"files" inside of the widget element:
+            // an element with class "files" inside of the widget element:
             filesContainer: undefined,
             // By default, files are appended to the files container.
             // Set the following option to true, to prepend files instead:

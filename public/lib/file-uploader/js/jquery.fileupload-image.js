@@ -48,7 +48,7 @@
         },
         {
             action: 'loadImage',
-            // Use the action as prefix for the"@" options:
+            // Use the action as prefix for the "@" options:
             prefix: true,
             fileTypes: '@',
             maxFileSize: '@',
@@ -57,7 +57,7 @@
         },
         {
             action: 'resizeImage',
-            // Use"image" as prefix for the"@" options:
+            // Use "image" as prefix for the "@" options:
             prefix: 'image',
             maxWidth: '@',
             maxHeight: '@',
@@ -80,7 +80,7 @@
         },
         {
             action: 'resizeImage',
-            // Use"preview" as prefix for the"@" options:
+            // Use "preview" as prefix for the "@" options:
             prefix: 'preview',
             maxWidth: '@',
             maxHeight: '@',
@@ -284,7 +284,7 @@
             },
 
             // Sets the resized version of the image as a property of the
-            // file object, must be called after"saveImage":
+            // file object, must be called after "saveImage":
             setImage: function (data, options) {
                 if (data.preview && !options.disabled) {
                     data.files[data.index][options.name || 'preview'] = data.preview;

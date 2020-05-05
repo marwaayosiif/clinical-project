@@ -1,16 +1,16 @@
 /* Set the defaults for DataTables initialisation */
 $.extend( true, $.fn.dataTable.defaults, {
-	"sDom":"<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
-	"sPaginationType":"bootstrap",
+	"sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
+	"sPaginationType": "bootstrap",
 	"oLanguage": {
-		"sLengthMenu":"_MENU_ records per page"
+		"sLengthMenu": "_MENU_ records per page"
 	}
 } );
 
 
 /* Default class modification */
 $.extend( $.fn.dataTableExt.oStdClasses, {
-	"sWrapper":"dataTables_wrapper form-inline"
+	"sWrapper": "dataTables_wrapper form-inline"
 } );
 
 
@@ -48,8 +48,8 @@ $.extend( $.fn.dataTableExt.oPagination, {
 				'</ul>'
 			);
 			var els = $('a', nPaging);
-			$(els[0]).bind( 'click.DT', { action:"previous" }, fnClickHandler );
-			$(els[1]).bind( 'click.DT', { action:"next" }, fnClickHandler );
+			$(els[0]).bind( 'click.DT', { action: "previous" }, fnClickHandler );
+			$(els[1]).bind( 'click.DT', { action: "next" }, fnClickHandler );
 		},
 
 		"fnUpdate": function ( oSettings, fnDraw ) {
@@ -114,32 +114,32 @@ $.extend( $.fn.dataTableExt.oPagination, {
 if ( $.fn.DataTable.TableTools ) {
 	// Set the classes that TableTools uses to something suitable for Bootstrap
 	$.extend( true, $.fn.DataTable.TableTools.classes, {
-		"container":"DTTT btn-group",
+		"container": "DTTT btn-group",
 		"buttons": {
-			"normal":"btn",
-			"disabled":"disabled"
+			"normal": "btn",
+			"disabled": "disabled"
 		},
 		"collection": {
-			"container":"DTTT_dropdown dropdown-menu",
+			"container": "DTTT_dropdown dropdown-menu",
 			"buttons": {
-				"normal":"",
-				"disabled":"disabled"
+				"normal": "",
+				"disabled": "disabled"
 			}
 		},
 		"print": {
-			"info":"DTTT_print_info modal"
+			"info": "DTTT_print_info modal"
 		},
 		"select": {
-			"row":"active"
+			"row": "active"
 		}
 	} );
 
 	// Have the collection use a bootstrap compatible dropdown
 	$.extend( true, $.fn.DataTable.TableTools.DEFAULTS.oTags, {
 		"collection": {
-			"container":"ul",
-			"button":"li",
-			"liner":"a"
+			"container": "ul",
+			"button": "li",
+			"liner": "a"
 		}
 	} );
 }

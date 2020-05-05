@@ -295,7 +295,7 @@
                 if (split.length == 2) {
                     start = moment(split[0], this.locale.format);
                     end = moment(split[1], this.locale.format);
-                } else if (this.singleDatePicker && val !=="") {
+                } else if (this.singleDatePicker && val !== "") {
                     start = moment(val, this.locale.format);
                     end = moment(val, this.locale.format);
                 }
@@ -726,16 +726,16 @@
                 var monthHtml = '<select class="monthselect">';
                 for (var m = 0; m < 12; m++) {
                     if ((!inMinYear || m >= minDate.month()) && (!inMaxYear || m <= maxDate.month())) {
-                        monthHtml +="<option value='" + m +"'" +
-                            (m === currentMonth ?" selected='selected'" :"") +
-                          ">" + this.locale.monthNames[m] +"</option>";
+                        monthHtml += "<option value='" + m + "'" +
+                            (m === currentMonth ? " selected='selected'" : "") +
+                            ">" + this.locale.monthNames[m] + "</option>";
                     } else {
-                        monthHtml +="<option value='" + m +"'" +
-                            (m === currentMonth ?" selected='selected'" :"") +
-                          " disabled='disabled'>" + this.locale.monthNames[m] +"</option>";
+                        monthHtml += "<option value='" + m + "'" +
+                            (m === currentMonth ? " selected='selected'" : "") +
+                            " disabled='disabled'>" + this.locale.monthNames[m] + "</option>";
                     }
                 }
-                monthHtml +="</select>";
+                monthHtml += "</select>";
 
                 var yearHtml = '<select class="yearselect">';
                 for (var y = minYear; y <= maxYear; y++) {
@@ -793,7 +793,7 @@
                     var classes = [];
 
                     //highlight today's date
-                    if (calendar[row][col].isSame(new Date(),"day"))
+                    if (calendar[row][col].isSame(new Date(), "day"))
                         classes.push('today');
 
                     //highlight weekends
@@ -1163,7 +1163,7 @@
             // itself then call this.hide()
             if (
                 // ie modal dialog fix
-                e.type =="focusin" ||
+                e.type == "focusin" ||
                 target.closest(this.element).length ||
                 target.closest(this.container).length ||
                 target.closest('.calendar-table').length

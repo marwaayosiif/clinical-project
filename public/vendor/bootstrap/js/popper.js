@@ -5,7 +5,7 @@
  * Copyright (c) 2016 Federico Zivolo and contributors
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the"Software"), to deal
+ * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
@@ -14,7 +14,7 @@
  * The above copyright notice and this permission notice shall be included in all
  * copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED"AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
@@ -239,7 +239,7 @@ function findCommonOffsetParent(element1, element2) {
     return window.document.documentElement;
   }
 
-  // Here we make sure to give as"start" the element that comes first in the DOM
+  // Here we make sure to give as "start" the element that comes first in the DOM
   var order = element1.compareDocumentPosition(element2) & Node.DOCUMENT_POSITION_FOLLOWING;
   var start = order ? element1 : element2;
   var end = order ? element2 : element1;
@@ -558,7 +558,7 @@ function getViewportOffsetRectRelativeToArtbitraryNode(element) {
  * @memberof Popper.Utils
  * @argument {Element} element
  * @argument {Element} customContainer
- * @returns {Boolean} answer to"isFixed?"
+ * @returns {Boolean} answer to "isFixed?"
  */
 function isFixed(element) {
   var nodeName = element.nodeName;
@@ -1966,11 +1966,11 @@ var modifiers = {
    * Modifier used to prevent the popper from being positioned outside the boundary.
    *
    * An scenario exists where the reference itself is not within the boundaries.<br />
-   * We can say it has"escaped the boundaries" — or just"escaped".<br />
+   * We can say it has "escaped the boundaries" — or just "escaped".<br />
    * In this case we need to decide whether the popper should either:
    *
-   * - detach from the reference and remain"trapped" in the boundaries, or
-   * - if it should ignore the boundary and"escape with its reference"
+   * - detach from the reference and remain "trapped" in the boundaries, or
+   * - if it should ignore the boundary and "escape with its reference"
    *
    * When `escapeWithReference` is set to`true` and reference is completely
    * outside its boundaries, the popper will overflow (or completely leave)

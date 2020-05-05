@@ -23,7 +23,7 @@ $.fn.zabuto_calendar = function (options) {
 
     this.each(function () {
         var $calendarElement = $(this);
-        $calendarElement.attr('id',"zabuto_calendar_" + Math.floor(Math.random() * 99999).toString(36));
+        $calendarElement.attr('id', "zabuto_calendar_" + Math.floor(Math.random() * 99999).toString(36));
 
         $calendarElement.data('initYear', opts.year);
         $calendarElement.data('initMonth', opts.month);
@@ -553,43 +553,43 @@ $.fn.zabuto_calendar_language = function (lang) {
     switch (lang.toLowerCase()) {
         case 'de':
             return {
-                month_labels: ["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"],
-                dow_labels: ["Mo","Di","Mi","Do","Fr","Sa","So"]
+                month_labels: ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"],
+                dow_labels: ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"]
             };
             break;
 
         case 'en':
             return {
-                month_labels: ["January","February","March","April","May","June","July","August","September","October","November","December"],
-                dow_labels: ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
+                month_labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+                dow_labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
             };
             break;
 
         case 'es':
             return {
-                month_labels: ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"],
-                dow_labels: ["Lu","Ma","Mi","Ju","Vi","Sá","Do"]
+                month_labels: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+                dow_labels: ["Lu", "Ma", "Mi", "Ju", "Vi", "Sá", "Do"]
             };
             break;
 
         case 'fr':
             return {
-                month_labels: ["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre"],
-                dow_labels: ["Lun","Mar","Mer","Jeu","Ven","Sam","Dim"]
+                month_labels: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
+                dow_labels: ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"]
             };
             break;
 
         case 'it':
             return {
-                month_labels: ["Gennaio","Febbraio","Marzo","Aprile","Maggio","Giugno","Luglio","Agosto","Settembre","Ottobre","Novembre","Dicembre"],
-                dow_labels: ["Lun","Mar","Mer","Gio","Ven","Sab","Dom"]
+                month_labels: ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"],
+                dow_labels: ["Lun", "Mar", "Mer", "Gio", "Ven", "Sab", "Dom"]
             };
             break;
 
         case 'nl':
             return {
-                month_labels: ["Januari","Februari","Maart","April","Mei","Juni","Juli","Augustus","September","Oktober","November","December"],
-                dow_labels: ["Ma","Di","Wo","Do","Vr","Za","Zo"]
+                month_labels: ["Januari", "Februari", "Maart", "April", "Mei", "Juni", "Juli", "Augustus", "September", "Oktober", "November", "December"],
+                dow_labels: ["Ma", "Di", "Wo", "Do", "Vr", "Za", "Zo"]
             };
             break;
     }

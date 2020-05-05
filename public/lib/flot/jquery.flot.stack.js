@@ -5,13 +5,13 @@ other, for accumulative graphs.
 The plugin assumes the data is sorted on x (or y if stacking
 horizontally). For line charts, it is assumed that if a line has an
 undefined gap (from a null point), then the line above it should have
-the same gap - insert zeros instead of"null" if you want another
+the same gap - insert zeros instead of "null" if you want another
 behaviour. This also holds for the start and end of the chart. Note
 that stacking a mix of positive and negative values in most instances
 doesn't make sense (so it looks weird).
 
-Two or more series are stacked when their"stack" attribute is set to
-the same key (which can be any number or string or just"true"). To
+Two or more series are stacked when their "stack" attribute is set to
+the same key (which can be any number or string or just "true"). To
 specify the default stack, you can set
 
   series: {

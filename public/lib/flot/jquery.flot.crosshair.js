@@ -3,15 +3,15 @@ Flot plugin for showing crosshairs, thin lines, when the mouse hovers
 over the plot.
 
   crosshair: {
-    mode: null or"x" or"y" or"xy"
+    mode: null or "x" or "y" or "xy"
     color: color
     lineWidth: number
   }
 
-Set the mode to one of"x","y" or"xy". The"x" mode enables a
-vertical crosshair that lets you trace the values on the x axis,"y"
-enables a horizontal crosshair and"xy" enables them both."color" is
-the color of the crosshair (default is"rgba(170, 0, 0, 0.80)"),
+Set the mode to one of "x", "y" or "xy". The "x" mode enables a
+vertical crosshair that lets you trace the values on the x axis, "y"
+enables a horizontal crosshair and "xy" enables them both. "color" is
+the color of the crosshair (default is "rgba(170, 0, 0, 0.80)"),
 "lineWidth" is the width of the drawn lines (default is 1).
 
 The plugin also adds four public methods:
@@ -19,10 +19,10 @@ The plugin also adds four public methods:
   - setCrosshair(pos)
 
     Set the position of the crosshair. Note that this is cleared if
-    the user moves the mouse."pos" is in coordinates of the plot and
+    the user moves the mouse. "pos" is in coordinates of the plot and
     should be on the form { x: xpos, y: ypos } (you can use x2/x3/...
     if you're using multiple axes), which is coincidentally the same
-    format as what you get from a"plothover" event. If"pos" is null,
+    format as what you get from a "plothover" event. If "pos" is null,
     the crosshair is cleared.
 
   - clearCrosshair()
@@ -36,7 +36,7 @@ The plugin also adds four public methods:
     (passed on to setCrosshair()) to move it to.
 
     Example usage:
-      var myFlot = $.plot( $("#graph"), ..., { crosshair: { mode:"x" } } };
+      var myFlot = $.plot( $("#graph"), ..., { crosshair: { mode: "x" } } };
       $("#graph").bind("plothover", function (evt, position, item) {
         if (item) {
           // Lock the crosshair to the data point being hovered
@@ -56,8 +56,8 @@ The plugin also adds four public methods:
 (function ($) {
     var options = {
         crosshair: {
-            mode: null, // one of null,"x","y" or"xy",
-            color:"rgba(170, 0, 0, 0.80)",
+            mode: null, // one of null, "x", "y" or "xy",
+            color: "rgba(170, 0, 0, 0.80)",
             lineWidth: 1
         }
     };
@@ -136,7 +136,7 @@ The plugin also adds four public methods:
             if (crosshair.x != -1) {
                 ctx.strokeStyle = c.color;
                 ctx.lineWidth = c.lineWidth;
-                ctx.lineJoin ="round";
+                ctx.lineJoin = "round";
 
                 ctx.beginPath();
                 if (c.mode.indexOf("x") != -1) {

@@ -60,7 +60,7 @@ More detail and specific examples can be found in the included HTML file.
 
 (function ($) 
 {
-	function init(plot) // this is the"body" of the plugin
+	function init(plot) // this is the "body" of the plugin
 	{
 		var canvas = null;
 		var target = null;
@@ -145,7 +145,7 @@ More detail and specific examples can be found in the included HTML file.
 					for (var j=0; j<depth; j++)
 						msg += '\t';
 				
-					if( typeof obj[i] =="object")
+					if( typeof obj[i] == "object")
 					{	// its an object
 						msg += ''+i+':\n';
 						traverse(obj[i], depth+1);
@@ -454,7 +454,7 @@ More detail and specific examples can be found in the included HTML file.
 						var x = centerLeft + Math.round(Math.cos(halfAngle) * radius);
 						var y = centerTop + Math.round(Math.sin(halfAngle) * radius) * options.series.pie.tilt;
 						
-						var html = '<span class="pieLabel" id="pieLabel'+index+'" style="position:absolute;top:' + y + 'px;left:' + x + 'px;">' + text +"</span>";
+						var html = '<span class="pieLabel" id="pieLabel'+index+'" style="position:absolute;top:' + y + 'px;left:' + x + 'px;">' + text + "</span>";
 						target.append(html);
 						var label = target.children('#pieLabel'+index);
 						var labelTop = (y - label.height()/2);
@@ -618,7 +618,7 @@ More detail and specific examples can be found in the included HTML file.
 
 		function highlight(s, auto) 
 		{
-			if (typeof s =="number")
+			if (typeof s == "number")
 				s = series[s];
 
 			var i = indexOfHighlight(s);
@@ -639,7 +639,7 @@ More detail and specific examples can be found in the included HTML file.
 				plot.triggerRedrawOverlay();
 			}
 			
-			if (typeof s =="number")
+			if (typeof s == "number")
 				s = series[s];
 
 			var i = indexOfHighlight(s);
@@ -685,7 +685,7 @@ More detail and specific examples can be found in the included HTML file.
 				if (series.angle < 0) return;
 				
 				//octx.fillStyle = parseColor(options.series.pie.highlight.color).scale(null, null, null, options.series.pie.highlight.opacity).toString();
-				octx.fillStyle ="rgba(255, 255, 255,"+options.series.pie.highlight.opacity+")"; // this is temporary until we have access to parseColor
+				octx.fillStyle = "rgba(255, 255, 255, "+options.series.pie.highlight.opacity+")"; // this is temporary until we have access to parseColor
 				
 				octx.beginPath();
 				if (Math.abs(series.angle - Math.PI*2) > 0.000000001)
@@ -744,7 +744,7 @@ More detail and specific examples can be found in the included HTML file.
 	$.plot.plugins.push({
 		init: init,
 		options: options,
-		name:"pie",
-		version:"1.0"
+		name: "pie",
+		version: "1.0"
 	});
 })(jQuery);

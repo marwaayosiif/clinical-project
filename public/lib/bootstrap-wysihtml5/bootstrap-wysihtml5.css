@@ -7,7 +7,7 @@ ul.wysihtml5-toolbar {
 ul.wysihtml5-toolbar:after {
 	clear: both;
 	display: table;
-	content:"";
+	content: "";
 }
 
 ul.wysihtml5-toolbar > li {

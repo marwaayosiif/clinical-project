@@ -35,7 +35,7 @@
     //  equivalent to the return data of .serializeArray(), e.g.:
     //  [{name: 'a', value: 1}, {name: 'b', value: 2}]
     // options.initialIframeSrc: the URL of the initial iframe src,
-    //  by default set to"javascript:false;"
+    //  by default set to "javascript:false;"
     $.ajaxTransport('iframe', function (options) {
         if (options.async) {
             // javascript:false as initial iframe src
@@ -165,7 +165,7 @@
                     if (iframe) {
                         // javascript:false as iframe src aborts the request
                         // and prevents warning popups on HTTPS in IE6.
-                        // concat is used to avoid the"Script URL" JSLint error:
+                        // concat is used to avoid the "Script URL" JSLint error:
                         iframe
                             .unbind('load')
                             .prop('src', initialIframeSrc);
