@@ -28,18 +28,18 @@
     <link href="css/main.css" rel="stylesheet">
 
     <!-- =======================================================
-        Template Name: Dashio
-        Template URL: https://templatemag.com/dashio-bootstrap-admin-template/
-        Author: TemplateMag.com
-        License: https://templatemag.com/license/
-    ======================================================= -->
+    Template Name: Dashio
+    Template URL: https://templatemag.com/dashio-bootstrap-admin-template/
+    Author: TemplateMag.com
+    License: https://templatemag.com/license/
+  ======================================================= -->
 </head>
 
 <body>
     <section id="container">
         <!-- **********************************************************************************************************************************************************
-            TOP BAR CONTENT & NOTIFICATIONS
-            *********************************************************************************************************************************************************** -->
+        TOP BAR CONTENT & NOTIFICATIONS
+        *********************************************************************************************************************************************************** -->
         <!--header start-->
         <header class="header black-bg">
             <div class="sidebar-toggle-box">
@@ -52,8 +52,8 @@
         </header>
         <!--header end-->
         <!-- **********************************************************************************************************************************************************
-            MAIN SIDEBAR MENU
-            *********************************************************************************************************************************************************** -->
+        MAIN SIDEBAR MENU
+        *********************************************************************************************************************************************************** -->
         <!--sidebar start-->
         <aside>
             <div id="sidebar" class="nav-collapse">
@@ -79,18 +79,18 @@
                     </li>
 
                     <li class="sub-menu">
-                        <a href="javascript:;">
+                        <a class="active" href="javascript:;">
                             <i class="fa  fa-hospital-o"></i>
                             <span>Departments</span>
                         </a>
                         <ul style="padding-left: 0;">
                             <li class="sub-menu">
-                                <a href="javascript:;">
+                                <a class="active" href="javascript:;">
                                     <span>Surgery</span>
                                 </a>
                                 <ul class="sub">
                                     <li><a href="/showPre-installationSurgery">Pre-installation Reports</a></li>
-                                    <li><a href="/showDailyInspectionSurgery">Daily Inspection Reports</a></li>
+                                    <li class="active"><a href="/showDailyInspectionSurgery">Daily Inspection Reports</a></li>
                                     <li><a href="/showInventoryListingSurgery">Inventory Listing Reports</a></li>
                                 </ul>
                             </li>
@@ -119,13 +119,13 @@
                         </ul>
                     </li>
                     <li class="sub-menu">
-                        <a class="active" href="javascript:;">
+                        <a href="javascript:;">
                             <i class="fa fa-book"></i>
                             <span>Add Reports</span>
                         </a>
                         <ul class="sub">
                             <li><a href="/pre-installationform">Add Pre-installation Report</a></li>
-                            <li class="active"><a href="/showDailyInspectionForm">Add Daily Inspection Report</a></li>
+                            <li><a href="/showDailyInspectionForm">Add Daily Inspection Report</a></li>
                             <li><a href="/showInventoryListingForm">Add Inventory Listing Report</a></li>
 
                         </ul>
@@ -136,12 +136,12 @@
         </aside>
         <!--sidebar end-->
         <!-- **********************************************************************************************************************************************************
-            MAIN CONTENT
-            *********************************************************************************************************************************************************** -->
+        MAIN CONTENT
+        *********************************************************************************************************************************************************** -->
         <!--main content start-->
         <section id="main-content">
             <section class="wrapper">
-                <h3><i class="fa fa-angle-right"></i> Add A New Daily Inspection Report</h3>
+                <h3><i class="fa fa-angle-right"></i> Daily Inspection Report</h3>
 
                 <!-- /row -->
                 <div class="row mt">
@@ -150,35 +150,30 @@
                             <div class="form">
                                 <form class="cmxform form-horizontal style-form" id="signupForm" method="POST" action="/showDailyInspectionForm">
                                     <div class="form-group">
-                                        <label for="department" class="control-label col-lg-2">Department's Name</label>
+                                        <label for="department" class="control-label col-lg-2">Department's Name:</label>
                                         <div class="col-lg-10">
-                                            <select class="form-control" id="department" name="department" required>
-                                                    <option value="Surgery">Surgery</option>
-                                                    <option value="Emergency">Emergency</option>
-                                                    <option value="Catheterization">Catheterization</option>
-                                                </select>
+                                            <p class="form-control-static">any department</p>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="serial" class="control-label col-lg-2">Serial's Number</label>
+                                        <label for="serial" class="control-label col-lg-2">Serial's Number:</label>
                                         <div class="col-lg-4">
-                                            <input class="form-control" id="serial" style="width: 100%!important;" name="serial" type="text" required />
+                                            <p class="form-control-static">any serial number</p>
                                         </div>
-                                        <label style="width:100px; margin-left: 40px;" for="location" class="control-label col-lg-2">Location</label>
+                                        <label style="width:100px; margin-left: 40px;" for="location" class="control-label col-lg-2">Location:</label>
                                         <div class="col-lg-4">
-                                            <input class="form-control" style="width: 100%!important;" id="location" name="location" type="text" required />
+                                            <p class="form-control-static">any location</p>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-2">Date Range</label>
-                                        <div class="col-md-4">
+                                        <label class="control-label col-md-2">Date Range:</label>
+                                        <div class="col-md-10">
                                             <div class="input-group input-large" data-date="01/01/2014" data-date-format="mm/dd/yyyy">
-                                                <input type="text" class="form-control dpd1" name="begindate">
+                                                <p class="form-control-static  text-center">any date</p>
                                                 <span class="input-group-addon">To</span>
-                                                <input type="text" class="form-control dpd2" name="enddate">
+                                                <p class="form-control-static  text-center">any date</p>
                                             </div>
-                                            <span class="help-block">Select date range</span>
                                         </div>
                                     </div>
 
@@ -236,64 +231,64 @@
 
                                                     <td class="cell">
                                                         <div style="margin:15px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="ForeignSubstances1" value="checked" name="ForeignSubstances1">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="ForeignSubstances1" value="checked" name="ForeignSubstances1">
                                                         </div>
                                                         <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="DamageOrCracks1" value="checked" name="DamageOrCracks1">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="DamageOrCracks1" value="checked" name="DamageOrCracks1">
 
                                                         </div>
                                                     </td>
                                                     <td class="cell">
                                                         <div style="margin:15px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="ForeignSubstances2" value="checked" name="ForeignSubstances2">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="ForeignSubstances2" value="checked" name="ForeignSubstances2">
                                                         </div>
                                                         <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="DamageOrCracks2" value="checked" name="DamageOrCracks2">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="DamageOrCracks2" value="checked" name="DamageOrCracks2">
 
                                                         </div>
                                                     </td>
                                                     <td class="cell">
                                                         <div style="margin:15px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="ForeignSubstances3" value="checked" name="ForeignSubstances3">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="ForeignSubstances3" value="checked" name="ForeignSubstances3">
                                                         </div>
                                                         <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="DamageOrCracks3" value="checked" name="DamageOrCracks3">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="DamageOrCracks3" value="checked" name="DamageOrCracks3">
 
                                                         </div>
                                                     </td>
                                                     <td class="cell">
                                                         <div style="margin:15px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="ForeignSubstances4" value="checked" name="ForeignSubstances4">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="ForeignSubstances4" value="checked" name="ForeignSubstances4">
                                                         </div>
                                                         <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="DamageOrCracks4" value="checked" name="DamageOrCracks4">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="DamageOrCracks4" value="checked" name="DamageOrCracks4">
 
                                                         </div>
                                                     </td>
                                                     <td class="cell">
                                                         <div style="margin:15px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="ForeignSubstances5" value="checked" name="ForeignSubstances5">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="ForeignSubstances5" value="checked" name="ForeignSubstances5">
                                                         </div>
                                                         <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="DamageOrCracks5" value="checked" name="DamageOrCracks5">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="DamageOrCracks5" value="checked" name="DamageOrCracks5">
 
                                                         </div>
                                                     </td>
                                                     <td class="cell">
                                                         <div style="margin:15px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="ForeignSubstances6" value="checked" name="ForeignSubstances6">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="ForeignSubstances6" value="checked" name="ForeignSubstances6">
                                                         </div>
                                                         <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="DamageOrCracks6" value="checked" name="DamageOrCracks6">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="DamageOrCracks6" value="checked" name="DamageOrCracks6">
 
                                                         </div>
                                                     </td>
                                                     <td class="cell">
                                                         <div style="margin:15px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="ForeignSubstances7" value="checked" name="ForeignSubstances7">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="ForeignSubstances7" value="checked" name="ForeignSubstances7">
                                                         </div>
                                                         <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="DamageOrCracks7" value="checked" name="DamageOrCracks7">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="DamageOrCracks7" value="checked" name="DamageOrCracks7">
 
                                                         </div>
                                                     </td>
@@ -315,93 +310,93 @@
 
                                                     <td class="cell">
                                                         <div style="margin:15px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="BrokenOrLooseBattery1" value="checked" name="BrokenOrLooseBattery1">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="BrokenOrLooseBattery1" value="checked" name="BrokenOrLooseBattery1">
                                                         </div>
                                                         <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="DamagedORLeakingBattery1" value="checked" name="DamagedORLeakingBattery1">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="DamagedORLeakingBattery1" value="checked" name="DamagedORLeakingBattery1">
 
                                                         </div>
                                                         <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="SpareBatteryAvailable1" value="checked" name="SpareBatteryAvailable1">
-
-                                                        </div>
-                                                    </td>
-                                                    <td class="cell">
-                                                        <div style="margin:15px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="BrokenOrLooseBattery2" value="checked" name="BrokenOrLooseBattery2">
-                                                        </div>
-                                                        <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="DamagedORLeakingBattery2" value="checked" name="DamagedORLeakingBattery2">
-
-                                                        </div>
-                                                        <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="SpareBatteryAvailable2" value="checked" name="SpareBatteryAvailable2">
-
-                                                        </div>
-                                                    </td>
-
-                                                    <td class="cell">
-                                                        <div style="margin:15px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="BrokenOrLooseBattery3" value="checked" name="BrokenOrLooseBattery3">
-                                                        </div>
-                                                        <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="DamagedORLeakingBattery3" value="checked" name="DamagedORLeakingBattery3">
-
-                                                        </div>
-                                                        <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="SpareBatteryAvailable3" value="checked" name="SpareBatteryAvailable3">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="SpareBatteryAvailable1" value="checked" name="SpareBatteryAvailable1">
 
                                                         </div>
                                                     </td>
                                                     <td class="cell">
                                                         <div style="margin:15px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="BrokenOrLooseBattery4" value="checked" name="BrokenOrLooseBattery4">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="BrokenOrLooseBattery2" value="checked" name="BrokenOrLooseBattery2">
                                                         </div>
                                                         <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="DamagedORLeakingBattery4" value="checked" name="DamagedORLeakingBattery4">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="DamagedORLeakingBattery2" value="checked" name="DamagedORLeakingBattery2">
 
                                                         </div>
                                                         <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="SpareBatteryAvailable4" value="checked" name="SpareBatteryAvailable4">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="SpareBatteryAvailable2" value="checked" name="SpareBatteryAvailable2">
+
+                                                        </div>
+                                                    </td>
+
+                                                    <td class="cell">
+                                                        <div style="margin:15px 0px 0px 5px;padding:0px;">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="BrokenOrLooseBattery3" value="checked" name="BrokenOrLooseBattery3">
+                                                        </div>
+                                                        <div style="margin:5px 0px 0px 5px;padding:0px;">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="DamagedORLeakingBattery3" value="checked" name="DamagedORLeakingBattery3">
+
+                                                        </div>
+                                                        <div style="margin:5px 0px 0px 5px;padding:0px;">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="SpareBatteryAvailable3" value="checked" name="SpareBatteryAvailable3">
 
                                                         </div>
                                                     </td>
                                                     <td class="cell">
                                                         <div style="margin:15px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="BrokenOrLooseBattery5" value="checked" name="BrokenOrLooseBattery5">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="BrokenOrLooseBattery4" value="checked" name="BrokenOrLooseBattery4">
                                                         </div>
                                                         <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="DamagedORLeakingBattery5" value="checked" name="DamagedORLeakingBattery5">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="DamagedORLeakingBattery4" value="checked" name="DamagedORLeakingBattery4">
 
                                                         </div>
                                                         <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="SpareBatteryAvailable5" value="checked" name="SpareBatteryAvailable5">
-
-                                                        </div>
-                                                    </td>
-                                                    <td class="cell">
-                                                        <div style="margin:15px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="BrokenOrLooseBattery6" value="checked" name="BrokenOrLooseBattery6">
-                                                        </div>
-                                                        <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="DamagedORLeakingBattery6" value="checked" name="DamagedORLeakingBattery6">
-
-                                                        </div>
-                                                        <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="SpareBatteryAvailable6" value="checked" name="SpareBatteryAvailable6">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="SpareBatteryAvailable4" value="checked" name="SpareBatteryAvailable4">
 
                                                         </div>
                                                     </td>
                                                     <td class="cell">
                                                         <div style="margin:15px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="BrokenOrLooseBattery7" value="checked" name="BrokenOrLooseBattery7">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="BrokenOrLooseBattery5" value="checked" name="BrokenOrLooseBattery5">
                                                         </div>
                                                         <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="DamagedORLeakingBattery7" value="checked" name="DamagedORLeakingBattery7">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="DamagedORLeakingBattery5" value="checked" name="DamagedORLeakingBattery5">
 
                                                         </div>
                                                         <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="SpareBatteryAvailable7" value="checked" name="SpareBatteryAvailable7">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="SpareBatteryAvailable5" value="checked" name="SpareBatteryAvailable5">
+
+                                                        </div>
+                                                    </td>
+                                                    <td class="cell">
+                                                        <div style="margin:15px 0px 0px 5px;padding:0px;">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="BrokenOrLooseBattery6" value="checked" name="BrokenOrLooseBattery6">
+                                                        </div>
+                                                        <div style="margin:5px 0px 0px 5px;padding:0px;">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="DamagedORLeakingBattery6" value="checked" name="DamagedORLeakingBattery6">
+
+                                                        </div>
+                                                        <div style="margin:5px 0px 0px 5px;padding:0px;">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="SpareBatteryAvailable6" value="checked" name="SpareBatteryAvailable6">
+
+                                                        </div>
+                                                    </td>
+                                                    <td class="cell">
+                                                        <div style="margin:15px 0px 0px 5px;padding:0px;">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="BrokenOrLooseBattery7" value="checked" name="BrokenOrLooseBattery7">
+                                                        </div>
+                                                        <div style="margin:5px 0px 0px 5px;padding:0px;">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="DamagedORLeakingBattery7" value="checked" name="DamagedORLeakingBattery7">
+
+                                                        </div>
+                                                        <div style="margin:5px 0px 0px 5px;padding:0px;">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="SpareBatteryAvailable7" value="checked" name="SpareBatteryAvailable7">
 
                                                         </div>
                                                     </td>
@@ -419,41 +414,41 @@
 
                                                     <td class="cell">
                                                         <div style="margin:15px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="CableDamage1" value="checked" name="CableDamage1">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="CableDamage1" value="checked" name="CableDamage1">
                                                         </div>
 
                                                     </td>
                                                     <td class="cell">
                                                         <div style="margin:15px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="CableDamage2" value="checked" name="CableDamage2">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="CableDamage2" value="checked" name="CableDamage2">
                                                         </div>
                                                     </td>
                                                     <td class="cell">
                                                         <div style="margin:15px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="CableDamage3" value="checked" name="CableDamage3">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="CableDamage3" value="checked" name="CableDamage3">
                                                         </div>
                                                     </td>
                                                     <td class="cell">
                                                         <div style="margin:15px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="CableDamage4" value="checked" name="CableDamage4">
-                                                        </div>
-
-                                                    </td>
-                                                    <td class="cell">
-                                                        <div style="margin:15px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="CableDamage5" value="checked" name="CableDamage5">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="CableDamage4" value="checked" name="CableDamage4">
                                                         </div>
 
                                                     </td>
                                                     <td class="cell">
                                                         <div style="margin:15px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="CableDamage6" value="checked" name="CableDamage6">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="CableDamage5" value="checked" name="CableDamage5">
                                                         </div>
 
                                                     </td>
                                                     <td class="cell">
                                                         <div style="margin:15px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="CableDamage7" value="checked" name="CableDamage7">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="CableDamage6" value="checked" name="CableDamage6">
+                                                        </div>
+
+                                                    </td>
+                                                    <td class="cell">
+                                                        <div style="margin:15px 0px 0px 5px;padding:0px;">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="CableDamage7" value="checked" name="CableDamage7">
                                                         </div>
 
                                                     </td>
@@ -478,121 +473,121 @@
 
                                                     <td class="cell">
                                                         <div style="margin:15px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="selfTestMessage1" value="checked" name="selfTestMessage1">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="selfTestMessage1" value="checked" name="selfTestMessage1">
                                                         </div>
                                                         <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="SpeakerBeep1" value="checked" name="SpeakerBeep1">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="SpeakerBeep1" value="checked" name="SpeakerBeep1">
 
                                                         </div>
                                                         <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="TwoFullyChargedBatteries1" value="checked" name="TwoFullyChargedBatteries1">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="TwoFullyChargedBatteries1" value="checked" name="TwoFullyChargedBatteries1">
 
                                                         </div>
                                                         <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="serviceIndicator1" value="checked" name="serviceIndicator1">
-
-                                                        </div>
-                                                    </td>
-                                                    <td class="cell">
-                                                        <div style="margin:15px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="selfTestMessage2" value="checked" name="selfTestMessage2">
-                                                        </div>
-                                                        <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="SpeakerBeep2" value="checked" name="SpeakerBeep2">
-
-                                                        </div>
-                                                        <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="TwoFullyChargedBatteries2" value="checked" name="TwoFullyChargedBatteries2">
-
-                                                        </div>
-                                                        <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="serviceIndicator2" value="checked" name="serviceIndicator2">
-
-                                                        </div>
-                                                    </td>
-
-                                                    <td class="cell">
-                                                        <div style="margin:15px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="selfTestMessage3" value="checked" name="selfTestMessage3">
-                                                        </div>
-                                                        <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="SpeakerBeep3" value="checked" name="SpeakerBeep3">
-
-                                                        </div>
-                                                        <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="TwoFullyChargedBatteries3" value="checked" name="TwoFullyChargedBatteries3">
-
-                                                        </div>
-                                                        <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="serviceIndicator3" value="checked" name="serviceIndicator3">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="serviceIndicator1" value="checked" name="serviceIndicator1">
 
                                                         </div>
                                                     </td>
                                                     <td class="cell">
                                                         <div style="margin:15px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="selfTestMessage4" value="checked" name="selfTestMessage4">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="selfTestMessage2" value="checked" name="selfTestMessage2">
                                                         </div>
                                                         <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="SpeakerBeep4" value="checked" name="SpeakerBeep4">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="SpeakerBeep2" value="checked" name="SpeakerBeep2">
 
                                                         </div>
                                                         <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="TwoFullyChargedBatteries4" value="checked" name="TwoFullyChargedBatteries4">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="TwoFullyChargedBatteries2" value="checked" name="TwoFullyChargedBatteries2">
 
                                                         </div>
                                                         <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="serviceIndicator4" value="checked" name="serviceIndicator4">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="serviceIndicator2" value="checked" name="serviceIndicator2">
+
+                                                        </div>
+                                                    </td>
+
+                                                    <td class="cell">
+                                                        <div style="margin:15px 0px 0px 5px;padding:0px;">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="selfTestMessage3" value="checked" name="selfTestMessage3">
+                                                        </div>
+                                                        <div style="margin:5px 0px 0px 5px;padding:0px;">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="SpeakerBeep3" value="checked" name="SpeakerBeep3">
+
+                                                        </div>
+                                                        <div style="margin:5px 0px 0px 5px;padding:0px;">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="TwoFullyChargedBatteries3" value="checked" name="TwoFullyChargedBatteries3">
+
+                                                        </div>
+                                                        <div style="margin:5px 0px 0px 5px;padding:0px;">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="serviceIndicator3" value="checked" name="serviceIndicator3">
 
                                                         </div>
                                                     </td>
                                                     <td class="cell">
                                                         <div style="margin:15px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="selfTestMessage5" value="checked" name="selfTestMessage5">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="selfTestMessage4" value="checked" name="selfTestMessage4">
                                                         </div>
                                                         <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="SpeakerBeep5" value="checked" name="SpeakerBeep5">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="SpeakerBeep4" value="checked" name="SpeakerBeep4">
 
                                                         </div>
                                                         <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="TwoFullyChargedBatteries5" value="checked" name="TwoFullyChargedBatteries5">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="TwoFullyChargedBatteries4" value="checked" name="TwoFullyChargedBatteries4">
 
                                                         </div>
                                                         <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="serviceIndicator5" value="checked" name="serviceIndicator5">
-
-                                                        </div>
-                                                    </td>
-                                                    <td class="cell">
-                                                        <div style="margin:15px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="selfTestMessage6" value="checked" name="selfTestMessage6">
-                                                        </div>
-                                                        <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="SpeakerBeep6" value="checked" name="SpeakerBeep6">
-
-                                                        </div>
-                                                        <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="TwoFullyChargedBatteries6" value="checked" name="TwoFullyChargedBatteries6">
-
-                                                        </div>
-                                                        <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="serviceIndicator6" value="checked" name="serviceIndicator6">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="serviceIndicator4" value="checked" name="serviceIndicator4">
 
                                                         </div>
                                                     </td>
                                                     <td class="cell">
                                                         <div style="margin:15px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="selfTestMessage7" value="checked" name="selfTestMessage7">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="selfTestMessage5" value="checked" name="selfTestMessage5">
                                                         </div>
                                                         <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="SpeakerBeep7" value="checked" name="SpeakerBeep7">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="SpeakerBeep5" value="checked" name="SpeakerBeep5">
 
                                                         </div>
                                                         <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="TwoFullyChargedBatteries7" value="checked" name="TwoFullyChargedBatteries7">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="TwoFullyChargedBatteries5" value="checked" name="TwoFullyChargedBatteries5">
 
                                                         </div>
                                                         <div style="margin:5px 0px 0px 5px;padding:0px;">
-                                                            <input type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="serviceIndicator7" value="checked" name="serviceIndicator7">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="serviceIndicator5" value="checked" name="serviceIndicator5">
+
+                                                        </div>
+                                                    </td>
+                                                    <td class="cell">
+                                                        <div style="margin:15px 0px 0px 5px;padding:0px;">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="selfTestMessage6" value="checked" name="selfTestMessage6">
+                                                        </div>
+                                                        <div style="margin:5px 0px 0px 5px;padding:0px;">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="SpeakerBeep6" value="checked" name="SpeakerBeep6">
+
+                                                        </div>
+                                                        <div style="margin:5px 0px 0px 5px;padding:0px;">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="TwoFullyChargedBatteries6" value="checked" name="TwoFullyChargedBatteries6">
+
+                                                        </div>
+                                                        <div style="margin:5px 0px 0px 5px;padding:0px;">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="serviceIndicator6" value="checked" name="serviceIndicator6">
+
+                                                        </div>
+                                                    </td>
+                                                    <td class="cell">
+                                                        <div style="margin:15px 0px 0px 5px;padding:0px;">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px;padding:0px;" class="checkbox form-control" id="selfTestMessage7" value="checked" name="selfTestMessage7">
+                                                        </div>
+                                                        <div style="margin:5px 0px 0px 5px;padding:0px;">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="SpeakerBeep7" value="checked" name="SpeakerBeep7">
+
+                                                        </div>
+                                                        <div style="margin:5px 0px 0px 5px;padding:0px;">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="TwoFullyChargedBatteries7" value="checked" name="TwoFullyChargedBatteries7">
+
+                                                        </div>
+                                                        <div style="margin:5px 0px 0px 5px;padding:0px;">
+                                                            <input disabled type="checkbox" style="width: 20px;min-height: 2px;height: 20px; padding:0px;" class="checkbox form-control" id="serviceIndicator7" value="checked" name="serviceIndicator7">
 
                                                         </div>
                                                     </td>
@@ -601,18 +596,14 @@
                                         </table>
                                     </div>
                                     <div class="form-group">
-                                        <label for="name" class="control-label col-lg-2">Your Name</label>
+                                        <label for="name" class="control-label col-lg-2">Your Name:</label>
                                         <div class="col-lg-10">
-                                            <input class=" form-control" id="name" name="name" type="text" required/>
+                                            <p class="form-control-static">any name</p>
                                         </div>
                                     </div>
 
 
-                                    <div class="form-group">
-                                        <div class="col-lg-offset-2 col-lg-10">
-                                            <button class="btn btn-theme" href="/showDailyInspectionForm" type="submit">Add</button>
-                                        </div>
-                                    </div>
+
                                 </form>
                             </div>
                         </div>
