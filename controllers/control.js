@@ -54,42 +54,83 @@ exports.showEditEq = (req, res, next) => {
 }
 
 exports.showPreinstallationCatheterData = (req, res, next) => {
-    Department = 'Catheterization'
-    Pre_installation.findAll({ where: { Department: Department } }).then(prev => {
+    const Department = 'Catheter'
+    Pre_installation.findAll({ where: {Department: Department} }).then(prev => {
         res.render('CatheterPre_installation', { newform: prev, layout: false })
     })
 }
-exports.showPreinstallationSurgeryData = (req, res, next) => {
-    Department = 'Surgery'
-    Pre_installation.findAll({ where: { Department: Department } }).then(prev => {
-        res.render('SurgeryPre_installation', { newform: prev, layout: false })
+exports.CatheterPreinstallationReport = (req, res, next) => {
+    const Id = req.params.id;
+    Pre_installation.findOne({ where: {SerialNO:Id} }).then(prev => {
+        res.render('CathPreinstallReport', {newform: prev, layout: false })
     })
 }
+exports.showPreinstallationSurgeryData = (req, res, next) => {
+    const Department = 'Surgery'
+    Pre_installation.findAll({ where: {Department: Department } }).then(prev => {
+        res.render('SurgeryPre_installation', {newform: prev, layout: false })
+    })
+}
+exports.SurgeryPreinstallationReport = (req, res, next) => {
+    const Id = req.params.id;
+    Pre_installation.findOne({ where: {SerialNO:Id} }).then(prev => {
+        res.render('SurgPreinstallReport', {newform: prev, layout: false })
+    })
+}
+
 exports.showPreinstallationEmergencyData = (req, res, next) => {
     Department = 'Emergency'
-    Pre_installation.findAll({ where: { Department: Department } }).then(prev => {
+    Pre_installation.findAll({ where: { Department:Department } }).then(prev => {
         res.render('EmergencyPre_installation', { newform: prev, layout: false })
+    })
+}
+exports.EmergencyPreinstallationReport= (req, res, next) => {
+    const Id = req.params.id;
+    Pre_installation.findOne({ where: {SerialNO:Id} }).then(prev => {
+        res.render('EmerPreinstallReport', {newform: prev,id:Id, layout: false })
     })
 }
 
 exports.showDailyInspectionCatheterData = (req, res, next) => {
-    Department = 'Catheterization'
+    const Department = 'Catheterization'
     DailyInspection.findAll({ where: { Department: Department } }).then(prev => {
         res.render('CatheterDailyInspection', { daily: prev, layout: false })
     })
 }
-exports.showDailyInspectionSurgeryData = (req, res, next) => {
-    Department = 'Surgery'
-    DailyInspection.findAll({ where: { Department: Department } }).then(prev => {
-        res.render('SurgeryDailyInspection', { daily: prev, layout: false })
+exports.CatheterDailyInspectionReport= (req, res, next) => {
+    const Id = req.params.id;
+    DailyInspection.findOne({ where: {SerailNo:Id} }).then(prev => {
+        res.render('CathInspectionReport', {newform: prev, layout: false })
     })
 }
+
 exports.showDailyInspectionEmergencyData = (req, res, next) => {
     Department = 'Emergency'
     DailyInspection.findAll({ where: { Department: Department } }).then(prev => {
         res.render('EmergencyDailyInspection', { daily: prev, layout: false })
     })
 }
+
+exports.EmergencyDailyInspectionReport = (req, res, next) => {
+    const Id = req.params.id;
+    DailyInspection.findOne({ where: {SerailNo:Id} }).then(prev => {
+        res.render('EmerInspectionReport', {newform: prev, layout: false })
+    })
+}
+
+exports.showDailyInspectionSurgeryData = (req, res, next) => {
+    Department = 'Surgery'
+    DailyInspection.findAll({ where: { Department: Department } }).then(prev => {
+        res.render('SurgeryDailyInspection', { daily: prev, layout: false })
+    })
+}
+exports.SurgeryDailyInspectionReport = (req, res, next) => {
+    const Id = req.params.id;
+    DailyInspection.findOne({ where: {SerailNo:Id} }).then(prev => {
+        res.render('SurgInspectionReport', {newform: prev, layout: false })
+    })
+}
+
 
 exports.showInventoryListingCatheterData = (req, res, next) => {
     Department = 'Catheterization'
@@ -105,6 +146,7 @@ exports.showInventoryListingSurgeryData = (req, res, next) => {
 }
 exports.showInventoryListingEmergencyData = (req, res, next) => {
     Department = 'Emergency'
+    // const Id = req.params.id;
     spareParts.findAll({ where: { Department: Department } }).then(prev => {
         res.render('EmergencyInventorylisting', { inventory: prev, layout: false })
     })
@@ -367,6 +409,8 @@ exports.showDailyInspectionData = (req, res, next) => {
         SerailNo:req.body.serial,
         Location:req.body.location,
         Department:req.body.department,
+        EndDate:req.body.enddate,
+        BeginDate:req.body.begindate,
         Authorized_Operator:req.body.name,
         ForeignSubstances1:req.body.ForeignSubstances1,
         ForeignSubstances2:req.body.ForeignSubstances2,

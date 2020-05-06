@@ -299,6 +299,15 @@ const DailyInspection = sequelize.define('DailyInspection',{
         type:Sequelize.TEXT,
         allowNull:true
     },
+    BeginDate:{
+        type:Sequelize.DATE,
+        allowNull:true
+    },
+    EndDate:{
+        type:Sequelize.DATE,
+        allowNull:true
+    },
+
 })
 
 

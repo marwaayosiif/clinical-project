@@ -165,7 +165,7 @@
                                         {{#each newform}}
 
                                     <tr class="gradeA">
-                                        <td><a href="/EmergencyPreinstallationReport"><img src="lib/advanced-datatable/images/details_open.png"></a></td>
+                                        <td><a href="/EmergencyPreinstallationReport/{{this.dataValues.SerialNO}}"><img src="lib/advanced-datatable/images/details_open.png"></a></td>
                                         <td>{{this.dataValues.Equipment}}</td>
                                         <td>{{this.dataValues.SerialNO}}</td>
                                         <td>{{this.dataValues.Date}}</td>
@@ -174,7 +174,8 @@
                                         <td class=" hidden-phone">{{this.dataValues.Room}}</td>
 
                                         
-                                    </tr>     {{/each}} 
+                                    </tr>
+                                        {{/each}}
 
                                   
                                 </tbody>

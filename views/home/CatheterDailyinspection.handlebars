@@ -165,15 +165,13 @@
                                 <tbody>
                                     {{#each daily}}
                                     <tr class="gradeA">
-                                        <td><a href="/CatheterDailyInspectionReport"><img src="lib/advanced-datatable/images/details_open.png"></a></td>
+                                        <td><a href="/CatheterDailyInspectionReport/{{this.dataValues.SerailNo}}"><img src="lib/advanced-datatable/images/details_open.png"></a></td>
                                         <td>{{this.dataValues.SerailNo}}</td>
                                         <td>{{this.dataValues.Location}}</td>
                                         <td>{{this.dataValues.Authorized_Operator}}</td>
                                         <td>{{this.dataValues.BeginDate}}</td>
                                         <td>{{this.dataValues.EndDate}}</td>
-
-
-                                     
+                                        <th >{{this.dataValues.Authorized_Operator}}</th>
                                     </tr>
                                     {{/each}}
                                 </tbody>
