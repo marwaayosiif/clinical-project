@@ -54,7 +54,7 @@ exports.showEditEq = (req, res, next) => {
 }
 
 exports.showPreinstallationCatheterData = (req, res, next) => {
-    const Department = 'Catheter'
+    const Department = 'Catheterization'
     Pre_installation.findAll({ where: {Department: Department} }).then(prev => {
         res.render('CatheterPre_installation', { newform: prev, layout: false })
     })
