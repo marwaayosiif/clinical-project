@@ -28,7 +28,7 @@ app.use(mainRoutes);
 
 
 // synchronizing with database 
-sequelize.sync().then(res => {
+sequelize.sync({ force: true }).then(res => {
         app.listen(3000, () => {
             console.log('Running')
         })
