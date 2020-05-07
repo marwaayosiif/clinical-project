@@ -304,7 +304,7 @@ exports.singUp = (req, res, next) => {
         Department: req.body.department,
         Salary: req.body.salary,
         Email: req.body.email,
-        Password: req.body.password
+        Id: req.body.id
     });
 
     Engineers.findOne({ where: { Email: engineer.Email } }).then(user => {
@@ -352,21 +352,28 @@ exports.editEng = (req, res, next) => {
 exports.login = (req, res, next) => {
     let Email = req.body.email;
     let Password = req.body.pass;
-    Engineers.findOne({ where: { Email: Email } }).then(user => {
-        if (!user) {
-            console.log("user is not found")
-            res.redirect('/showLogin')
-        } else {
-            bcrypt.compare(Password, user.Password).then((returnedPassword) => {
-                if (returnedPassword) {
-                    res.redirect('/managementSystem');
-                } else {
-                    console.log("password is not correct")
-                    res.redirect('/showLogin')
-                }
-            });
-        }
-    });
+    if(Email=='admin@gmail.com' && Password == 0000){
+        res.redirect('/managementSystem');
+    }
+    else{
+        console.log("You Are Not The Admin!!")
+        res.redirect('/showLogin')
+    }
+    // Engineers.findOne({ where: { Email: Email } }).then(user => {
+    //     if (!user) {
+    //         console.log("user is not found")
+    //         res.redirect('/showLogin')
+    //     } else {
+    //         bcrypt.compare(Password, user.Password).then((returnedPassword) => {
+    //             if (returnedPassword) {
+    //                 res.redirect('/managementSystem');
+    //             } else {
+    //                 console.log("password is not correct")
+    //                 res.redirect('/showLogin')
+    //             }
+    //         });
+    //     }
+    // });
 }
 exports.pre_installationformData = (req, res, next) => {
     const newform = new Pre_installation({

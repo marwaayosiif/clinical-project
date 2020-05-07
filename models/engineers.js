@@ -21,7 +21,7 @@ const Enigneers= sequelize.define('Enigneers',{
         type: Sequelize.STRING,
         primaryKey:true
     },
-    Password:{
+    Id:{
         type:Sequelize.STRING,
         allowNull:false
     },
