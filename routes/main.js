@@ -21,39 +21,39 @@ router.get('/showWorkOrdersForm',controller.showWorkOrdeForm);
 router.post('/getWorkOrderData',controller.getWorkOrderData)
 // get Data from database
 // pre-installion
-router.get('/showPre-installationCatheter',controller.showPreinstallationCatheterData);
-router.get('/showPre-installationSurgery',controller.showPreinstallationSurgeryData);
-router.get('/showPre-installationEmergency',controller.showPreinstallationEmergencyData);
+router.get('/showPre-installationOutPatient',controller.showPreinstallationOutPatientData);
+router.get('/showPre-installationOR',controller.showPreinstallationORData);
+router.get('/showPre-installationCCU',controller.showPreinstallationCCUData);
 
-// router.get('/CatheterDailyInspectionReport',controller.CatheterDailyInspectionReport);
-// router.get('/SurgeryDailyInspectionReport:/id',controller.SurgeryDailyInspectionReport);
-// router.get('/EmergencyDailyInspectionReport',controller.EmergencyDailyInspectionReport);
+// router.get('/OutPatientDailyInspectionReport',controller.OutPatientDailyInspectionReport);
+// router.get('/ORDailyInspectionReport:/id',controller.ORDailyInspectionReport);
+// router.get('/CCUDailyInspectionReport',controller.CCUDailyInspectionReport);
 // Daily inspection
-router.get('/showDailyInspectionCatheter',controller.showDailyInspectionCatheterData);
-router.get('/showDailyInspectionSurgery',controller.showDailyInspectionSurgeryData);
-router.get('/showDailyInspectionEmergency',controller.showDailyInspectionEmergencyData);
+router.get('/showDailyInspectionOutPatient',controller.showDailyInspectionOutPatientData);
+router.get('/showDailyInspectionOR',controller.showDailyInspectionORData);
+router.get('/showDailyInspectionCCU',controller.showDailyInspectionCCUData);
 
-router.get('/SurgeryPreinstallationReport/:id',controller.SurgeryPreinstallationReport);
-router.get('/EmergencyPreinstallationReport/:id',controller.EmergencyPreinstallationReport);
-router.get('/CatheterPreinstallationReport/:id',controller.CatheterPreinstallationReport);
+router.get('/ORPreinstallationReport/:id',controller.ORPreinstallationReport);
+router.get('/CCUPreinstallationReport/:id',controller.CCUPreinstallationReport);
+router.get('/OutPatientPreinstallationReport/:id',controller.OutPatientPreinstallationReport);
 
 
 //Daily inspection
-router.get('/CatheterDailyInspectionReport/:id',controller.CatheterDailyInspectionReport);
-router.get('/EmergencyDailyInspectionReport/:id',controller.EmergencyDailyInspectionReport);
+router.get('/OutPatientDailyInspectionReport/:id',controller.OutPatientDailyInspectionReport);
+router.get('/CCUDailyInspectionReport/:id',controller.CCUDailyInspectionReport);
 
-router.get('/SurgeryDailyInspectionReport/:id',controller.SurgeryDailyInspectionReport);
+router.get('/ORDailyInspectionReport/:id',controller.ORDailyInspectionReport);
 
 
 
 
 // Inventory
-router.get('/showInventoryListingCatheter',controller.showInventoryListingCatheterData);
-router.get('/showInventoryListingSurgery',controller.showInventoryListingSurgeryData);
-router.get('/showInventoryListingEmergency',controller.showInventoryListingEmergencyData);
+router.get('/showInventoryListingOutPatient',controller.showInventoryListingOutPatientData);
+router.get('/showInventoryListingOR',controller.showInventoryListingORData);
+router.get('/showInventoryListingCCU',controller.showInventoryListingCCUData);
 
-router.get('/pre-installationformCatheter',controller.showPreinstallationform);
-// router.post('/pre-installationformCatheter',controller.PreinstallationCatheterData);
+router.get('/pre-installationformOutPatient',controller.showPreinstallationform);
+// router.post('/pre-installationformOutPatient',controller.PreinstallationCatheterData);
 
 
 router.get('/pre-installationform',controller.pre_installationform);

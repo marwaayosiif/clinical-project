@@ -84,33 +84,33 @@
                         <ul style="padding-left: 0;">
                             <li class="sub-menu">
                                 <a href="javascript:;">
-                                    <span>Surgery</span>
+                                    <span>OR</span>
                                 </a>
                                 <ul class="sub">
-                                    <li><a href="/showPre-installationSurgery">Pre-installation Reports</a></li>
-                                    <li><a href="/showDailyInspectionSurgery">Daily Inspection Reports</a></li>
-                                    <li><a href="/showInventoryListingSurgery">Inventory Listing Reports</a></li>
+                                    <li><a href="/showPre-installationOR">Pre-installation Reports</a></li>
+                                    <li><a href="/showDailyInspectionOR">Daily Inspection Reports</a></li>
+                                    <li><a href="/showInventoryListingOR">Inventory Listing Reports</a></li>
                                 </ul>
                             </li>
                             <li class="sub-menu">
                                 <a href="javascript:;">
-                                    <span>Emergency</span>
+                                    <span>CCU</span>
                                 </a>
                                 <ul class="sub">
-                                    <li><a href="/showPre-installationEmergency">Pre-installation Reports</a></li>
-                                    <li><a href="/showDailyInspectionEmergency">Daily Inspection Reports</a></li>
-                                    <li><a href="/showInventoryListingEmergency">Inventory Listing Reports</a></li>
+                                    <li><a href="/showPre-installationCCU">Pre-installation Reports</a></li>
+                                    <li><a href="/showDailyInspectionCCU">Daily Inspection Reports</a></li>
+                                    <li><a href="/showInventoryListingCCU">Inventory Listing Reports</a></li>
 
                                 </ul>
                             </li>
                             <li class="sub-menu">
                                 <a href="javascript:;">
-                                    <span>Catheterization</span>
+                                    <span>Out Patient</span>
                                 </a>
                                 <ul class="sub">
-                                    <li><a href="/showPre-installationCatheter">Pre-installation Reports</a></li>
-                                    <li><a href="/showDailyInspectionCatheter">Daily Inspection Reports</a></li>
-                                    <li><a href="/showInventoryListingCatheter">Inventory Listing Reports</a></li>
+                                    <li><a href="/showPre-installationOutPatient">Pre-installation Reports</a></li>
+                                    <li><a href="/showDailyInspectionOutPatient">Daily Inspection Reports</a></li>
+                                    <li><a href="/showInventoryListingOutPatient">Inventory Listing Reports</a></li>
 
                                 </ul>
                             </li>
@@ -153,11 +153,13 @@
                                     <tr>
                                         <th>Name</th>
                                         <th>Model</th>
-                                        <th>Cost</th>
+                                        <th>Brand Name</th>
                                         <th>Ventor</th>
                                         <th>Warranty Period</th>
+                                        <th>Location</th>
                                         <th class="hidden-phone">Serial Number</th>
-                                        <th class="hidden-phone">Maintenance Date</th>
+                                        <th class="hidden-phone">Opertaion Date</th>
+                                        <th class="hidden-phone">Supply Date</th>
                                         <th class="hidden-phone">Department</th>
 
                                         
@@ -168,11 +170,13 @@
                                     <tr class="gradeA">
                                         <td>{{this.dataValues.Name}}</td>
                                         <td>{{this.dataValues.Model}}</td>
-                                        <td>{{this.dataValues.Cost}}</td>
+                                        <td>{{this.dataValues.brandName}}</td>
                                         <td>{{this.dataValues.Ventor}}</td>
                                         <td>{{this.dataValues.WarrantyPeriod}}</td>
+                                        <td>{{this.dataValues.location}}</td>
                                         <td class="  hidden-phone">{{this.dataValues.SerialNO}}</td>
-                                        <td class=" hidden-phone">{{this.dataValues.DueDate}}</td>
+                                        <td class=" hidden-phone">{{this.dataValues.OperationDate}}</td>
+                                        <td class=" hidden-phone">{{this.dataValues.supplyDate}}</td>
                                         <td class=" hidden-phone">{{this.dataValues.Department}}</td>
                                     </tr>
                                     {{/each}}
@@ -219,12 +223,14 @@
             var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">';
             sOut += '<tr><td>Name:</td><td>' + aData[1] + '</td></tr>';
             sOut += '<tr><td>Model:</td><td>' + aData[2] + '</td></tr>';
-            sOut += '<tr><td>Cost:</td><td>' + aData[3] + '</td></tr>';
+            sOut += '<tr><td>Brand Name:</td><td>' + aData[3] + '</td></tr>';
             sOut +="<tr><td>Vendor:</td><td>" + aData[4] + '</td> </tr>';
             sOut +="<tr><td>Warranty Period:</td><td>" + aData[5] + '</td> </tr>';
-            sOut +="<tr><td>Serial Number:</td><td>" + aData[6] + '</td> </tr>';
-            sOut += '<tr><td>Maintainance Date:</td><td>' + aData[7] + '</td></tr>';
-            sOut +="<tr><td>Department:</td><td>" + aData[8] + '</td> </tr>';
+            sOut +="<tr><td>Location:</td><td>" + aData[6] + '</td> </tr>';
+            sOut +="<tr><td>Serial Number:</td><td>" + aData[7] + '</td> </tr>';
+            sOut += '<tr><td>Operation Date:</td><td>' + aData[8] + '</td></tr>';
+            sOut += '<tr><td>Supply Date:</td><td>' + aData[9] + '</td></tr>';
+            sOut +="<tr><td>Department:</td><td>" + aData[10] + '</td> </tr>';
             sOut += '</table>';
 
             return sOut;

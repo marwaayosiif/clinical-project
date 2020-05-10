@@ -87,33 +87,33 @@
                         <ul style="padding-left: 0;">
                             <li class="sub-menu">
                                 <a class="active" href="javascript:;">
-                                    <span>Surgery</span>
+                                    <span>OR</span>
                                 </a>
                                 <ul class="sub">
-                                    <li ><a href="/showPre-installationSurgery">Pre-installation Reports</a></li>
-                                    <li class="active"><a href="/showDailyInspectionSurgery">Daily Inspection Reports</a></li>
-                                    <li><a href="/showInventoryListingSurgery">Inventory Listing Reports</a></li>
+                                    <li class="active"><a href="/showPre-installationOR">Pre-installation Reports</a></li>
+                                    <li><a href="/showDailyInspectionOR">Daily Inspection Reports</a></li>
+                                    <li><a href="/showInventoryListingOR">Inventory Listing Reports</a></li>
                                 </ul>
                             </li>
                             <li class="sub-menu">
                                 <a href="javascript:;">
-                                    <span>Emergency</span>
+                                    <span>CCU</span>
                                 </a>
                                 <ul class="sub">
-                                    <li><a href="/showPre-installationEmergency">Pre-installation Reports</a></li>
-                                    <li><a href="/showDailyInspectionEmergency">Daily Inspection Reports</a></li>
-                                    <li><a href="/showInventoryListingEmergency">Inventory Listing Reports</a></li>
+                                    <li><a href="/showPre-installationCCU">Pre-installation Reports</a></li>
+                                    <li><a href="/showDailyInspectionCCU">Daily Inspection Reports</a></li>
+                                    <li><a href="/showInventoryListingCCU">Inventory Listing Reports</a></li>
 
                                 </ul>
                             </li>
                             <li class="sub-menu">
                                 <a href="javascript:;">
-                                    <span>Catheterization</span>
+                                    <span>Out Patient</span>
                                 </a>
                                 <ul class="sub">
-                                    <li><a href="/showPre-installationCatheter">Pre-installation Reports</a></li>
-                                    <li><a href="/showDailyInspectionCatheter">Daily Inspection Reports</a></li>
-                                    <li><a href="/showInventoryListingCatheter">Inventory Listing Reports</a></li>
+                                    <li><a href="/showPre-installationOutPatient">Pre-installation Reports</a></li>
+                                    <li><a href="/showDailyInspectionOutPatient">Daily Inspection Reports</a></li>
+                                    <li><a href="/showInventoryListingOutPatient">Inventory Listing Reports</a></li>
 
                                 </ul>
                             </li>
@@ -143,7 +143,7 @@
         <!--main content start-->
         <section id="main-content">
             <section class="wrapper">
-                <h3><i class="fa fa-angle-right"></i> Daily Inspection Reports For Surgery Department</h3>
+                <h3><i class="fa fa-angle-right"></i> Pre-installation Reports For OR Department</h3>
                 <div class="row mb">
                     <!-- page start-->
                     <div class="content-panel">
@@ -154,28 +154,31 @@
                                 <thead>
                                     <tr class="centerRow">
                                         <th></th>
+                                        <th  >Equipment</th>
                                         <th >Serial Number</th>
-                                        <th >Location</th>
+                                        <th >Date</th>
                                         <th >Name of The Responsible</th>
-                                        <th >Begin Date</th>
-                                        <th >End Date</th>
-
+                                        <th class="hidden-phone">Floor</th>
+                                        <th class="hidden-phone">Room</th>
+                                        
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {{#each daily}}
-                                    <tr class="gradeA">
-                                        <td><a href="/SurgeryDailyInspectionReport/{{this.dataValues.SerailNo}}"><img src="lib/advanced-datatable/images/details_open.png"></a></td>
-                                        <td>{{this.dataValues.SerailNo}}</td>
-                                        <td>{{this.dataValues.Location}}</td>
-                                        <td>{{this.dataValues.Authorized_Operator}}</td>
-                                        <td>{{this.dataValues.BeginDate}}</td>
-                                        <td>{{this.dataValues.EndDate}}</td>
-v
+                                                                        {{#each newform}}
 
-                                     
+                                    <tr class="gradeA">
+                                        <td><a href="/ORPreinstallationReport/{{this.dataValues.SerialNO}}"><img src="lib/advanced-datatable/images/details_open.png"></a></td>
+                                        <td>{{this.dataValues.Equipment}}</td>
+                                        <td>{{this.dataValues.SerialNO}}</td>
+                                        <td>{{this.dataValues.Date}}</td>
+                                        <td>{{this.dataValues.Name}}</td>
+                                        <td class=" hidden-phone">{{this.dataValues.Floor}}</td>
+                                        <td class=" hidden-phone">{{this.dataValues.Room}}</td>
+
+                                        
                                     </tr>
-                                    {{/each}}
+{{/each}}
+
                                 </tbody>
                             </table>
                         </div>
@@ -210,7 +213,7 @@ v
     <script src="lib/common-scripts.js"></script>
 
     <!--script for this page-->
-       <script type="text/javascript">
+      <script type="text/javascript">
     
         /* Formating function for row details */
    

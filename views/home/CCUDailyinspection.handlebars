@@ -35,6 +35,7 @@
 </head>
 
 <body>
+
     <section id="container">
         <!-- **********************************************************************************************************************************************************
         TOP BAR CONTENT & NOTIFICATIONS
@@ -84,34 +85,34 @@
                         </a>
                         <ul style="padding-left: 0;">
                             <li class="sub-menu">
-                                <a href="javascript:;">
-                                    <span>Surgery</span>
-                                </a>
-                                <ul class="sub">
-                                    <li><a href="/showPre-installationSurgery">Pre-installation Reports</a></li>
-                                    <li><a href="/showDailyInspectionSurgery">Daily Inspection Reports</a></li>
-                                    <li><a href="/showInventoryListingSurgery">Inventory Listing Reports</a></li>
-                                </ul>
-                            </li>
-                            <li class="sub-menu">
                                 <a  href="javascript:;">
-                                    <span>Emergency</span>
+                                    <span>OR</span>
                                 </a>
                                 <ul class="sub">
-                                    <li ><a href="/showPre-installationEmergency">Pre-installation Reports</a></li>
-                                    <li><a href="/showDailyInspectionEmergency">Daily Inspection Reports</a></li>
-                                    <li ><a href="/showInventoryListingEmergency">Inventory Listing Reports</a></li>
-
+                                    <li ><a href="/showPre-installationOR">Pre-installation Reports</a></li>
+                                    <li ><a href="/showDailyInspectionOR">Daily Inspection Reports</a></li>
+                                    <li><a href="/showInventoryListingOR">Inventory Listing Reports</a></li>
                                 </ul>
                             </li>
                             <li class="sub-menu">
                                 <a class="active" href="javascript:;">
-                                    <span>Catheterization</span>
+                                    <span>CCU</span>
                                 </a>
                                 <ul class="sub">
-                                    <li ><a href="/showPre-installationCatheter">Pre-installation Reports</a></li>
-                                    <li><a href="/showDailyInspectionCatheter">Daily Inspection Reports</a></li>
-                                    <li class="active"><a href="/showInventoryListingCatheter">Inventory Listing Reports</a></li>
+                                    <li><a href="/showPre-installationCCU">Pre-installation Reports</a></li>
+                                    <li class="active"><a href="/showDailyInspectionCCU">Daily Inspection Reports</a></li>
+                                    <li><a href="/showInventoryListingCCU">Inventory Listing Reports</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="sub-menu">
+                                <a href="javascript:;">
+                                    <span>Out Patient</span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a href="/showPre-installationOutPatient">Pre-installation Reports</a></li>
+                                    <li><a href="/showDailyInspectionOutPatient">Daily Inspection Reports</a></li>
+                                    <li><a href="/showInventoryListingOutPatient">Inventory Listing Reports</a></li>
 
                                 </ul>
                             </li>
@@ -141,7 +142,7 @@
         <!--main content start-->
         <section id="main-content">
             <section class="wrapper">
-                <h3><i class="fa fa-angle-right"></i> Inventory Listing Reports For Catheterization Department</h3>
+                <h3><i class="fa fa-angle-right"></i> Daily Inspection Reports For CCU Department</h3>
                 <div class="row mb">
                     <!-- page start-->
                     <div class="content-panel">
@@ -151,26 +152,26 @@
 
                                 <thead>
                                     <tr class="centerRow">
-                                        <th  >Part</th>
+                                        <th></th>
                                         <th >Serial Number</th>
-                                        <th >Category</th>
-                                        <th >Unit Cost</th>
-                                        <th class="hidden-phone">Quantity</th>
-                                        <th class="hidden-phone">Vendor</th>
-                                        
+                                        <th >Location</th>
+                                        <th >Name of The Responsible</th>
+                                        <th >Begin Date</th>
+                                        <th >End Date</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {{#each inventory}}
+                                    {{#each daily}}
                                     <tr class="gradeA">
-                                        <td>{{this.dataValues.Name}}</td>
-                                        <td>{{this.dataValues.PartNumber}}</td>
-                                        <td>{{this.dataValues.Category}}</td>
-                                        <td>{{this.dataValues.UnitCost}}</td>
-                                        <td class=" hidden-phone">{{this.dataValues.Quantity}}</td>
-                                        <td class=" hidden-phone">{{this.dataValues.Vendor}}</td>
+                                        <td><a href="/CCUDailyInspectionReport/{{this.dataValues.SerailNo}}"><img src="lib/advanced-datatable/images/details_open.png"></a></td>
+                                        <td>{{this.dataValues.SerailNo}}</td>
+                                        <td>{{this.dataValues.Location}}</td>
+                                        <td>{{this.dataValues.Authorized_Operator}}</td>
+                                        <td>{{this.dataValues.BeginDate}}</td>
+                                        <td>{{this.dataValues.EndDate}}</td>
 
-                                        
+
                                     </tr>
                                     {{/each}}
                                 </tbody>
@@ -188,7 +189,6 @@
 
 
     </section>
-
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="lib/jquery/jquery.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
@@ -209,69 +209,30 @@
     <script src="lib/common-scripts.js"></script>
 
     <!--script for this page-->
-    <script type="text/javascript">
+       <script type="text/javascript">
     
         /* Formating function for row details */
-        function fnFormatDetails(oTable, nTr) {
-            var aData = oTable.fnGetData(nTr);
-            var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;margin:auto">';
-            sOut +="<tr><td>Part's Name:</td><td>" + aData[1] + '</td></tr>';
-            sOut +="<tr><td>Part's Serial Number:</td><td>" + aData[2] + '</td></tr>';
-            sOut += '<tr><td>Category:</td><td>' + aData[3] + '</td></tr>';
-            sOut += '<tr><td>Unit Cost:</td><td>' + aData[4] + '</td></tr>';
-            sOut +="<tr><td>Quantity: </td><td>" + aData[5] + '</td> </tr>';
-            sOut +="<tr><td>Vendor: </td><td>" + aData[6] + '</td> </tr>';
-            sOut += '</table>';
-      
-            return sOut;
-        }
-
+   
         $(document).ready(function() {
-            /*
-             * Insert a 'details' column to the table
-             */
-            var nCloneTh = document.createElement('th');
-            var nCloneTd = document.createElement('td');
-            nCloneTd.innerHTML = '<img src="lib/advanced-datatable/images/details_open.png">';
-            nCloneTd.className ="center";
+          
 
-            $('#hidden-table-info thead tr').each(function() {
-                this.insertBefore(nCloneTh, this.childNodes[0]);
-            });
-
-            $('#hidden-table-info tbody tr').each(function() {
-                this.insertBefore(nCloneTd.cloneNode(true), this.childNodes[0]);
-            });
-
+          
+          
             /*
              * Initialse DataTables, with no sorting on the 'details' column
              */
             var oTable = $('#hidden-table-info').dataTable({
-           "aoColumnDefs": [{
-               "bSortable": false,
-               "aTargets": [0]
+            "aoColumnDefs": [{
+                "bSortable": false,
+                "aTargets": [0]
                 }],
-           "aaSorting": [
+            "aaSorting": [
                     [1, 'asc']
                 ]
             });
 
-            /* Add event listener for opening and closing details
-             * Note that the indicator for showing which row is open is not controlled by DataTables,
-             * rather it is done here
-             */
-            $('#hidden-table-info tbody td img').live('click', function() {
-                var nTr = $(this).parents('tr')[0];
-                if (oTable.fnIsOpen(nTr)) {
-                    /* This row is already open - close it */
-                    this.src ="lib/advanced-datatable/images/details_open.png";
-                    oTable.fnClose(nTr);
-                } else {
-                    /* Open this row */
-                    this.src ="lib/advanced-datatable/images/details_close.png";
-                    oTable.fnOpen(nTr, fnFormatDetails(oTable, nTr), 'details');
-                }
-            });
+          
+        
         });
         
     </script>
