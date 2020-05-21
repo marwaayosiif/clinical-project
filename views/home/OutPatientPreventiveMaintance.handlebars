@@ -90,28 +90,28 @@
                                 <ul class="sub">
                                     <li><a href="/showPre-installationOR">Pre-installation Reports</a></li>
                                     <li><a href="/showDailyInspectionOR">Daily Inspection Reports</a></li>
-                                    <li><a href="/showInventoryListingOR">Inventory Listing Reports</a></li>
+                                    <li><a href="/showPreventiveMaintainanceOR">Preventive Maintainance Reports</a></li>
                                 </ul>
                             </li>
                             <li class="sub-menu">
-                                <a class="active" href="javascript:;">
+                                <a href="javascript:;">
                                     <span>CCU</span>
                                 </a>
                                 <ul class="sub">
                                     <li ><a href="/showPre-installationCCU">Pre-installation Reports</a></li>
                                     <li><a href="/showDailyInspectionCCU">Daily Inspection Reports</a></li>
-                                    <li class="active"><a href="/showInventoryListingCCU">Inventory Listing Reports</a></li>
+                                    <li><a href="/showPreventiveMaintainanceCCU">Preventive Maintainance Reports</a></li>
 
                                 </ul>
                             </li>
                             <li class="sub-menu">
-                                <a href="javascript:;">
+                                <a class="active" href="javascript:;">
                                     <span>Out Patient</span>
                                 </a>
                                 <ul class="sub">
                                     <li ><a href="/showPre-installationOutPatient">Pre-installation Reports</a></li>
                                     <li><a href="/showDailyInspectionOutPatient">Daily Inspection Reports</a></li>
-                                    <li><a href="/showInventoryListingOutPatient">Inventory Listing Reports</a></li>
+                                    <li class="active"><a href="/showPreventiveMaintainanceOutPatient">Preventive Maintainance Reports</a></li>
 
                                 </ul>
                             </li>
@@ -125,7 +125,7 @@
                         <ul class="sub">
                             <li><a href="/pre-installationform">Add Pre-installation Report</a></li>
                             <li><a href="/showDailyInspectionForm">Add Daily Inspection Report</a></li>
-                            <li><a href="/showInventoryListingForm">Add Inventory Listing Report</a></li>
+                            <li><a href="/showPreventiveMaintainanceForm">Add Preventive Maintainance Report</a></li>
 
                         </ul>
                     </li>
@@ -141,7 +141,7 @@
         <!--main content start-->
         <section id="main-content">
             <section class="wrapper">
-                <h3><i class="fa fa-angle-right"></i> Inventory Listing Reports For CCU Department</h3>
+                <h3><i class="fa fa-angle-right"></i> Preventive Maintainance Reports For Out Patient Department</h3>
                 <div class="row mb">
                     <!-- page start-->
                     <div class="content-panel">
@@ -150,30 +150,40 @@
                             <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
 
                                 <thead>
-                                    <tr class="centerRow">
-                                        <th  >Part</th>
-                                        <th >Serial Number</th>
-                                        <th >Category</th>
-                                        <th >Unit Cost</th>
-                                        <th class="hidden-phone">Quantity</th>
-                                        <th class="hidden-phone">Vendor</th>
-                                        
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {{#each inventory}}
-                                    <tr class="gradeA">
-                                        <td>{{this.dataValues.Name}}</td>
-                                        <td>{{this.dataValues.PartNumber}}</td>
-                                        <td>{{this.dataValues.Category}}</td>
-                                        <td>{{this.dataValues.UnitCost}}</td>
-                                        <td class=" hidden-phone">{{this.dataValues.Quantity}}</td>
-                                        <td class=" hidden-phone">{{this.dataValues.Vendor}}</td>
 
-                                        
+                                    <tr>
+                                        <th>Vendor</th>
+                                        <th>Name</th>
+                                        <th>Model</th>
+                                        <th>Serail Number</th>
+                                        <th>Warranty Period</th>
+                                        <th>Operation</th>
+                                        <th class="hidden-phone">Schedule Date</th>
+                                        <th class="hidden-phone">Frequancy of Maintainance</th>
+                                        <th class="hidden-phone">Days of Maintainance</th>
+                                        <th class="hidden-phone">Processes</th>
                                     </tr>
-                                    {{/each}}
+
+                                </thead>
+
+                                {{#each pre}}
+                                <tbody>
+                                    <tr class="gradeA">
+                                        <td>{{this.dataValues.Vendor}}</td>
+                                        <td>{{this.dataValues.Name}}</td>
+                                        <td>{{this.dataValues.Model}}</td>
+                                        <td>{{this.dataValues.SerialNO}}</td>
+                                        <td>{{this.dataValues.WarrantyPeriod}}</td>
+                                        <td>{{this.dataValues.Operation}}</td>
+                                        <td>{{this.dataValues.ScheduleDate}}</td>
+                                        <td class="  hidden-phone">{{this.dataValues.frequency}}</td>
+                                        <td class="hidden-phone">{{this.dataValues.DaysMaintainance}}</td>
+                                        <td class="hidden-phone">{{this.dataValues.processes}}</td>
+                                    </tr>
+
                                 </tbody>
+                                {{/each}}
+
                             </table>
                         </div>
                     </div>
@@ -186,9 +196,9 @@
         <!-- /MAIN CONTENT -->
         <!--main content end-->
 
+   
 
     </section>
-
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="lib/jquery/jquery.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
@@ -215,12 +225,16 @@
         function fnFormatDetails(oTable, nTr) {
             var aData = oTable.fnGetData(nTr);
             var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;margin:auto">';
-            sOut +="<tr><td>Part's Name:</td><td>" + aData[1] + '</td></tr>';
-            sOut +="<tr><td>Part's Serial Number:</td><td>" + aData[2] + '</td></tr>';
-            sOut += '<tr><td>Category:</td><td>' + aData[3] + '</td></tr>';
-            sOut += '<tr><td>Unit Cost:</td><td>' + aData[4] + '</td></tr>';
-            sOut +="<tr><td>Quantity: </td><td>" + aData[5] + '</td> </tr>';
-            sOut +="<tr><td>Vendor: </td><td>" + aData[6] + '</td> </tr>';
+            sOut +="<tr><td>Vendor's Name: </td><td>" + aData[1] + '</td></tr>';
+            sOut +="<tr><td>Part's Name: </td><td>" + aData[2] + '</td></tr>';
+            sOut +="<tr><td>Part's Model: </td><td>" + aData[3] + '</td></tr>';
+            sOut +="<tr><td>Part's Serial Number: </td><td>" + aData[4] + '</td></tr>';
+            sOut += '<tr><td>Warranty Period: </td><td>' + aData[5] + '</td></tr>';
+            sOut += '<tr><td>Operation: </td><td>' + aData[6] + '</td></tr>';
+            sOut +="<tr><td>Schedule Date: </td><td>" + aData[7] + '</td> </tr>';
+            sOut += '<tr><td>Frequancy of Maintainance: </td><td>' + aData[8] + '</td></tr>';
+            sOut +="<tr><td>Days of Maintainance: </td><td>" + aData[9] + '</td> </tr>';
+            sOut +="<tr><td>Processes: </td><td>" + aData[10] + '</td> </tr>';
             sOut += '</table>';
       
             return sOut;
@@ -277,4 +291,4 @@
     </script>
 </body>
 
-</html>
+</html> 

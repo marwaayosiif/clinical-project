@@ -20,25 +20,25 @@
     <link href="lib/advanced-datatable/css/demo_page.css" rel="stylesheet" />
     <link href="lib/advanced-datatable/css/demo_table.css" rel="stylesheet" />
     <link rel="stylesheet" href="lib/advanced-datatable/css/DT_bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="lib/bootstrap-datepicker/css/datepicker.css" />
 
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/style-responsive.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
 
     <!-- =======================================================
-    Template Name: Dashio
-    Template URL: https://templatemag.com/dashio-bootstrap-admin-template/
-    Author: TemplateMag.com
-    License: https://templatemag.com/license/
-  ======================================================= -->
+        Template Name: Dashio
+        Template URL: https://templatemag.com/dashio-bootstrap-admin-template/
+        Author: TemplateMag.com
+        License: https://templatemag.com/license/
+      ======================================================= -->
 </head>
 
 <body>
     <section id="container">
         <!-- **********************************************************************************************************************************************************
-        TOP BAR CONTENT & NOTIFICATIONS
-        *********************************************************************************************************************************************************** -->
+            TOP BAR CONTENT & NOTIFICATIONS
+            *********************************************************************************************************************************************************** -->
         <!--header start-->
         <header class="header black-bg">
             <div class="sidebar-toggle-box">
@@ -51,8 +51,8 @@
         </header>
         <!--header end-->
         <!-- **********************************************************************************************************************************************************
-        MAIN SIDEBAR MENU
-        *********************************************************************************************************************************************************** -->
+            MAIN SIDEBAR MENU
+            *********************************************************************************************************************************************************** -->
         <!--sidebar start-->
         <aside>
             <div id="sidebar" class="nav-collapse">
@@ -78,7 +78,7 @@
                     </li>
 
                     <li class="sub-menu">
-                        <a href="javascript:;">
+                        <a class="active" href="javascript:;">
                             <i class="fa  fa-hospital-o"></i>
                             <span>Departments</span>
                         </a>
@@ -90,7 +90,7 @@
                                 <ul class="sub">
                                     <li><a href="/showPre-installationOR">Pre-installation Reports</a></li>
                                     <li><a href="/showDailyInspectionOR">Daily Inspection Reports</a></li>
-                                    <li><a href="/showInventoryListingOR">Inventory Listing Reports</a></li>
+                                    <li><a href="/showPreventiveMaintainanceOR">Preventive Maintainance Reports</a></li>
                                 </ul>
                             </li>
                             <li class="sub-menu">
@@ -100,7 +100,7 @@
                                 <ul class="sub">
                                     <li><a href="/showPre-installationCCU">Pre-installation Reports</a></li>
                                     <li><a href="/showDailyInspectionCCU">Daily Inspection Reports</a></li>
-                                    <li><a href="/showInventoryListingCCU">Inventory Listing Reports</a></li>
+                                    <li><a href="/showPreventiveMaintainanceCCU">Preventive Maintainance Reports</a></li>
 
                                 </ul>
                             </li>
@@ -111,7 +111,7 @@
                                 <ul class="sub">
                                     <li><a href="/showPre-installationOutPatient">Pre-installation Reports</a></li>
                                     <li><a href="/showDailyInspectionOutPatient">Daily Inspection Reports</a></li>
-                                    <li><a href="/showInventoryListingOutPatient">Inventory Listing Reports</a></li>
+                                    <li><a href="/showPreventiveMaintainanceOutPatient">Preventive Maintainance Reports</a></li>
 
                                 </ul>
                             </li>
@@ -125,10 +125,11 @@
                         <ul class="sub">
                             <li><a href="/pre-installationform">Add Pre-installation Report</a></li>
                             <li><a href="/showDailyInspectionForm">Add Daily Inspection Report</a></li>
-                            <li class="active"><a href="/showInventoryListingForm">Add Inventory Listing Report</a></li>
+                            <li class="active"><a href="/showPreventiveMaintainanceForm">Add Preventive Maintainance Report</a></li>
 
                         </ul>
                     </li>
+
                 </ul>
                 <!-- sidebar menu end-->
             </div>
@@ -140,16 +141,16 @@
         <!--main content start-->
         <section id="main-content">
             <section class="wrapper">
-                <h3><i class="fa fa-angle-right"></i> Add A New Inventory Listing Report</h3>
+                <h3><i class="fa fa-angle-right"></i> Add A New Preventive Maintainance Report</h3>
 
                 <!-- /row -->
                 <div class="row mt">
                     <div class="col-lg-12">
                         <div class="form-panel">
                             <div class="form">
-                                <form class="cmxform form-horizontal style-form" id="signupForm" method="POST" action="/showInventoryListingForm">
+                                <form class="cmxform form-horizontal style-form" id="signupForm" method="get" action="">
                                     <div class="form-group">
-                                        <label for="department" class="control-label col-lg-2">Department's Name</label>
+                                        <label class="control-label col-lg-2">Department's Name</label>
                                         <div class="col-lg-10">
                                             <select class="form-control" id="department" name="department" required>
                                                 <option value="OR">OR</option>
@@ -159,47 +160,78 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="serial" class="control-label col-lg-2">Part's Serial Number</label>
-                                        <div class="col-lg-10">
-                                            <input class="form-control" id="serial" name="serial" type="text" required />
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
                                         <label for="name" class="control-label col-lg-2">Part's Name</label>
                                         <div class="col-lg-10">
                                             <input class=" form-control" id="name" name="name" type="text" required/>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="category" class="control-label col-lg-2">Category</label>
-                                        <div class="col-lg-10">
-                                            <input class=" form-control" id="category" name="category" type="text" required/>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="cost" class="control-label col-lg-2">Unit Cost</label>
-                                        <div class="col-lg-10">
-                                            <input class=" form-control" id="cost" name="cost" type="number" required/>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="quantity" class="control-label col-lg-2">Quantity</label>
-                                        <div class="col-lg-10">
-                                            <input class=" form-control" id="quantity" name="quantity" type="number" required/>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="vendor" class="control-label col-lg-2">Vendor</label>
+                                        <label for="vendor" class="control-label col-lg-2">Vendor's Name</label>
                                         <div class="col-lg-10">
                                             <input class=" form-control" id="vendor" name="vendor" type="text" required/>
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        <label for="serial" class="control-label col-lg-2">Serial Number</label>
+                                        <div class="col-lg-10">
+                                            <input class="form-control" id="serial" name="serial" type="number" required />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="model" class="control-label col-lg-2">Model</label>
+                                        <div class="col-lg-10">
+                                            <input class=" form-control" id="model" name="model" type="text" required/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="warranty" class="control-label col-lg-2">Warranty Period</label>
+                                        <div class="col-lg-10">
+                                            <input class=" form-control" id="warranty" name="warranty" type="text" required/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="operation" class="control-label col-lg-2">Operation</label>
+                                        <div class="col-lg-10">
+                                            <input class=" form-control" id="operation" name="operation" type="text" required/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="date" class="control-label col-lg-2">Schedule Date</label>
+                                        <div class="col-lg-3">
+                                            <div data-date-viewmode="years" data-date-format="dd-mm-yyyy" data-date="01-01-2014" class="input-append date dpYears">
+                                                <input type="text" readonly="" id="date" name="date" value="01-01-2014" size="16" class="form-control" required>
+                                                <span class="input-group-btn add-on">
+                            <button class="btn btn-theme" type="button"><i class="fa fa-calendar"></i></button>
+                            </span>
+                                            </div>
+                                            <span class="help-block">Select date</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="freq" class="control-label col-lg-2">Frequancy of Maintainance (Per Year)</label>
+                                        <div class="col-lg-10">
+                                            <input class="form-control" id="freq" name="freq" type="number" required />
+                                        </div>
+                                    </div>
 
+                                    <div class="form-group">
+                                        <label for="processes" class="control-label col-lg-2">Processes</label>
+                                        <div class="col-lg-10">
+                                            <textarea class="form-control" name="processes" id="processes" rows="5" data-rule="required" required></textarea>
+                                        </div>
+                                    </div>
 
+                                    <div class="form-group">
+                                        <label for="days" class="control-label col-lg-2">Days of Maintainance</label>
+                                        <div class="col-lg-10">
+                                            <input class="form-control" id="days" name="days" type="number" required />
+                                        </div>
+                                    </div>
 
                                     <div class="form-group">
                                         <div class="col-lg-offset-2 col-lg-10">
-                                            <button class="btn btn-theme" href="/showInventoryListingForm" type="submit">Add</button>
+                                            <button class="btn btn-theme" type="submit">Add</button>
+                                            <a class="btn btn-theme04" type="button" href="preventive_maintance.html">Cancel</a>
                                         </div>
                                     </div>
                                 </form>
