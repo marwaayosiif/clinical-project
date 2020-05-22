@@ -7,7 +7,7 @@ const Engineers = require('../models/engineers')
 const Equipment = require('../models/equipment')
 const spareParts = require('../models/spareParts')
 const DailyInspection = require('../models/DailyInspection')
-
+const preventive = require('../models/preventive');
 exports.showWorkOrdeForm = (req, res, next) => {
     res.sendFile(path.join(DirName, 'views', 'add_workorder.html'));
 }
@@ -52,6 +52,29 @@ exports.ShowEditTech = (req, res, next) => {
 exports.showEditEq = (req, res, next) => {
     res.sendFile(path.join(DirName, 'views', 'edit_equipment.html'));
 }
+exports.showPreventiveMaintainanceForm= (req, res, next) => {
+    res.sendFile(path.join(DirName, 'views', 'add_preventive.html'));
+}
+exports.getPreventiveMaintainanceData= (req, res, next) =>{
+    const preventive_maintance = new preventive({
+        Department: req.body.department,
+        PartsName: req.body.name,
+        Vendor: req.body.vendor,
+        SerialNO: req.body.serial,
+        Model: req.body.model,
+        WarrantyPeriod: req.body.warranty,
+        Operation: req.body.operation,
+        SerialNO: req.body.serial,
+        scheduleDate: req.body.date,
+        frequancy: req.body.freq,
+        process: req.body.processes,
+        DayesOfMaintainance:req.body.days,
+
+    });
+    preventive_maintance.save().then(
+        res.redirect('/showPreventiveMaintainanceForm')
+    )
+}
 
 exports.showPreinstallationOutPatientData = (req, res, next) => {
     const Department = 'OutPatient'
@@ -62,9 +85,61 @@ exports.showPreinstallationOutPatientData = (req, res, next) => {
 exports.OutPatientPreinstallationReport = (req, res, next) => {
     const Id = req.params.id;
     Pre_installation.findOne({ where: {SerialNO:Id} }).then(prev => {
+        res.render('OutPatientPreinstallationReport', {newform: prev, layout: false })
+    })
+}
+exports.showPreventiveMaintainanceOutPatient = (req, res, next) => {
+    const Department = 'OutPatient'
+    preventive.findAll({ where: {Department: Department} }).then(prev => {
+        res.render('OutPatientPreventiveMaintance', { newform: prev, layout: false })
+    })
+}
+exports.OutPatientPMReport = (req, res, next) => {
+    const Id = req.params.id;
+    preventive.findOne({ where: {SerialNO:Id} }).then(prev => {
+        res.render('OutPatientPMReport', {newform: prev, layout: false })
+    })
+}
+
+exports.showPreventiveMaintainanceCCU = (req, res, next) => {
+    const Department = 'CCU'
+    preventive.findAll({ where: {Department: Department} }).then(prev => {
+        res.render('CCUPreventiveMaintance', { newform: prev, layout: false })
+    })
+}
+exports.CCUPMReport = (req, res, next) => {
+    const Id = req.params.id;
+    preventive.findOne({ where: {SerialNO:Id} }).then(prev => {
+        res.render('CCUPMReport', {newform: prev, layout: false })
+    })
+}
+exports.showPreventiveMaintainanceOR = (req, res, next) => {
+    const Department = 'OR'
+    preventive.findAll({ where: {Department: Department} }).then(prev => {
+        res.render('ORPreventiveMaintance', {newform: prev, layout: false })
+    })
+}
+
+exports.ORPMReport = (req, res, next) => {
+    const Id = req.params.id;
+    preventive.findOne({ where: {SerialNO:Id} }).then(prev => {
+        res.render('ORPMReport', {newform: prev, layout: false })
+    })
+}
+
+exports.OutPatientPreventiveMaintainanceReport = (req, res, next) => {
+    const Id = req.params.id;
+    Pre_installation.findOne({ where: {SerialNO:Id} }).then(prev => {
         res.render('OutPatientPreinstallReport', {newform: prev, layout: false })
     })
 }
+// exports.OutPatientPMReport = (req, res, next) => {
+//     const Id = req.params.id;
+//     preventive.findOne({ where: {SerialNO:Id} }).then(prev => {
+//         res.render('OutPatientPMReport', {newform: prev, layout: false })
+//     })
+// }
+
 exports.showPreinstallationORData = (req, res, next) => {
     const Department = 'OR'
     Pre_installation.findAll({ where: {Department: Department } }).then(prev => {

@@ -152,6 +152,7 @@
                                 <thead>
 
                                     <tr>
+                                        <th></th>
                                         <th>Vendor</th>
                                         <th>Name</th>
                                         <th>Model</th>
@@ -166,23 +167,26 @@
 
                                 </thead>
 
-                                {{#each pre}}
+                                {{#each newform}}
                                 <tbody>
                                     <tr class="gradeA">
+                                        <td><a href="/ORPMReport/{{this.dataValues.SerailNo}}"><img src="lib/advanced-datatable/images/details_open.png"></a></td>
+
                                         <td>{{this.dataValues.Vendor}}</td>
-                                        <td>{{this.dataValues.Name}}</td>
+                                        <td>{{this.dataValues.PartsName}}</td>
                                         <td>{{this.dataValues.Model}}</td>
                                         <td>{{this.dataValues.SerialNO}}</td>
                                         <td>{{this.dataValues.WarrantyPeriod}}</td>
                                         <td>{{this.dataValues.Operation}}</td>
-                                        <td>{{this.dataValues.ScheduleDate}}</td>
-                                        <td class="  hidden-phone">{{this.dataValues.frequency}}</td>
-                                        <td class="hidden-phone">{{this.dataValues.DaysMaintainance}}</td>
-                                        <td class="hidden-phone">{{this.dataValues.processes}}</td>
+                                        <td>{{this.dataValues.scheduleDate}}</td>
+                                        <td class="  hidden-phone">{{this.dataValues.frequancy}}</td>
+                                        <td class="hidden-phone">{{this.dataValues.DayesOfMaintainance}}</td>
+                                        <td class="hidden-phone">{{this.dataValues.process}}</td>
                                     </tr>
 
                                 </tbody>
                                 {{/each}}
+
 
                             </table>
                         </div>
