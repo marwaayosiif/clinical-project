@@ -16,10 +16,10 @@ const preventive= sequelize.define('preventive',{
         type: Sequelize.TEXT,
         allowNull: false
     },
-    Model: {
-    type:Sequelize.STRING,
-    allowNull:true
-    },
+    // Model: {
+    // type:Sequelize.STRING,
+    // allowNull:true
+    // },
     SerialNO:{
         type: Sequelize.STRING,
         primaryKey:true
@@ -47,10 +47,10 @@ const preventive= sequelize.define('preventive',{
         type:Sequelize.STRING,
         allowNull:true
     },
-    DayesOfMaintainance:{
-        type:Sequelize.STRING,
-        allowNull:true
-    },
+    // DayesOfMaintainance:{
+    //     type:Sequelize.STRING,
+    //     allowNull:true
+    // },
 })
 
 

@@ -61,15 +61,11 @@ exports.getPreventiveMaintainanceData= (req, res, next) =>{
         PartsName: req.body.name,
         Vendor: req.body.vendor,
         SerialNO: req.body.serial,
-        Model: req.body.model,
         WarrantyPeriod: req.body.warranty,
         Operation: req.body.operation,
-        SerialNO: req.body.serial,
         scheduleDate: req.body.date,
         frequancy: req.body.freq,
         process: req.body.processes,
-        DayesOfMaintainance:req.body.days,
-
     });
     preventive_maintance.save().then(
         res.redirect('/showPreventiveMaintainanceForm')

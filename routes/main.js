@@ -73,7 +73,7 @@ router.get('/pre-installationformOutPatient',controller.showPreinstallationform)
 
 
 router.get('/pre-installationform',controller.pre_installationform);
-// router.get('/showDailyInspectionForm',controller.showDailyInspectionForm);
+router.get('/showDailyInspectionForm',controller.showDailyInspectionForm);
 router.get('/showInventoryListingForm',controller.showInventoryListingForm);
 // router.get('/showWorkOrdersForm',controller.showWorkOrdersForm);
 router.post('/pre-installationform',controller.pre_installationformData);
