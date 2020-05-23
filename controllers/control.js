@@ -65,7 +65,6 @@ exports.getPreventiveMaintainanceData= (req, res, next) =>{
         Operation: req.body.operation,
         scheduleDate: req.body.date,
         frequancy: req.body.freq,
-        process: req.body.processes,
     });
     preventive_maintance.save().then(
         res.redirect('/showPreventiveMaintainanceForm')

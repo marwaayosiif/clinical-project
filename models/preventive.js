@@ -43,10 +43,10 @@ const preventive= sequelize.define('preventive',{
         type:Sequelize.STRING,
         allowNull:true
     },
-    process:{
-        type:Sequelize.STRING,
-        allowNull:true
-    },
+    // process:{
+    //     type:Sequelize.STRING,
+    //     allowNull:true
+    // },
     // DayesOfMaintainance:{
     //     type:Sequelize.STRING,
     //     allowNull:true

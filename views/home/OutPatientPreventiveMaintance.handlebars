@@ -160,7 +160,6 @@
                                         <th>Operation</th>
                                         <th class="hidden-phone">Maintainance Date</th>
                                         <th class="hidden-phone">Frequancy of Maintainance</th>
-                                        <th class="hidden-phone">Processes</th>
                                     </tr>
 
                                 </thead>
@@ -177,7 +176,6 @@
                                         <td>{{this.dataValues.Operation}}</td>
                                         <td>{{this.dataValues.scheduleDate}}</td>
                                         <td class="  hidden-phone">{{this.dataValues.frequancy}}</td>
-                                        <td class="hidden-phone">{{this.dataValues.process}}</td>
                                     </tr>
 
                                 </tbody>
@@ -232,7 +230,6 @@
             sOut += '<tr><td>Operation: </td><td>' + aData[5] + '</td></tr>';
             sOut +="<tr><td>Maintainance Date: </td><td>" + aData[6] + '</td> </tr>';
             sOut += '<tr><td>Frequancy of Maintainance: </td><td>' + aData[7] + '</td></tr>';
-            sOut +="<tr><td>Processes: </td><td>" + aData[8] + '</td> </tr>';
             sOut += '</table>';
       
             return sOut;
