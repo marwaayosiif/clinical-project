@@ -90,7 +90,7 @@
                                 <ul class="sub">
                                     <li><a href="/showPre-installationOR">Pre-installation Reports</a></li>
                                     <li><a href="/showDailyInspectionOR">Daily Inspection Reports</a></li>
-                                    <li><a href="/showPreventiveMaintainanceOR">Preventive Maintainance Reports</a></li>
+                                    <li><a href="/showPreventiveMaintainanceOR">Preventive Maintainance</a></li>
                                 </ul>
                             </li>
                             <li class="sub-menu">
@@ -100,7 +100,7 @@
                                 <ul class="sub">
                                     <li ><a href="/showPre-installationCCU">Pre-installation Reports</a></li>
                                     <li><a href="/showDailyInspectionCCU">Daily Inspection Reports</a></li>
-                                    <li class="active"><a href="/showPreventiveMaintainanceCCU">Preventive Maintainance Reports</a></li>
+                                    <li class="active"><a href="/showPreventiveMaintainanceCCU">Preventive Maintainance</a></li>
 
                                 </ul>
                             </li>
@@ -111,7 +111,7 @@
                                 <ul class="sub">
                                     <li ><a href="/showPre-installationOutPatient">Pre-installation Reports</a></li>
                                     <li><a href="/showDailyInspectionOutPatient">Daily Inspection Reports</a></li>
-                                    <li><a href="/showPreventiveMaintainanceOutPatient">Preventive Maintainance Reports</a></li>
+                                    <li><a href="/showPreventiveMaintainanceOutPatient">Preventive Maintainance</a></li>
 
                                 </ul>
                             </li>
@@ -125,7 +125,7 @@
                         <ul class="sub">
                             <li><a href="/pre-installationform">Add Pre-installation Report</a></li>
                             <li><a href="/showDailyInspectionForm">Add Daily Inspection Report</a></li>
-                            <li><a href="/showPreventiveMaintainanceForm">Add Preventive Maintainance Report</a></li>
+                            <li><a href="/showPreventiveMaintainanceForm">Add Preventive Maintainance</a></li>
 
                         </ul>
                     </li>
@@ -141,7 +141,7 @@
         <!--main content start-->
         <section id="main-content">
             <section class="wrapper">
-                <h3><i class="fa fa-angle-right"></i> Preventive Maintainance Reports For CCU Department</h3>
+                <h3><i class="fa fa-angle-right"></i> Preventive Maintainance For CCU Department</h3>
                 <div class="row mb">
                     <!-- page start-->
                     <div class="content-panel">
@@ -163,8 +163,9 @@
 
                                 </thead>
 
-                        {{#each newform}}
+               
                                 <tbody>
+                                             {{#each newform}}
                                     <tr class="gradeA">
 
                                         <td>{{this.dataValues.Vendor}}</td>
@@ -175,9 +176,9 @@
                                         <td>{{this.dataValues.scheduleDate}}</td>
                                         <td class="  hidden-phone">{{this.dataValues.frequancy}}</td>
                                     </tr>
-
+     {{/each}}
                                 </tbody>
-                                {{/each}}
+                           
 
 
 
@@ -233,8 +234,7 @@
       
             return sOut;
         }
-
-        $(document).ready(function() {
+      $(document).ready(function() {
             /*
              * Insert a 'details' column to the table
              */
@@ -242,28 +242,24 @@
             var nCloneTd = document.createElement('td');
             nCloneTd.innerHTML = '<img src="lib/advanced-datatable/images/details_open.png">';
             nCloneTd.className ="center";
-
             $('#hidden-table-info thead tr').each(function() {
                 this.insertBefore(nCloneTh, this.childNodes[0]);
             });
-
             $('#hidden-table-info tbody tr').each(function() {
                 this.insertBefore(nCloneTd.cloneNode(true), this.childNodes[0]);
             });
-
             /*
              * Initialse DataTables, with no sorting on the 'details' column
              */
             var oTable = $('#hidden-table-info').dataTable({
-            "aoColumnDefs": [{
-                "bSortable": false,
-                "aTargets": [0]
+           "aoColumnDefs": [{
+               "bSortable": false,
+               "aTargets": [0]
                 }],
-            "aaSorting": [
+           "aaSorting": [
                     [1, 'asc']
                 ]
             });
-
             /* Add event listener for opening and closing details
              * Note that the indicator for showing which row is open is not controlled by DataTables,
              * rather it is done here

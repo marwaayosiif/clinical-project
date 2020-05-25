@@ -1,57 +1,57 @@
-const Sequelize=require('sequelize');
-const sequelize=require('../util/db.js');
+const Sequelize = require('sequelize');
+const sequelize = require('../util/db.js');
 
 
-const preventive= sequelize.define('preventive',{
-    
-    Department:{
+const preventive = sequelize.define('preventive', {
+
+    Department: {
         type: Sequelize.TEXT,
-        allowNull:false
+        allowNull: false
     },
-     
-    PartsName:{
+
+    PartsName: {
         type: Sequelize.TEXT,
     },
     Vendor: {
         type: Sequelize.TEXT,
         allowNull: false
     },
-    // Model: {
-    // type:Sequelize.STRING,
-    // allowNull:true
-    // },
-    SerialNO:{
+    Model: {
         type: Sequelize.STRING,
-        primaryKey:true
+        allowNull: true
     },
-    
-   
-    WarrantyPeriod:{
-        type:Sequelize.STRING,
-        allowNull:true
+    SerialNO: {
+        type: Sequelize.STRING,
+        primaryKey: true
     },
-  
-    Operation:{
-        type:Sequelize.STRING,
-        allowNull:true
+
+
+    WarrantyPeriod: {
+        type: Sequelize.STRING,
+        allowNull: true
     },
-    scheduleDate:{
-        type:Sequelize.DATE,
-        allowNull:true
+
+    Operation: {
+        type: Sequelize.STRING,
+        allowNull: true
     },
-    frequancy:{
-        type:Sequelize.STRING,
-        allowNull:true
+    scheduleDate: {
+        type: Sequelize.DATE,
+        allowNull: true
     },
-    // process:{
-    //     type:Sequelize.STRING,
-    //     allowNull:true
-    // },
-    // DayesOfMaintainance:{
-    //     type:Sequelize.STRING,
-    //     allowNull:true
-    // },
+    frequancy: {
+        type: Sequelize.STRING,
+        allowNull: true
+    },
+    process: {
+        type: Sequelize.STRING,
+        allowNull: true
+    },
+    DayesOfMaintainance: {
+        type: Sequelize.STRING,
+        allowNull: true
+    },
 })
 
 
-module.exports=preventive;
+module.exports = preventive;

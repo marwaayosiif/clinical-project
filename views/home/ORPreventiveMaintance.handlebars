@@ -90,7 +90,7 @@
                                 <ul class="sub">
                                     <li><a href="/showPre-installationOR">Pre-installation Reports</a></li>
                                     <li><a href="/showDailyInspectionOR">Daily Inspection Reports</a></li>
-                                    <li class="active"><a href="/showPreventiveMaintainanceOR">Preventive Maintainance Reports</a></li>
+                                    <li class="active"><a href="/showPreventiveMaintainanceOR">Preventive Maintainance</a></li>
                                 </ul>
                             </li>
                             <li class="sub-menu">
@@ -100,7 +100,7 @@
                                 <ul class="sub">
                                     <li ><a href="/showPre-installationCCU">Pre-installation Reports</a></li>
                                     <li><a href="/showDailyInspectionCCU">Daily Inspection Reports</a></li>
-                                    <li><a href="/showPreventiveMaintainanceCCU">Preventive Maintainance Reports</a></li>
+                                    <li><a href="/showPreventiveMaintainanceCCU">Preventive Maintainance</a></li>
 
                                 </ul>
                             </li>
@@ -111,7 +111,7 @@
                                 <ul class="sub">
                                     <li ><a href="/showPre-installationOutPatient">Pre-installation Reports</a></li>
                                     <li><a href="/showDailyInspectionOutPatient">Daily Inspection Reports</a></li>
-                                    <li><a href="/showPreventiveMaintainanceOutPatient">Preventive Maintainance Reports</a></li>
+                                    <li><a href="/showPreventiveMaintainanceOutPatient">Preventive Maintainance</a></li>
 
                                 </ul>
                             </li>
@@ -125,7 +125,7 @@
                         <ul class="sub">
                             <li><a href="/pre-installationform">Add Pre-installation Report</a></li>
                             <li><a href="/showDailyInspectionForm">Add Daily Inspection Report</a></li>
-                            <li><a href="/showPreventiveMaintainanceForm">Add Preventive Maintainance Report</a></li>
+                            <li><a href="/showPreventiveMaintainanceForm">Add Preventive Maintainance</a></li>
 
                         </ul>
                     </li>
@@ -141,7 +141,7 @@
         <!--main content start-->
         <section id="main-content">
             <section class="wrapper">
-                <h3><i class="fa fa-angle-right"></i> Preventive Maintainance Reports For OR Department</h3>
+                <h3><i class="fa fa-angle-right"></i> Preventive Maintainance For OR Department</h3>
                 <div class="row mb">
                     <!-- page start-->
                     <div class="content-panel">
@@ -164,8 +164,9 @@
 
                                 </thead>
 
-                                 {{#each newform}}
                                 <tbody>
+                                                                     {{#each newform}}
+
                                     <tr class="gradeA">
                                         {{!-- <td><img src="lib/advanced-datatable/images/details_open.png"></a></td> --}}
 
@@ -177,9 +178,9 @@
                                         <td>{{this.dataValues.scheduleDate}}</td>
                                         <td class="  hidden-phone">{{this.dataValues.frequancy}}</td>
                                     </tr>
+                                {{/each}}
 
                                 </tbody>
-                                {{/each}}
 
                             </table>
                         </div>
