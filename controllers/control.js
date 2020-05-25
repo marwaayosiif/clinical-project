@@ -63,8 +63,9 @@ exports.getPreventiveMaintainanceData = (req, res, next) => {
         SerialNO: req.body.serial,
         WarrantyPeriod: req.body.warranty,
         Operation: req.body.operation,
-        // scheduleDate: req.body.date,
+        scheduleDate: req.body.date,
         frequancy: req.body.freq,
+        Model:req.body.model
     });
 
     Equipment.findOne({ where: { SerialNO: preventive_maintance.SerialNO, Department: preventive_maintance.Department, Ventor: preventive_maintance.Vendor } }).then(prev => {

@@ -36,10 +36,6 @@ const preventive = sequelize.define('preventive', {
         type:Sequelize.STRING,
         allowNull:true
     },
-    scheduleDate:{
-        type:Sequelize.DATE,
-        allowNull:true
-    },
     frequancy:{
         type:Sequelize.STRING,
         allowNull:true
