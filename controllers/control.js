@@ -323,7 +323,7 @@ exports.getEqData = (req, res, next) => {
         location: req.body.location,
         WarrantyPeriod: req.body.warrantyperiod,
         brandName: req.body.brandname,
-        OperationDate: req.body.operationDate,
+        OperationDate: req.body.OperationDate,
         supplyDate: req.body.supplyDate,
     });
     Equipment.findOne({ where: { SerialNO: equip.SerialNO } }).then(user => {

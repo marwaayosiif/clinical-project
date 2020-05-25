@@ -57,8 +57,6 @@ const preventive = sequelize.define('preventive', {
         type: Sequelize.STRING,
         primaryKey: true
     },
-
-
     WarrantyPeriod: {
         type: Sequelize.STRING,
         allowNull: true
