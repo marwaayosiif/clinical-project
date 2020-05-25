@@ -91,7 +91,7 @@ exports.showPreinstallationOutPatientData = (req, res, next) => {
 exports.OutPatientPreinstallationReport = (req, res, next) => {
     const Id = req.params.id;
     Pre_installation.findOne({ where: {SerialNO:Id} }).then(prev => {
-        res.render('OutPatientPreinstallationReport', {newform: prev, layout: false })
+        res.render('OutPatientPreinstallReport', {newform: prev, layout: false })
     })
 }
 exports.showPreventiveMaintainanceOutPatient = (req, res, next) => {
@@ -436,24 +436,13 @@ exports.login = (req, res, next) => {
         res.redirect('/managementSystem');
     }
     else{
-        console.log("You Are Not The Admin!!")
-        res.redirect('/showLogin')
+        res.sendFile(path.join(DirName, 'views','error', 'loginERROR.html'));
+
     }
-    // Engineers.findOne({ where: { Email: Email } }).then(user => {
-    //     if (!user) {
-    //         console.log("user is not found")
-    //         res.redirect('/showLogin')
-    //     } else {
-    //         bcrypt.compare(Password, user.Password).then((returnedPassword) => {
-    //             if (returnedPassword) {
-    //                 res.redirect('/managementSystem');
-    //             } else {
-    //                 console.log("password is not correct")
-    //                 res.redirect('/showLogin')
-    //             }
-    //         });
-    //     }
-    // });
+    
+}
+exports.loginERROR=(res,req,next)=>{
+    res.sendFile(path.join(DirName, 'views','error', 'loginERROR.html'));
 }
 exports.pre_installationformData = (req, res, next) => {
     const newform = new Pre_installation({

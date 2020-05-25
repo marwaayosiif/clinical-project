@@ -128,4 +128,6 @@ router.get('/showDailyInspectionFormERROR',controller.showDailyInspectionFormERR
 
 router.get('/showDailyInspectionFormEngERROR',controller.showDailyInspectionFormEngERROR);
 
+router.get('/loginERROR',controller.loginERROR);
+
 module.exports = router;
