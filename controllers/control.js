@@ -63,12 +63,23 @@ exports.getPreventiveMaintainanceData= (req, res, next) =>{
         SerialNO: req.body.serial,
         WarrantyPeriod: req.body.warranty,
         Operation: req.body.operation,
-        scheduleDate: req.body.date,
+        // scheduleDate: req.body.date,
         frequancy: req.body.freq,
     });
-    preventive_maintance.save().then(
-        res.redirect('/showPreventiveMaintainanceForm')
-    )
+   
+    Equipment.findOne({where: {SerialNO:preventive_maintance.SerialNO,Department:preventive_maintance.Department,Ventor:preventive_maintance.Vendor} }).then(prev=>{     
+        if (!prev){
+            res.redirect('/showPreventiveMaintainanceFormERROR')
+        }    
+        else{            
+            preventive_maintance.save().then(res.redirect('/showPreventiveMaintainanceForm'))   
+
+        }
+      
+    })
+}
+exports.showPreventiveMaintainanceFormERROR=(req,res,next)=>{
+    res.sendFile(path.join(DirName, 'views','error', 'add_preventiveER.html'));
 }
 
 exports.showPreinstallationOutPatientData = (req, res, next) => {
@@ -446,6 +457,7 @@ exports.login = (req, res, next) => {
 }
 exports.pre_installationformData = (req, res, next) => {
     const newform = new Pre_installation({
+        
         SerialNO: req.body.serial,
         Date: req.body.date,
         Name: req.body.name,
@@ -472,13 +484,21 @@ exports.pre_installationformData = (req, res, next) => {
         LockKeysAssignedToPersonalRON: req.body.lockkeyRON,
         LockKeysAssignedToPersonalComment: req.body.lockkeyComment,
     });
-    // newform.RequiredSuppliesAvailableCheck == 'on' ? newform.RequiredSuppliesAvailableCheck == 'true' : newform.RequiredSuppliesAvailableCheck == 'false'
 
-    // newform.Pre_installationFormCopiedCheck == 'on' ? newform.Pre_installationFormCopiedCheck == 'true' : newform.Pre_installationFormCopiedCheck == 'false'
+    Equipment.findOne({where: {SerialNO:newform.SerialNO,Department:newform.Department,Name:newform.Equipment} }).then(pre_install=>{     
+        if (!pre_install){
+            res.redirect('/pre_installationformERROR')
+        }    
+        else{            
+            newform.save().then(res.redirect('/pre-installationform'))   
 
-    newform.save().then(savedUser => {
-        res.redirect('/pre-installationform');
-    });
+        }
+    })
+}
+
+exports.pre_installationformERROR = (req,res,next)=>{
+    res.sendFile(path.join(DirName, 'views','error', 'add_preinstallationER.html'));
+
 }
 exports.showDailyInspectionData = (req, res, next) => {
     const daily = new DailyInspection({
@@ -559,10 +579,40 @@ exports.showDailyInspectionData = (req, res, next) => {
         serviceIndicator6:req.body.serviceIndicator6,
         serviceIndicator7:req.body.serviceIndicator7,
     });
-    daily.save().then(savedUser => {
-        res.redirect('/showDailyInspectionForm');
-    });
+   console.log(daily.Authorized_Operator)
+    Equipment.findOne({where: {SerialNO:daily.SerailNo,Department:daily.Department} }).then(newdaily=>{     
+        if (!newdaily){
+            res.redirect('/showDailyInspectionFormERROR')
+        }    
+        else{          
+            oprator_Name = daily.Authorized_Operator.split(' ');
+            Engineers.findOne({where:{Department:daily.Department,FName:oprator_Name[0]}}).then(newdata=>{
+                if(!newdata){
+                    console.log('Engineer Not found')
+                    res.redirect('/showDailyInspectionFormEngERROR')
+                }
+                else{
+                    if (newdata.LName==oprator_Name[1])
+                        daily.save().then(res.redirect('/showDailyInspectionForm'));
+                    else
+                        res.redirect('/showDailyInspectionFormEngERROR');
+                }
+            }).catch(err => {
+                console.log("ADD DAILY INSPECTION Error");
+            })
+        }
+    })
 }
+
+exports.showDailyInspectionFormERROR = (req,res,next)=>{
+    res.sendFile(path.join(DirName, 'views','error', 'add_dailyinspectionER.html'));
+
+}
+exports.showDailyInspectionFormEngERROR = (req,res,next)=>{
+    res.sendFile(path.join(DirName, 'views','error', 'add_dailyinspectionEngER.html'));
+
+}
+
 exports.showInventoryListingData = (req, res, next) => {
     const inventory = new spareParts({
         PartNumber:req.body.serial,

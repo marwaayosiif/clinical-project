@@ -120,4 +120,12 @@ router.post('/editEng', controller.editEng)
 
 router.get('/showEditEq', controller.showEditEq)
 router.post('/editEq', controller.editEq)
+//errors
+router.get('/showPreventiveMaintainanceFormERROR',controller.showPreventiveMaintainanceFormERROR)
+
+router.get('/pre_installationformERROR',controller.pre_installationformERROR)
+router.get('/showDailyInspectionFormERROR',controller.showDailyInspectionFormERROR)
+
+router.get('/showDailyInspectionFormEngERROR',controller.showDailyInspectionFormEngERROR);
+
 module.exports = router;
