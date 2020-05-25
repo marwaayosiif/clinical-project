@@ -152,37 +152,35 @@
                                 <thead>
 
                                     <tr>
+                                        {{!-- <th></th> --}}
                                         <th>Vendor</th>
                                         <th>Name</th>
-                                        <th>Model</th>
                                         <th>Serail Number</th>
                                         <th>Warranty Period</th>
                                         <th>Operation</th>
-                                        <th class="hidden-phone">Schedule Date</th>
+                                        <th class="hidden-phone">Maintainance Date</th>
                                         <th class="hidden-phone">Frequancy of Maintainance</th>
-                                        <th class="hidden-phone">Days of Maintainance</th>
-                                        <th class="hidden-phone">Processes</th>
                                     </tr>
 
                                 </thead>
 
-                                {{#each pre}}
+                                {{#each newform}}
                                 <tbody>
                                     <tr class="gradeA">
+                                        {{!-- <td><a href="/ORPMReport/{{this.dataValues.SerailNo}}"><img src="lib/advanced-datatable/images/details_open.png"></a></td> --}}
+
                                         <td>{{this.dataValues.Vendor}}</td>
-                                        <td>{{this.dataValues.Name}}</td>
-                                        <td>{{this.dataValues.Model}}</td>
+                                        <td>{{this.dataValues.PartsName}}</td>
                                         <td>{{this.dataValues.SerialNO}}</td>
                                         <td>{{this.dataValues.WarrantyPeriod}}</td>
                                         <td>{{this.dataValues.Operation}}</td>
-                                        <td>{{this.dataValues.ScheduleDate}}</td>
-                                        <td class="  hidden-phone">{{this.dataValues.frequency}}</td>
-                                        <td class="hidden-phone">{{this.dataValues.DaysMaintainance}}</td>
-                                        <td class="hidden-phone">{{this.dataValues.processes}}</td>
+                                        <td>{{this.dataValues.scheduleDate}}</td>
+                                        <td class="  hidden-phone">{{this.dataValues.frequancy}}</td>
                                     </tr>
 
                                 </tbody>
                                 {{/each}}
+
 
                             </table>
                         </div>
@@ -227,14 +225,11 @@
             var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;margin:auto">';
             sOut +="<tr><td>Vendor's Name: </td><td>" + aData[1] + '</td></tr>';
             sOut +="<tr><td>Part's Name: </td><td>" + aData[2] + '</td></tr>';
-            sOut +="<tr><td>Part's Model: </td><td>" + aData[3] + '</td></tr>';
-            sOut +="<tr><td>Part's Serial Number: </td><td>" + aData[4] + '</td></tr>';
-            sOut += '<tr><td>Warranty Period: </td><td>' + aData[5] + '</td></tr>';
-            sOut += '<tr><td>Operation: </td><td>' + aData[6] + '</td></tr>';
-            sOut +="<tr><td>Schedule Date: </td><td>" + aData[7] + '</td> </tr>';
-            sOut += '<tr><td>Frequancy of Maintainance: </td><td>' + aData[8] + '</td></tr>';
-            sOut +="<tr><td>Days of Maintainance: </td><td>" + aData[9] + '</td> </tr>';
-            sOut +="<tr><td>Processes: </td><td>" + aData[10] + '</td> </tr>';
+            sOut +="<tr><td>Part's Serial Number: </td><td>" + aData[3] + '</td></tr>';
+            sOut += '<tr><td>Warranty Period: </td><td>' + aData[4] + '</td></tr>';
+            sOut += '<tr><td>Operation: </td><td>' + aData[5] + '</td></tr>';
+            sOut +="<tr><td>Maintainance Date: </td><td>" + aData[6] + '</td> </tr>';
+            sOut += '<tr><td>Frequancy of Maintainance: </td><td>' + aData[7] + '</td></tr>';
             sOut += '</table>';
       
             return sOut;

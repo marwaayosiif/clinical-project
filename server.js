@@ -10,6 +10,7 @@ const Equipment = require('./models/equipment');
 const Engineers = require('./models/engineers');
 const spareParts = require('./models/spareParts');
 const DailyInspection = require('./models/DailyInspection');
+const preventive = require('./models/preventive');
 const app = express();
 var cookieParser = require('cookie-parser');
 const multer = require('multer');
@@ -37,3 +38,4 @@ sequelize.sync().then(res => {
     .catch(err => {
         console.log("err:", err);
     })
+    

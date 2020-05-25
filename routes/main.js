@@ -9,7 +9,7 @@ const Pre_installation = require('../models/pre-installation')
 const Engineers= require('../models/engineers')
 const spareParts = require('../models/spareParts')
 const DailyInspection = require('../models/DailyInspection')
-
+const preventive = require('../models/preventive');
 
 
 router.get('/index',controller.mainRoute);
@@ -29,6 +29,7 @@ router.get('/showPre-installationCCU',controller.showPreinstallationCCUData);
 // router.get('/ORDailyInspectionReport:/id',controller.ORDailyInspectionReport);
 // router.get('/CCUDailyInspectionReport',controller.CCUDailyInspectionReport);
 // Daily inspection
+
 router.get('/showDailyInspectionOutPatient',controller.showDailyInspectionOutPatientData);
 router.get('/showDailyInspectionOR',controller.showDailyInspectionORData);
 router.get('/showDailyInspectionCCU',controller.showDailyInspectionCCUData);
@@ -36,6 +37,20 @@ router.get('/showDailyInspectionCCU',controller.showDailyInspectionCCUData);
 router.get('/ORPreinstallationReport/:id',controller.ORPreinstallationReport);
 router.get('/CCUPreinstallationReport/:id',controller.CCUPreinstallationReport);
 router.get('/OutPatientPreinstallationReport/:id',controller.OutPatientPreinstallationReport);
+
+router.get('/showPreventiveMaintainanceOR',controller.showPreventiveMaintainanceOR);
+router.get('/ORPMReport/:id',controller.ORPMReport);
+
+router.get('/showPreventiveMaintainanceOutPatient',controller.showPreventiveMaintainanceOutPatient);
+router.get('/OutPatientPMReport/:id',controller.OutPatientPMReport);
+
+router.get('/showPreventiveMaintainanceCCU',controller.showPreventiveMaintainanceCCU);
+router.get('/CCUPMReport/:id',controller.CCUPMReport);
+
+
+
+// router.get('/showPreventiveMaintainanceCCU/:id',controller.CCUPreinstallationReport);
+// router.get('/showPreventiveMaintainanceOR/:id',controller.OutPatientPreinstallationReport);
 
 
 //Daily inspection
@@ -52,6 +67,7 @@ router.get('/showInventoryListingOutPatient',controller.showInventoryListingOutP
 router.get('/showInventoryListingOR',controller.showInventoryListingORData);
 router.get('/showInventoryListingCCU',controller.showInventoryListingCCUData);
 
+
 router.get('/pre-installationformOutPatient',controller.showPreinstallationform);
 // router.post('/pre-installationformOutPatient',controller.PreinstallationCatheterData);
 
@@ -65,6 +81,9 @@ router.post('/showDailyInspectionForm',controller.showDailyInspectionData);
 router.post('/showInventoryListingForm',controller.showInventoryListingData);
 
 
+
+router.get('/showPreventiveMaintainanceForm',controller.showPreventiveMaintainanceForm)
+router.post('/getPreventiveMaintainanceData',controller.getPreventiveMaintainanceData)
 
 router.get('/viewEng',controller.showEng);
 router.get('/addEng',controller.ShowEditEngForm);
@@ -101,4 +120,12 @@ router.post('/editEng', controller.editEng)
 
 router.get('/showEditEq', controller.showEditEq)
 router.post('/editEq', controller.editEq)
+//errors
+router.get('/showPreventiveMaintainanceFormERROR',controller.showPreventiveMaintainanceFormERROR)
+
+router.get('/pre_installationformERROR',controller.pre_installationformERROR)
+router.get('/showDailyInspectionFormERROR',controller.showDailyInspectionFormERROR)
+
+router.get('/showDailyInspectionFormEngERROR',controller.showDailyInspectionFormEngERROR);
+
 module.exports = router;
